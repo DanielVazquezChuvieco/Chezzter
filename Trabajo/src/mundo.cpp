@@ -20,7 +20,7 @@ void Mundo::dibuja()
 	//dibujo del suelo
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
-		glColor3ub(255,0,0);
+		glColor3ub(100,0,0);
 		glVertex3d(-5.0,0,-5.0);
 		glVertex3d(-5.0,0,5.0);
 		glColor3ub(255,255,0);
