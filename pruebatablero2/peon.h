@@ -1,4 +1,6 @@
 #pragma once
+#include"ETSIDI.h"
+
 class peon
 {
 	float r = 20;

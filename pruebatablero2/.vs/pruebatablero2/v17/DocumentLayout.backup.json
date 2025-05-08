@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "juego.h",
               "DocumentMoniker": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\juego.h",
               "RelativeDocumentMoniker": "juego.h",
@@ -55,7 +55,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "juego.cpp",
               "DocumentMoniker": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\juego.cpp",
               "RelativeDocumentMoniker": "juego.cpp",
@@ -68,46 +68,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "peon.cpp",
               "DocumentMoniker": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.cpp",
               "RelativeDocumentMoniker": "peon.cpp",
-              "ToolTip": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.cpp",
-              "RelativeToolTip": "peon.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.cpp*",
+              "RelativeToolTip": "peon.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-08T09:54:38.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "peon.h",
               "DocumentMoniker": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.h",
               "RelativeDocumentMoniker": "peon.h",
-              "ToolTip": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.h",
-              "RelativeToolTip": "peon.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.h*",
+              "RelativeToolTip": "peon.h*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-08T09:53:23.534Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "tablero.cpp",
               "DocumentMoniker": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\tablero.cpp",
               "RelativeDocumentMoniker": "tablero.cpp",
               "ToolTip": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\tablero.cpp",
               "RelativeToolTip": "tablero.cpp",
-              "ViewState": "AgIAABAAAAAAAAAAAADwvycAAABuAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAADwvx0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-08T08:52:53.026Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "tablero.h",
               "DocumentMoniker": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\tablero.h",
               "RelativeDocumentMoniker": "tablero.h",
@@ -115,8 +115,7 @@
               "RelativeToolTip": "tablero.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T08:52:50.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T08:52:50.394Z"
             },
             {
               "$type": "Document",
@@ -128,8 +127,7 @@
               "RelativeToolTip": "Source.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvxsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-07T15:21:10.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T15:21:10.433Z"
             }
           ]
         }

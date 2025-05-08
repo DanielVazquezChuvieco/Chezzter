@@ -24,10 +24,10 @@ void tablero::dibuja() {
 
             // Dibujamos un cuadrado usando 4 vértices (OpenGL clásico)
             glBegin(GL_QUADS); // Iniciamos dibujo de un cuadrado
-            glVertex2i(x, y);                           // esquina superior izquierda
-            glVertex2i(x + tamañoCasilla, y);             // esquina superior derecha
-            glVertex2i(x + tamañoCasilla, y + tamañoCasilla); // esquina inferior derecha
-            glVertex2i(x, y + tamañoCasilla);             // esquina inferior izquierda
+            glVertex2f(x, y);                           // esquina superior izquierda
+            glVertex2f(x + tamañoCasilla, y);             // esquina superior derecha
+            glVertex2f(x + tamañoCasilla, y + tamañoCasilla); // esquina inferior derecha
+            glVertex2f(x, y + tamañoCasilla);             // esquina inferior izquierda
             glEnd(); // Terminamos el dibujo del cuadrado
         }
     }

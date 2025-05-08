@@ -1,5 +1,7 @@
 #include "peon.h"
 #include "freeglut.h"
+#include "ETSIDI.h"
+
 //#include "tablero.h"
 
 const int tamañoCasilla = 75;
