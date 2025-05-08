@@ -1,2 +1,4 @@
-﻿  Source.cpp
-  pruebatablero2.vcxproj -> C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\pruebatablero2\x64\Debug\pruebatablero2.exe
+﻿  tablero.cpp
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(38,49): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(44,56): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+  pruebatablero2.vcxproj -> C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\x64\Debug\pruebatablero2.exe

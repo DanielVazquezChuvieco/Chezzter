@@ -31,6 +31,9 @@ int main(int argc, char** argv) {
     // Le decimos a GLUT qué función usar para dibujar
     glutDisplayFunc(onDraw);
 
+
+    Juego.inicia();
+
     // Entramos en el bucle principal de GLUT (no vuelve nunca)
     glutMainLoop();
 
