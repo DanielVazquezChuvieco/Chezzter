@@ -1,0 +1,6 @@
+﻿  Casilla.cpp
+  Source.cpp
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\Tablero\DivisiónClases\tablero2\tablero2\Source.cpp(3,13): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+  Tablero.cpp
+  Generando código...
+  tablero2.vcxproj -> C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\Tablero\DivisiónClases\tablero2\x64\Debug\tablero2.exe
