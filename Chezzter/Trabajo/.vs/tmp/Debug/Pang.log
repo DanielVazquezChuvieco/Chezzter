@@ -1,0 +1,14 @@
+﻿  mundo.cpp
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\Chess\Chezzter\Chezzter\Trabajo\src\tablero.h(3,29): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+  pang.cpp
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\Chess\Chezzter\Chezzter\Trabajo\src\tablero.h(3,29): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+  peon.cpp
+  pieza.cpp
+  tablero.cpp
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\Chess\Chezzter\Chezzter\Trabajo\src\tablero.h(3,29): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\Chess\Chezzter\Chezzter\Trabajo\src\tablero.cpp(14,21): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\Chess\Chezzter\Chezzter\Trabajo\src\tablero.cpp(15,21): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+  todaslaspiezas.cpp
+  vector2D.cpp
+  Generando código...
+  Pang.vcxproj -> D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\Chess\Chezzter\Chezzter\Trabajo\bin\Pang.exe
