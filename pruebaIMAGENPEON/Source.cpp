@@ -44,7 +44,9 @@ int main(int argc, char** argv) {
 // Esta función se llama automáticamente cada vez que hay que dibujar la ventana
 void onDraw() {
     glClear(GL_COLOR_BUFFER_BIT); // Limpiamos la pantalla (borramos lo anterior)
-    Juego.dibuja();          // Dibujamos el tablero
+    glDisable(GL_LIGHTING);           // Apagamos la iluminacion para que no se oscurezca
+    Juego.dibuja();                   // Dibuja tablero y piezas
     glutSwapBuffers();            // Mostramos lo que dibujamos en pantalla
 }
+
 

@@ -50,8 +50,7 @@
               "RelativeToolTip": "juego.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T09:04:57.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T09:04:57.963Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "juego.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T09:06:06.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T09:06:06.334Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,8 @@
               "Title": "peon.cpp",
               "DocumentMoniker": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.cpp",
               "RelativeDocumentMoniker": "peon.cpp",
-              "ToolTip": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.cpp*",
-              "RelativeToolTip": "peon.cpp*",
+              "ToolTip": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.cpp",
+              "RelativeToolTip": "peon.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-08T09:54:38.824Z",
@@ -85,12 +83,11 @@
               "Title": "peon.h",
               "DocumentMoniker": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.h",
               "RelativeDocumentMoniker": "peon.h",
-              "ToolTip": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.h*",
-              "RelativeToolTip": "peon.h*",
+              "ToolTip": "C:\\Users\\jvald\\Desktop\\CURSO 24 - 25\\2do CUATRI\\INFO\\Trabajo\\Chezzter\\pruebatablero2\\peon.h",
+              "RelativeToolTip": "peon.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T09:53:23.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T09:53:23.534Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "tablero.cpp",
               "ViewState": "AgIAAA0AAAAAAAAAAADwvx0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T08:52:53.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T08:52:53.026Z"
             },
             {
               "$type": "Document",
