@@ -127,15 +127,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Alfil.cpp" />
+    <ClCompile Include="Caballo.cpp" />
+    <ClCompile Include="Casilla.cpp" />
     <ClCompile Include="juego.cpp" />
     <ClCompile Include="peon.cpp" />
+    <ClCompile Include="Pieza.cpp" />
+    <ClCompile Include="Reina.cpp" />
+    <ClCompile Include="Rey.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="tablero.cpp" />
+    <ClCompile Include="Torre.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Alfil.h" />
+    <ClInclude Include="Caballo.h" />
+    <ClInclude Include="Casilla.h" />
     <ClInclude Include="juego.h" />
     <ClInclude Include="peon.h" />
+    <ClInclude Include="Pieza.h" />
+    <ClInclude Include="Reina.h" />
+    <ClInclude Include="Rey.h" />
     <ClInclude Include="tablero.h" />
+    <ClInclude Include="Torre.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

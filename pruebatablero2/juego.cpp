@@ -2,31 +2,37 @@
 #include "freeglut.h"
 #include "peon.h"
 
+
 void juego::dibuja() {
 	Tablero.dibuja();
-
-	peon1.dibuja();
-	peon2.dibuja();
-	peon3.dibuja();
-	peon4.dibuja();
-	peon5.dibuja();
-	peon6.dibuja();
-	peon7.dibuja();
-	peon8.dibuja();
-
-	peon01.dibuja();
-	peon02.dibuja();
-	peon03.dibuja();
-	peon04.dibuja();
-	peon05.dibuja();
-	peon06.dibuja();
-	peon07.dibuja();
-	peon08.dibuja();
-
 
 	//iran todos los dibujas
 }
 
-void juego::inicia() {
+void juego::clickRaton(int x, int y) {
+	int fila = (y - 100) / 75;
+	int col = (x - 100) / 75;
+
+	if (!esperandoSegundoClick) {
+		if (Tablero.at(fila, col).hayPieza()) {
+			filaOrigen = fila;
+			colOrigen = col;
+		}
+		esperandoSegundoClick = true;
+	}
+	else {
+		Casilla& origen = Tablero.at(filaOrigen, colOrigen);
+		Casilla& destino = Tablero.at(fila, col);
+
+		if (origen.hayPieza()) {
+			destino.set(origen.getPieza()); // mover puntero
+			origen.set(nullptr);            // borrar en origen
+		}
+	}
+
+
+	esperandoSegundoClick = false;
+	glutPostRedisplay();  // Fuerza redibujado
 
 }
+

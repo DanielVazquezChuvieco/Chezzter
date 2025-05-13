@@ -1,21 +1,19 @@
 #pragma once
-#include"ETSIDI.h"
+#include "ETSIDI.h"
+#include "Pieza.h"
 
-class peon
-{
-	float r = 20;
-	int fila;
-	int columna;
-	bool esBlanco;
-
-
+class peon :public Pieza {
 public:
-	void dibuja();
+    peon(int filaIni, int columnaIni, bool blanca) :Pieza(filaIni, columnaIni, blanca) {
+        if (esBlancoPieza)
+            sprite = new ETSIDI::SpriteSequence("imagenes/peonBlanco2.png", 1);
+        else
+            sprite = new ETSIDI::SpriteSequence("imagenes/peonNegro2.png", 1);
 
-	peon(int filaIni, int columnaIni, bool blanca) {
-		fila = filaIni;
-		columna = columnaIni;
-		esBlanco = blanca;
-	}
+        setPosicionGrafica();
+    } //Constructor 
+
 };
+
+
 
