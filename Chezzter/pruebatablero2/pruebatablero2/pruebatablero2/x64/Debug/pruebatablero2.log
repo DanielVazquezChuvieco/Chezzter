@@ -1,0 +1,23 @@
+﻿  Alfil.cpp
+  Caballo.cpp
+  Casilla.cpp
+  juego.cpp
+  peon.cpp
+  Pieza.cpp
+  Reina.cpp
+  Rey.cpp
+  Source.cpp
+  tablero.cpp
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(64,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(64,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(65,46): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(65,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(66,48): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(66,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(67,29): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(67,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(77,54): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\tablero.cpp(83,58): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+  Torre.cpp
+  Generando código...
+  pruebatablero2.vcxproj -> C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\pruebatablero2\x64\Debug\pruebatablero2.exe
