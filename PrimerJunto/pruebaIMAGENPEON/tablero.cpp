@@ -1,6 +1,11 @@
 #include "tablero.h"
 #include "peon.h"
 #include "freeglut.h"
+<<<<<<< Updated upstream
+=======
+#include <iostream>
+using namespace std;
+>>>>>>> Stashed changes
 
 Casilla casilla; //Asignamos la responsabilidad de definir el tamaño de la casilla a casilla
 
@@ -54,11 +59,20 @@ void tablero::dibuja() {
         glRasterPos2f(75, margenY + casilla.gettam() / 2 + fila * casilla.gettam());
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, caracter);
     }
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes
     for (int fila = 0; fila < filas; fila++) {
         // Recorremos todas las columnas del tablero
         for (int col = 0; col < columnas; col++) {
             if (grid[fila][col].hayPieza()) {
+<<<<<<< Updated upstream
                 grid[fila][col].getPieza()->dibuja();  // Llamamos al método dibuja() de la pieza
+=======
+                grid[fila][col].getPieza()->dibuja();  // Llamamos al método dibuja()
+                std::cout << "Dibujando pieza en " << fila << "," << col << std::endl;
+>>>>>>> Stashed changes
             }
         }
     }
@@ -72,5 +86,9 @@ void tablero::colocapiezas() {
     for (int col = 0; col < columnas; ++col) {
         at(1, col).set(new peon(1, col, false));  // false = negro
     }
+<<<<<<< Updated upstream
 
+=======
+  
+>>>>>>> Stashed changes
 }

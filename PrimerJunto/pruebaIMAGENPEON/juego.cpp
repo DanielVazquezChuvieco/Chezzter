@@ -5,7 +5,11 @@
 
 void juego::dibuja() {
 	Tablero.dibuja();
+<<<<<<< Updated upstream
 
+=======
+	
+>>>>>>> Stashed changes
 	//iran todos los dibujas
 }
 

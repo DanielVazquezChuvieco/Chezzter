@@ -3,6 +3,10 @@
 
 void Pieza::dibuja() {
     if (sprite) {
+<<<<<<< Updated upstream
+=======
+        glLoadIdentity();
+>>>>>>> Stashed changes
         sprite->draw();
     }
 }

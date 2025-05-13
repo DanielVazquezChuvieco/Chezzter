@@ -2,15 +2,25 @@
 #include "tablero.h"
 #include "juego.h"
 
+<<<<<<< Updated upstream
 juego Juego;
 
 
 void onDraw(); //esta funcion sera llamada para dibujar
 void onMouseClick(int button, int state, int x, int y);
+=======
+tablero Tablero;
+juego Juego;
+
+void onDraw(); //esta funcion sera llamada para dibujar
+void onMouseClick(int button, int state, int x, int y);
+void OnTimer(int value);
+>>>>>>> Stashed changes
 // Función principal del programa
 int main(int argc, char** argv) {
     // Inicializamos GLUT (sistema de ventanas)
     glutInit(&argc, argv);
+<<<<<<< Updated upstream
 
     // Usamos doble buffer y modo RGB
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -35,6 +45,38 @@ int main(int argc, char** argv) {
     glutMouseFunc(onMouseClick);
 
 
+=======
+   // Usamos doble buffer y modo RGB
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    // Establecemos el tamaño inicial de la ventana
+    glutInitWindowSize(800, 800);
+    // Creamos la ventana con el título deseado
+    glutCreateWindow("CHEZZTER");
+
+    glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_COLOR_MATERIAL);
+    glMatrixMode(GL_PROJECTION);
+    //gluPerspective(40.0, 800 / 800.0f, 0.1, 150);
+    //Equivalente en 2D a gluPerspective LAB
+  // Cambiamos al modo de proyección (para ajustar la cámara)
+    glLoadIdentity();            // Cargamos una matriz de identidad (sin transformaciones)
+     //funciones de dibujo
+    gluOrtho2D(0, 800, 800, 0);
+    glViewport(0, 0, 800, 800); //ajusto lo que se ve entre (0,0) abajo izq y (800,800) arriba dcha.
+    //glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+                                 // Usamos una proyección 2D simple, con origen en la esquina superior izquierda
+   
+    // Le decimos a GLUT qué función usar para dibujar
+
+    glutDisplayFunc(onDraw);
+    glutTimerFunc(25, OnTimer, 0);
+
+   // glutMouseFunc(onMouseClick);
+
+   // ETSIDI::play("");
+>>>>>>> Stashed changes
     // Entramos en el bucle principal de GLUT (no vuelve nunca)
    glutMainLoop();
 
@@ -44,9 +86,27 @@ int main(int argc, char** argv) {
 
 // Esta función se llama automáticamente cada vez que hay que dibujar la ventana
 void onDraw() {
+<<<<<<< Updated upstream
     glClear(GL_COLOR_BUFFER_BIT); // Limpiamos la pantalla (borramos lo anterior)
     Juego.dibuja();         // Dibujamos el tablero
     glutSwapBuffers();            // Mostramos lo que dibujamos en pantalla
+=======
+    //Borrado de la pantalla	
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    //Para definir el punto de vista
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    
+  
+    Tablero.dibuja();
+   
+   
+    //no borrar esta linea ni poner nada despues
+    glutSwapBuffers();
+
+    
+          
+>>>>>>> Stashed changes
 
 }
 
@@ -55,4 +115,17 @@ void onMouseClick(int button, int state, int x, int y) {
         Juego.clickRaton(x, y);
         glutPostRedisplay();
     }
+<<<<<<< Updated upstream
+=======
+}
+void OnTimer(int value)
+{
+    //poner aqui el código de animacion
+
+
+        //no borrar estas lineas
+
+    glutTimerFunc(25, OnTimer, 0); //25
+    glutPostRedisplay();
+>>>>>>> Stashed changes
 }
