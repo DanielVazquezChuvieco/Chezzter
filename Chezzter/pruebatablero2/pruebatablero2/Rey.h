@@ -1,6 +1,8 @@
 #pragma once
 #include "ETSIDI.h"
 #include "Pieza.h"
+#include "tablero.h"
+
 class Rey :public Pieza
 {
 public:
@@ -11,6 +13,9 @@ public:
             sprite = new ETSIDI::SpriteSequence("imagenes/reyNegro.png", 1);
 
         setPosicionGrafica();
-    } //Constructor 
+    } //Constructor
+
+    //Movimiento válido rey
+    bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero);
 };
 

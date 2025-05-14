@@ -1,6 +1,9 @@
 #pragma once
 #include "ETSIDI.h"
 #include "Pieza.h"
+#include "tablero.h"
+
+
 class Torre :public Pieza
 {
 public:
@@ -12,6 +15,9 @@ public:
 
         setPosicionGrafica();
     } //Constructor 
+
+    //Movimiento válido torre
+    bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero);
 };
 
 

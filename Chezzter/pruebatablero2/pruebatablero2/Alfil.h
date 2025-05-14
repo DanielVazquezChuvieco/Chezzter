@@ -1,6 +1,9 @@
 #pragma once
 #include "ETSIDI.h"
 #include "Pieza.h"
+#include "tablero.h"
+
+
 class Alfil :public Pieza
 {
 public:
@@ -12,5 +15,8 @@ public:
 
         setPosicionGrafica();
     } //Constructor 
+
+    //movimiento válido alfil
+    bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero);
 };
 

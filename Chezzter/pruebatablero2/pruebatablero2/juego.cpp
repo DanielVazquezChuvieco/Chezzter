@@ -1,8 +1,12 @@
 #include "juego.h"
 #include "freeglut.h"
 #include "peon.h"
+#include "Torre.h"
+#include "Caballo.h"
+#include "Alfil.h"
+#include "Reina.h"
+#include "Rey.h"
 #include <iostream>
-
 
 using namespace std;
 
@@ -54,6 +58,64 @@ void juego::clickRaton(int x, int y) {
                 if (pieza) {
                     cout << "Puntero a pieza válido" << endl;
 
+                    // Validación para peón
+                    peon* peonPtr = dynamic_cast<peon*>(pieza);  //convierte el puntero pieza a un puntero derivado peon
+                    if (peonPtr) {                                //si se ha convertido el puntero correctamente entonces:
+                        if (!peonPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {  //llamada a su método movimientoValido, si no es válido muestra un mensaje por consola
+                            cout << "Movimiento de peón inválido" << endl;
+                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
+                            return;
+                        }
+                    }
+
+                    // Validación para torre
+                    Torre* torrePtr = dynamic_cast<Torre*>(pieza);  //convierte el puntero pieza a un puntero derivado torre
+                    if (torrePtr) {                                 //si se ha convertido el puntero correctamente entonces:
+                        if (!torrePtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {  //llamada a su método movimientoVálido, si no es válido muestra un mensaje por consola
+                            cout << "Movimiento de torre inválido" << endl;
+                            esperandoSegundoClick = false;   //se cancela el estado de espera del segundo click
+                            return;
+                        }
+                    }
+                    //Validación para caballo
+                    Caballo* caballoPtr = dynamic_cast<Caballo*>(pieza);  //convierte el puntero pieza a un puntero derivado caballo
+                    if (caballoPtr) {                                 //si se ha convertido el puntero correctamente entonces: 
+                        if (!caballoPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {   //llamada a su método movimientoVálido, si no es válido muestra mensaje por consola
+                            cout << "Movimiento de alfil inválido" << endl;
+                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
+                            return;
+                        }
+                    }
+
+                    //Validación para alfil
+                    Alfil* alfilPtr = dynamic_cast<Alfil*>(pieza);  //convierte el puntero pieza a un puntero derivado alfil
+                    if (alfilPtr) {                                 //si se ha convertido el puntero correctamente entonces: 
+                        if (!alfilPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {   //llamada a su método movimientoVálido, si no es válido muestra mensaje por consola
+                            cout << "Movimiento de alfil inválido" << endl;
+                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
+                            return;
+                        }
+                    }
+
+                    //Validación para reina
+                    Reina* reinaPtr = dynamic_cast<Reina*>(pieza);  //convierte el puntero pieza a un puntero derivado reina
+                    if (reinaPtr) {                                 //si se ha convertido el puntero correctamente entonces: 
+                        if (!reinaPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {   //llamada a su método movimientoVálido, si no es válido muestra mensaje por consola
+                            cout << "Movimiento de alfil inválido" << endl;
+                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
+                            return;
+                        }
+                    }
+
+                    //Validación para rey
+                    Rey* reyPtr = dynamic_cast<Rey*>(pieza);  //convierte el puntero pieza a un puntero derivado rey
+                    if (reyPtr) {                                 //si se ha convertido el puntero correctamente entonces: 
+                        if (!reyPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {   //llamada a su método movimientoVálido, si no es válido muestra mensaje por consola
+                            cout << "Movimiento de alfil inválido" << endl;
+                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
+                            return;
+                        }
+                    }
                     destino.set(pieza);
                     origen.set(nullptr);
 
