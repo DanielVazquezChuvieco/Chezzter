@@ -3,23 +3,30 @@
 #include "juego.h"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 juego Juego;
 
 
 void onDraw(); //esta funcion sera llamada para dibujar
 void onMouseClick(int button, int state, int x, int y);
 =======
+=======
+>>>>>>> Stashed changes
 tablero Tablero;
 juego Juego;
 
 void onDraw(); //esta funcion sera llamada para dibujar
 void onMouseClick(int button, int state, int x, int y);
 void OnTimer(int value);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 // Función principal del programa
 int main(int argc, char** argv) {
     // Inicializamos GLUT (sistema de ventanas)
     glutInit(&argc, argv);
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
     // Usamos doble buffer y modo RGB
@@ -46,6 +53,8 @@ int main(int argc, char** argv) {
 
 
 =======
+=======
+>>>>>>> Stashed changes
    // Usamos doble buffer y modo RGB
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     // Establecemos el tamaño inicial de la ventana
@@ -76,6 +85,9 @@ int main(int argc, char** argv) {
    // glutMouseFunc(onMouseClick);
 
    // ETSIDI::play("");
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     // Entramos en el bucle principal de GLUT (no vuelve nunca)
    glutMainLoop();
@@ -87,10 +99,13 @@ int main(int argc, char** argv) {
 // Esta función se llama automáticamente cada vez que hay que dibujar la ventana
 void onDraw() {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     glClear(GL_COLOR_BUFFER_BIT); // Limpiamos la pantalla (borramos lo anterior)
     Juego.dibuja();         // Dibujamos el tablero
     glutSwapBuffers();            // Mostramos lo que dibujamos en pantalla
 =======
+=======
+>>>>>>> Stashed changes
     //Borrado de la pantalla	
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     //Para definir el punto de vista
@@ -106,6 +121,9 @@ void onDraw() {
 
     
           
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 }
@@ -116,7 +134,10 @@ void onMouseClick(int button, int state, int x, int y) {
         glutPostRedisplay();
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 }
 void OnTimer(int value)
 {
@@ -127,5 +148,8 @@ void OnTimer(int value)
 
     glutTimerFunc(25, OnTimer, 0); //25
     glutPostRedisplay();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

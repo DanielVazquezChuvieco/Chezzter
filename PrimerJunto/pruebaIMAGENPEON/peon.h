@@ -1,5 +1,6 @@
 #pragma once
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #include "ETSIDI.h"
 #include "Pieza.h"
 
@@ -9,6 +10,8 @@ public:
         if(esBlancoPieza)
             sprite = new ETSIDI::SpriteSequence("imagenes/peonBlanco2.png", 1);
 =======
+=======
+>>>>>>> Stashed changes
 #include <iostream>
 #include "ETSIDI.h"
 #include "Pieza.h"
@@ -21,6 +24,9 @@ public:
         if (esBlancoPieza) 
             sprite = new ETSIDI::SpriteSequence("imagenes/peonBlanco2.png", 1);
             
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         else
             sprite = new ETSIDI::SpriteSequence("imagenes/peonNegro2.png", 1);

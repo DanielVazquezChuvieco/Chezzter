@@ -2,6 +2,11 @@
 #include "peon.h"
 #include "freeglut.h"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+#include <iostream>
+using namespace std;
+>>>>>>> Stashed changes
 =======
 #include <iostream>
 using namespace std;
@@ -60,6 +65,10 @@ void tablero::dibuja() {
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, caracter);
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes
 =======
   
 >>>>>>> Stashed changes
@@ -68,7 +77,12 @@ void tablero::dibuja() {
         for (int col = 0; col < columnas; col++) {
             if (grid[fila][col].hayPieza()) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 grid[fila][col].getPieza()->dibuja();  // Llamamos al método dibuja() de la pieza
+=======
+                grid[fila][col].getPieza()->dibuja();  // Llamamos al método dibuja()
+                std::cout << "Dibujando pieza en " << fila << "," << col << std::endl;
+>>>>>>> Stashed changes
 =======
                 grid[fila][col].getPieza()->dibuja();  // Llamamos al método dibuja()
                 std::cout << "Dibujando pieza en " << fila << "," << col << std::endl;
@@ -87,7 +101,11 @@ void tablero::colocapiezas() {
         at(1, col).set(new peon(1, col, false));  // false = negro
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+  
+>>>>>>> Stashed changes
 =======
   
 >>>>>>> Stashed changes
