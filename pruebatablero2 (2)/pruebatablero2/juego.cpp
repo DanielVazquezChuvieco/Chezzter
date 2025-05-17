@@ -27,6 +27,12 @@ void juego::clickRaton(int x, int y) {
     if (!esperandoSegundoClick) {
         if (fila >= 0 && fila < 8 && col >= 0 && col < 8) {
             if (Tablero.at(fila, col).hayPieza()) {
+                Pieza* pieza = Tablero.at(fila, col).getPieza();
+                if (!esTurnoDe(pieza->obtenerColor())) {
+                    cout << "No es el turno de esta pieza.\n";
+                    return;
+                }
+
                 filaOrigen = fila;
                 colOrigen = col;
                 cout << "Hay pieza en origen" << endl;
@@ -122,6 +128,7 @@ void juego::clickRaton(int x, int y) {
                     pieza->setFila(fila);
                     pieza->setColumna(col);
                     pieza->setPosicionGrafica();
+                    cambiarTurno();
                    
 
                     cout << "Movimiento realizado a (" << fila << ", " << col << ")" << endl;
@@ -141,4 +148,16 @@ void juego::clickRaton(int x, int y) {
         esperandoSegundoClick = false;
         glutPostRedisplay();
     }
+}
+
+std::string juego::obtenerTurnoActual() const {
+    return turnoActual;
+}
+
+void juego::cambiarTurno() {
+    turnoActual = (turnoActual == "BLANCO") ? "NEGRO" : "BLANCO";
+}
+
+bool juego::esTurnoDe(const std::string& color) const {
+    return turnoActual == color;
 }

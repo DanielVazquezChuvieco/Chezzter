@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include "ETSIDI.h"
+#include <string>
+
 
 class Pieza
 {
@@ -21,8 +23,11 @@ public:
     }
 
     virtual ~Pieza() { delete sprite; }
-    bool getcolor() const { return esBlancoPieza; }
+    bool getcolor() const { return esBlancoPieza; }  // podrías renombrar esto a esBlanca()
     virtual void dibuja();
     void setPosicionGrafica();
 
+    std::string obtenerColor() const {
+        return esBlancoPieza ? "BLANCO" : "NEGRO";
+    }
 };
