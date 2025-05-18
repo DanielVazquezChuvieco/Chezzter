@@ -7,6 +7,7 @@
 #include "Reina.h"
 #include "Rey.h"
 #include <iostream>
+#include "ETSIDI.h"
 
 using namespace std;
 
@@ -125,9 +126,12 @@ void juego::clickRaton(int x, int y) {
                     destino.set(pieza);
                     origen.set(nullptr);
                     
+
+                    ETSIDI::playMusica("sonidos/prueba.mp3"); //Pruebas de sonido al mover pieza
                     pieza->setFila(fila);
                     pieza->setColumna(col);
                     pieza->setPosicionGrafica();
+             
                     cambiarTurno();
                    
 

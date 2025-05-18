@@ -30,7 +30,7 @@ void tablero::dibuja() {
     //Importante que este antes del resto de dibujos para que no se pinte por encima
     // Fondo con textura
     glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id); //HAY QUE METER DONDE fondo EL NOMBRE DE LA FOTO QUE SE ELIJA 
+    glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/FONDO1.png").id); //HAY QUE METER DONDE fondo EL NOMBRE DE LA FOTO QUE SE ELIJA 
     glDisable(GL_LIGHTING); //Esta ni penseis en quitarla
 
     glColor3f(1.0f, 1.0f, 1.0f);  // para que se vea con su color real
@@ -56,9 +56,9 @@ void tablero::dibuja() {
 
             // Si es una casilla blanca, usamos color blanco
             if (esBlanco)
-                glColor3f(0.95f, 0.95f, 0.95f); //  gris claro
+                glColor3f(0.2f, 0.2f, 0.6f); //  gris claro
             else
-                glColor3f(1.0f, 0.4f, 0.4f); //  rojo claro
+                glColor3f(0.0f, 1.0f, 0.3f); //  rojo claro
 
             // Calculamos las coordenadas de cada cuadrado (esquina superior izquierda)
             int y = margenY + col * casilla.gettam(); // columna * tama�o de casilla
@@ -82,13 +82,13 @@ void tablero::dibuja() {
     //Estas funciones se encargan de asignar letras y numeros a las casillas
     for (int col = 0; col < columnas; col++) {
         char caracter = 'a' + col;
-        glColor3f(0.1f, 0.1f, 0.1f); // color negro
+        glColor3f(1.0f, 1.0f, 1.0f); // color negro
         glRasterPos2f(margenX + casilla.gettam() / 2 + col * casilla.gettam(), 75); //Encargada de posicionar el caracter
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, caracter); //Escribe en la tipologia elegida el caracter
     }
     for (int fila = 0; fila < filas; fila++) {
         char caracter = '1' + fila;
-        glColor3f(0.1f, 0.1f, 0.1f); // color negro
+        glColor3f(1.0f, 1.0f, 1.0f); // color negro
         glRasterPos2f(75, margenY + casilla.gettam() / 2 + fila * casilla.gettam());
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, caracter);
     }

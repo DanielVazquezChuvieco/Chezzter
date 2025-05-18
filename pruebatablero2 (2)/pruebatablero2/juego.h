@@ -3,6 +3,7 @@
 #include "peon.h"
 #include <string>
 #include <iostream>
+#include <cstring>
 
 class juego
 {
