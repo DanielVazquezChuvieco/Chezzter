@@ -30,9 +30,6 @@ bool Torre::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int
         c += pasoCol;   //si no sigue avanzando
     }
 
-    // No puede capturar piezas propias
-    if (Tablero.at(filaDestino, colDestino).hayPieza() && Tablero.at(filaDestino, colDestino).getPieza()->getcolor() == esBlancoPieza)
-        return false;
 
     return true;
 }

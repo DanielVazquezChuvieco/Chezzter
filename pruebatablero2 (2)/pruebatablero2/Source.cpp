@@ -6,6 +6,7 @@ juego Juego;
 
 void onDraw(); // esta función será llamada para dibujar
 void onMouseClick(int button, int state, int x, int y);
+void onMouseDrag(int x, int y);  //Nueva función de arrastre
 
 // Función principal del programa
 int main(int argc, char** argv) {
@@ -32,6 +33,7 @@ int main(int argc, char** argv) {
     // Funciones de dibujo e interacción
     glutDisplayFunc(onDraw);
     glutMouseFunc(onMouseClick);
+    glutMotionFunc(onMouseDrag);  //Movimiento con botón pulsado
 
     // Bucle principal de GLUT
     glutMainLoop();
@@ -47,7 +49,16 @@ void onDraw() {
 }
 
 void onMouseClick(int button, int state, int x, int y) {
-    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        Juego.clickRaton(x, y);
+    if (button == GLUT_LEFT_BUTTON) {
+        if (state == GLUT_DOWN) {
+            Juego.iniciarArrastre(x, y);
+        }
+        else if (state == GLUT_UP) {
+            Juego.finalizarArrastre(x, y);
+        }
     }
+}
+
+void onMouseDrag(int x, int y) {
+    Juego.actualizarArrastre(x, y);
 }

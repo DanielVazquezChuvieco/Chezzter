@@ -42,10 +42,10 @@ void tablero::dibuja() {
     glTexCoord2d(0, 0); glVertex2f(0, 800); //Origen arriba izq
     glEnd();
 
-   // glEnable(GL_LIGHTING);
+    // glEnable(GL_LIGHTING);
     glDisable(GL_TEXTURE_2D);
 
-   
+
 
     // Recorremos todas las filas del tablero
     for (int fila = 0; fila < filas; fila++) {
@@ -74,7 +74,7 @@ void tablero::dibuja() {
             glVertex2f(x, y + casilla.gettam());             // esquina inferior izquierda
             glEnd(); // Terminamos el dibujo del cuadrado
 
-          
+
 
         }
     }
@@ -115,35 +115,35 @@ void tablero::colocapiezas() {
     }
 
     //Caballos
-        at(1,7).set(new Caballo(1, 7, true));  // true = blanco
-        at(6,7).set(new Caballo(6, 7, true));  // true = blanco
+    at(1, 7).set(new Caballo(1, 7, true));  // true = blanco
+    at(6, 7).set(new Caballo(6, 7, true));  // true = blanco
     // Caballos negros
-        at(1,0).set(new Caballo(1, 0, false));  // false = negro
-        at(6,0).set(new Caballo(6, 0, false));  //false = negro
+    at(1, 0).set(new Caballo(1, 0, false));  // false = negro
+    at(6, 0).set(new Caballo(6, 0, false));  //false = negro
 
-        //Alfiles
-        at(2, 7).set(new Alfil(2, 7, true));  // true = blanco
-        at(5, 7).set(new Alfil(5, 7, true));  // true = blanco
-        // Alfiles negros
-        at(2, 0).set(new Alfil(2, 0, false));  // false = negro
-        at(5, 0).set(new Alfil(5, 0, false));  //false = negro
+    //Alfiles
+    at(2, 7).set(new Alfil(2, 7, true));  // true = blanco
+    at(5, 7).set(new Alfil(5, 7, true));  // true = blanco
+    // Alfiles negros
+    at(2, 0).set(new Alfil(2, 0, false));  // false = negro
+    at(5, 0).set(new Alfil(5, 0, false));  //false = negro
 
-        //Torres
-        at(0, 7).set(new Torre(0, 7, true));  // true = blanco
-        at(7, 7).set(new Torre(7, 7, true));  // true = blanco
-        // Torres negros
-        at(0, 0).set(new Torre(0, 0, false));  // false = negro
-        at(7, 0).set(new Torre(7, 0, false));  //false = negro
+    //Torres
+    at(0, 7).set(new Torre(0, 7, true));  // true = blanco
+    at(7, 7).set(new Torre(7, 7, true));  // true = blanco
+    // Torres negros
+    at(0, 0).set(new Torre(0, 0, false));  // false = negro
+    at(7, 0).set(new Torre(7, 0, false));  //false = negro
 
-        //Reina
-        at(3, 7).set(new Reina(3, 7, true));  // true = blanco
-        // Reina negros 
-        at(4, 0).set(new Reina(4, 0, false));  // false = negro
+    //Reina
+    at(3, 7).set(new Reina(3, 7, true));  // true = blanco
+    // Reina negros 
+    at(4, 0).set(new Reina(4, 0, false));  // false = negro
 
-        //Rey
-        at(4, 7).set(new Rey(4, 7, true));  // true = blanco
-        // Rey negros 
-        at(3, 0).set(new Rey(3, 0, false));  // false = negro
+    //Rey
+    at(4, 7).set(new Rey(4, 7, true));  // true = blanco
+    // Rey negros 
+    at(3, 0).set(new Rey(3, 0, false));  // false = negro
 
 }
 

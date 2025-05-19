@@ -1,2 +1,89 @@
-﻿  juego.cpp
-  pruebatablero2.vcxproj -> C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe
+﻿  Alfil.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Alfil.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Alfil.cpp")
+  
+  Caballo.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Caballo.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Caballo.cpp")
+  
+  Casilla.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Casilla.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Casilla.cpp")
+  
+  juego.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "juego.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "juego.cpp")
+  
+  peon.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "peon.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "peon.cpp")
+  
+  Pieza.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Pieza.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Pieza.cpp")
+  
+  Reina.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Reina.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Reina.cpp")
+  
+  Rey.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Rey.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Rey.cpp")
+  
+  Source.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Source.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Source.cpp")
+  
+  tablero.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "tablero.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "tablero.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(71,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(71,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(72,46): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(72,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(73,48): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(73,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(74,29): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(74,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(86,54): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(92,58): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+  Torre.cpp
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Torre.cpp")
+  
+E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "Torre.cpp")
+  
+  Generando código...
+  pruebatablero2.vcxproj -> E:\repositoriodegithubbb\Chezzter\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe

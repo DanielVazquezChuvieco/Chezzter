@@ -17,7 +17,7 @@ public:
     } //Constructor 
 
     //Movimiento válido torre
-    bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero);
+    bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero) override;
 };
 
 

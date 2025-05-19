@@ -11,9 +11,6 @@ bool Rey::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int c
     if (difFilas > 1 || difCols > 1)  //si el rey se mueve más de una casilla en cualquier dirección vertical, horizontal o diagonal
         return false;  //movimiento inválido retorna false
 
-    // No puede capturar piezas propias
-    if (Tablero.at(filaDestino, colDestino).hayPieza() && Tablero.at(filaDestino, colDestino).getPieza()->getcolor() == esBlancoPieza)
-        return false;
 
     return true;
 }

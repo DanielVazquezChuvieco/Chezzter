@@ -62,9 +62,6 @@ bool Reina::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int
             f += pasoFila;
             c += pasoCol;
         }
-        // No puede capturar piezas propias
-        if (Tablero.at(filaDestino, colDestino).hayPieza() && Tablero.at(filaDestino, colDestino).getPieza()->getcolor() == esBlancoPieza)
-            return false;
         return true;
     }
     return false;  //si no es ni recto ni diagonal devuelve false
