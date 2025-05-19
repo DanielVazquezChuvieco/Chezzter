@@ -16,9 +16,6 @@ bool Caballo::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, i
     if (!esMovimientoL)   //si no es así
         return false;   //devuelve false
 
-    // No puede capturar piezas propias
-    if (Tablero.at(filaDestino, colDestino).hayPieza() && Tablero.at(filaDestino, colDestino).getPieza()->getcolor() == esBlancoPieza)
-        return false;
 
     return true;
 }

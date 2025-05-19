@@ -12,156 +12,128 @@
 using namespace std;
 
 
-void juego::dibuja() {
-	Tablero.dibuja();
-
-	//iran todos los dibujas
+void juego::dibuja()
+{
+    Tablero.dibuja();  //Dibuja el tablero y piezasen pantalla
 }
 
-void juego::clickRaton(int x, int y) {
+
+void juego::iniciarArrastre(int x, int y) {
+    cout << "\n=== INICIANDO ARRASTRE ===" << endl;
+    cout << "Coordenadas click: (" << x << ", " << y << ")" << endl;
+
+    //Convierte las coordenadas de pantalla a la posición de la casilla del tablero y lo muestra por consola
     int fila = (y - 100) / 75;
     int col = (x - 100) / 75;
+    cout << "Casilla calculada: (" << fila << ", " << col << ")" << endl;
 
-    cout << "Click en: (" << fila << ", " << col << ")" << endl;
-    cout << "Estado esperandoSegundoClick: " << esperandoSegundoClick << endl;
+    if (fila >= 0 && fila < 8 && col >= 0 && col < 8) {  //Comprueba que el clic está dentro del tablero
+        if (Tablero.at(fila, col).hayPieza()) {   //Si hay una pieza en la casilla, obtiene un puntero a la pieza y muestra su tipo y color
+            Pieza* pieza = Tablero.at(fila, col).getPieza();
+            std::string colorPieza = pieza->getcolor() ? "BLANCO" : "NEGRO";
 
-    if (!esperandoSegundoClick) {
-        if (fila >= 0 && fila < 8 && col >= 0 && col < 8) {
-            if (Tablero.at(fila, col).hayPieza()) {
-                Pieza* pieza = Tablero.at(fila, col).getPieza();
-                if (!esTurnoDe(pieza->obtenerColor())) {
-                    cout << "No es el turno de esta pieza.\n";
-                    return;
-                }
+            cout << "Pieza encontrada: " << typeid(*pieza).name() << " Color: " << colorPieza << endl;
 
-                filaOrigen = fila;
-                colOrigen = col;
-                cout << "Hay pieza en origen" << endl;
-                esperandoSegundoClick = true;
+
+            if (!esTurnoDe(colorPieza)) {  //Si no es el turno del color de la pieza seleccionada, informa y no permite el arrastre
+                cout << "Intento de mover pieza contraria! Turno actual: " << obtenerTurnoActual() << endl;
+                return; // No es el turno de esa pieza
             }
-            else {
-                cout << "No hay pieza en (" << fila << ", " << col << ")" << endl;
-            }
+            //Si es el turno correcto, guarda la pieza
+            piezaArrastrada = pieza;
+            filaOrigen = fila;  //Guarda su posición de origen
+            colOrigen = col;
+            arrastrando = true;  //activa el modo arrastre
+
+            cout << "Iniciando arrastre de pieza desde (" << filaOrigen << ", " << colOrigen << ")" << endl;
+            piezaArrastrada->setPosicionGraficaPixel(x, y);  //actualiza la posición gráfica de la pieza del drag
         }
         else {
-            cout << "Click fuera del tablero en primer clic" << endl;
+            cout << "No hay pieza en (" << fila << ", " << col << ")" << endl;  //Si no hay pieza lo indica
         }
     }
     else {
-        cout << "Entrando al segundo click (Destinoo)" << endl;
-
-        if (filaOrigen >= 0 && filaOrigen < 8 && colOrigen >= 0 && colOrigen < 8 &&
-            fila >= 0 && fila < 8 && col >= 0 && col < 8) {
-
-            cout << "Verificando casilla origen: (" << filaOrigen << ", " << colOrigen << ")" << endl;
-
-            Casilla& origen = Tablero.at(filaOrigen, colOrigen);
-            Casilla& destino = Tablero.at(fila, col);
-
-            if (origen.hayPieza()) {
-                cout << "Origen tiene pieza" << endl;
-
-                Pieza* pieza = origen.getPieza();
-                if (pieza) {
-                    cout << "Puntero a pieza válido" << endl;
-
-                    // Validación para peón
-                    peon* peonPtr = dynamic_cast<peon*>(pieza);  //convierte el puntero pieza a un puntero derivado peon
-                    if (peonPtr) {                                //si se ha convertido el puntero correctamente entonces:
-                        if (!peonPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {  //llamada a su método movimientoValido, si no es válido muestra un mensaje por consola
-                            cout << "Movimiento de peón inválido" << endl;
-                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
-                            return;
-                        }
-                    }
-
-                    // Validación para torre
-                    Torre* torrePtr = dynamic_cast<Torre*>(pieza);  //convierte el puntero pieza a un puntero derivado torre
-                    if (torrePtr) {                                 //si se ha convertido el puntero correctamente entonces:
-                        if (!torrePtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {  //llamada a su método movimientoVálido, si no es válido muestra un mensaje por consola
-                            cout << "Movimiento de torre inválido" << endl;
-                            esperandoSegundoClick = false;   //se cancela el estado de espera del segundo click
-                            return;
-                        }
-                    }
-                    //Validación para caballo
-                    Caballo* caballoPtr = dynamic_cast<Caballo*>(pieza);  //convierte el puntero pieza a un puntero derivado caballo
-                    if (caballoPtr) {                                 //si se ha convertido el puntero correctamente entonces: 
-                        if (!caballoPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {   //llamada a su método movimientoVálido, si no es válido muestra mensaje por consola
-                            cout << "Movimiento de alfil inválido" << endl;
-                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
-                            return;
-                        }
-                    }
-
-                    //Validación para alfil
-                    Alfil* alfilPtr = dynamic_cast<Alfil*>(pieza);  //convierte el puntero pieza a un puntero derivado alfil
-                    if (alfilPtr) {                                 //si se ha convertido el puntero correctamente entonces: 
-                        if (!alfilPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {   //llamada a su método movimientoVálido, si no es válido muestra mensaje por consola
-                            cout << "Movimiento de alfil inválido" << endl;
-                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
-                            return;
-                        }
-                    }
-
-                    //Validación para reina
-                    Reina* reinaPtr = dynamic_cast<Reina*>(pieza);  //convierte el puntero pieza a un puntero derivado reina
-                    if (reinaPtr) {                                 //si se ha convertido el puntero correctamente entonces: 
-                        if (!reinaPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {   //llamada a su método movimientoVálido, si no es válido muestra mensaje por consola
-                            cout << "Movimiento de alfil inválido" << endl;
-                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
-                            return;
-                        }
-                    }
-
-                    //Validación para rey
-                    Rey* reyPtr = dynamic_cast<Rey*>(pieza);  //convierte el puntero pieza a un puntero derivado rey
-                    if (reyPtr) {                                 //si se ha convertido el puntero correctamente entonces: 
-                        if (!reyPtr->movimientoValido(filaOrigen, colOrigen, fila, col, Tablero)) {   //llamada a su método movimientoVálido, si no es válido muestra mensaje por consola
-                            cout << "Movimiento de alfil inválido" << endl;
-                            esperandoSegundoClick = false;  //se cancela el estado de espera del segundo click
-                            return;
-                        }
-                    }
-                    destino.set(pieza);
-                    origen.set(nullptr);
-                    
-
-                    ETSIDI::playMusica("sonidos/prueba.mp3"); //Pruebas de sonido al mover pieza
-                    pieza->setFila(fila);
-                    pieza->setColumna(col);
-                    pieza->setPosicionGrafica();
-             
-                    cambiarTurno();
-                   
-
-                    cout << "Movimiento realizado a (" << fila << ", " << col << ")" << endl;
-                }
-                else {
-                    cout << "Puntero a pieza es NULL" << endl;
-                }
-            }
-            else {
-                cout << "Origen NO tiene pieza (aunque debería)" << endl;
-            }
-        }
-        else {
-            cout << "Coordenadas fuera de rango en segundo clic" << endl;
-        }
-        Tablero.aplicarGravedad();
-        esperandoSegundoClick = false;
-        glutPostRedisplay();
+        cout << "Click fuera del tablero" << endl;  //Si está fuera del tablero lo indica
     }
 }
 
-std::string juego::obtenerTurnoActual() const {
-    return turnoActual;
+//Mientras el usuario arrastra la pieza, imprime la posición actual del ratón y actualiza la plsicion gráfica de la pieza para que siga el cursos
+void juego::actualizarArrastre(int x, int y) {
+    if (arrastrando && piezaArrastrada) {
+        cout << "Actualizando posicion arrastre: (" << x << ", " << y << ")" << endl;
+        piezaArrastrada->setPosicionGraficaPixel(x, y);
+        glutPostRedisplay();  //LLamada al glutPostRedisplay para redibujar la pantalla
+    }
 }
 
-void juego::cambiarTurno() {
-    turnoActual = (turnoActual == "BLANCO") ? "NEGRO" : "BLANCO";
-}
+void juego::finalizarArrastre(int x, int y) {
+    cout << "\n=== FINALIZANDO ARRASTRE ===" << endl;  //Imprime que el arrastre ha finalizado
 
-bool juego::esTurnoDe(const std::string& color) const {
-    return turnoActual == color;
+    if (arrastrando && piezaArrastrada) {  //Si hay una pieza siendo arrastrada calcula e imprime la casilla de destino
+        int filaDestino = (y - 100) / 75;
+        int colDestino = (x - 100) / 75;
+
+        cout << "Posicion destino calculada: (" << filaDestino << ", " << colDestino << ")" << endl;
+        cout << "Tipo de pieza: " << typeid(*piezaArrastrada).name() << endl;
+
+        //Inicializamos variables para saber si el movimiento es válido y el tipo de pieza
+        bool movimientoValido = false;
+        string tipoPieza = "Desconocida";
+
+        //Intentamos conertir el puntero a cada tipo de pieza para llamar a su método específico movimientoValido
+        if (peon* p = dynamic_cast<peon*>(piezaArrastrada)) {
+            tipoPieza = "Peon";  //Guarda el tipo de pieza para mostrarlo
+            movimientoValido = p->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+        }
+        else if (Torre* t = dynamic_cast<Torre*>(piezaArrastrada)) {
+            tipoPieza = "Torre";
+            movimientoValido = t->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+        }
+        else if (Alfil* a = dynamic_cast<Alfil*>(piezaArrastrada)) {
+            tipoPieza = "Alfil";
+            movimientoValido = a->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+        }
+        else if (Caballo* c = dynamic_cast<Caballo*>(piezaArrastrada)) {
+            tipoPieza = "Caballo";
+            movimientoValido = c->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+        }
+        else if (Reina* r = dynamic_cast<Reina*>(piezaArrastrada)) {
+            tipoPieza = "Reina";
+            movimientoValido = r->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+        }
+        else if (Rey* rey = dynamic_cast<Rey*>(piezaArrastrada)) {
+            tipoPieza = "Rey";
+            movimientoValido = rey->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+        }
+
+        //  imprime si el movimiento es válido o no
+        cout << "Validacion movimiento (" << tipoPieza << "): " << (movimientoValido ? "VALIDO" : "INVALIDO") << endl;
+
+        if (movimientoValido && filaDestino >= 0 && filaDestino < 8 && colDestino >= 0 && colDestino < 8) {  //Si el movimiento es válido y dentro del tablero
+            cout << "Realizando movimiento de (" << filaOrigen << ", " << colOrigen << ") a (" << filaDestino << ", " << colDestino << ")" << endl;
+            Tablero.at(filaDestino, colDestino).set(piezaArrastrada);  //actualiza la posición de la pieza
+            Tablero.at(filaOrigen, colOrigen).set(nullptr);
+            piezaArrastrada->setFila(filaDestino);
+            piezaArrastrada->setColumna(colDestino);
+            piezaArrastrada->setPosicionGrafica();
+
+            cout << "Turno anterior: " << obtenerTurnoActual() << endl;
+            cambiarTurno(); // Cambia el turno solo si el movimiento es válido
+            cout << "Nuevo turno: " << obtenerTurnoActual() << endl;
+        }
+        else {  //Si no es válido muestra posibles razones 
+            cout << "Movimiento invalido! Razones posibles:" << endl;
+            cout << "- Destino fuera del tablero: " << (filaDestino < 0 || filaDestino >= 8 || colDestino < 0 || colDestino >= 8) << endl;
+            cout << "- Movimiento no permitido para la pieza" << endl;
+            cout << "- Intento de capturar pieza propia" << endl;
+            piezaArrastrada->setPosicionGrafica(); // Devuelve la pieza a su sitio original
+        }
+        piezaArrastrada = nullptr;  //Ya no está arrastrando pieza
+        arrastrando = false;
+        Tablero.aplicarGravedad();  //Aplica gravedad si hay huecos debajo
+        glutPostRedisplay();  //Redibuja la pantalla
+    }
+    else {
+        cout << "Arrastre finalizado sin pieza seleccionada" << endl;  //Si no había pieza seleccionada al soltar lo indica
+    }
 }

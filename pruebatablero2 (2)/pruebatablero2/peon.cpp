@@ -24,10 +24,9 @@ bool peon::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int 
     // Captura en vertical (una fila arriba o abajo)
     bool esVertical = abs(filaDestino - filaOrigen) == 1;
     bool esAdelante = colDestino == colOrigen + direccion;
-    bool hayEnemigo = Tablero.at(filaDestino, colDestino).hayPieza() &&
-        Tablero.at(filaDestino, colDestino).getPieza()->getcolor() != esBlancoPieza;
+    bool hayPieza = Tablero.at(filaDestino, colDestino).hayPieza();
 
-    if (esVertical && esAdelante && hayEnemigo)
+    if (esVertical && esAdelante && hayPieza)
         return true;
 
     return false;
