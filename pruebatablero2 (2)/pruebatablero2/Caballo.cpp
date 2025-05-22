@@ -1,7 +1,7 @@
 #include "Caballo.h"
 #include <cmath>
 
-bool Caballo::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero) {
+bool Caballo::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino,const tablero& Tablero) {
 
     // Calcula la diferencia absoluta de filas y columnas
     int diferenciaFilas = filaDestino - filaOrigen; //Diferencia filas

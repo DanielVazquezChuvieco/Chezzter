@@ -1,1 +1,4 @@
-﻿  pruebatablero2.vcxproj -> D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\OKKK\Chezzter\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe
+﻿  juego.cpp
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\OKKK\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\OKKK\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.h(32,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  pruebatablero2.vcxproj -> D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\OKKK\Chezzter\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe

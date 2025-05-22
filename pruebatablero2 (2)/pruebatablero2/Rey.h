@@ -17,6 +17,11 @@ public:
 
 
     //Movimiento válido rey
-    bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero) override;
+    bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino,const tablero& Tablero) override;
+
+    bool esRey() const override { return true; }
+
+
+
 };
 

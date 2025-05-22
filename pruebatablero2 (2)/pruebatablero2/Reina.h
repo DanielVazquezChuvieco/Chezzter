@@ -16,5 +16,5 @@ public:
     } //Constructor 
 
     //Movimiento válido reina
-    bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero) override;
+    bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) override;
 };

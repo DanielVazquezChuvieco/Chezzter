@@ -1,6 +1,6 @@
 #include "Torre.h"
 
-bool Torre::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero) {
+bool Torre::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) {
     // Solo permite movimiento en misma fila o columna
     if (filaOrigen != filaDestino && colOrigen != colDestino)
         return false;  //Si el movimiento no es ni en la misma fila ni en la misma columna devuelve un false 

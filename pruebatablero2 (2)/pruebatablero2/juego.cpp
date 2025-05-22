@@ -120,6 +120,11 @@ void juego::finalizarArrastre(int x, int y) {
             cout << "Turno anterior: " << obtenerTurnoActual() << endl;
             cambiarTurno(); // Cambia el turno solo si el movimiento es válido
             cout << "Nuevo turno: " << obtenerTurnoActual() << endl;
+            std::string turnoActual = obtenerTurnoActual();
+            if (Tablero.estaEnJaque(turnoActual)) {
+                std::cout << "¡" << turnoActual << " está en JAQUE!" << std::endl;
+                
+            }
         }
         else {  //Si no es válido muestra posibles razones 
             cout << "Movimiento invalido! Razones posibles:" << endl;

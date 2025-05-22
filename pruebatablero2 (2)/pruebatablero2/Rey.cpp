@@ -1,6 +1,6 @@
 #include "Rey.h"
 
-bool Rey::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero) {
+bool Rey::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) {
     // El rey solo puede moverse una casilla en cualquier dirección
     int difFilas = filaDestino - filaOrigen;  //Cuántas filas se mueve el rey?
     if (difFilas < 0) difFilas = -difFilas;  //convierte la diferencia a valor absoluto

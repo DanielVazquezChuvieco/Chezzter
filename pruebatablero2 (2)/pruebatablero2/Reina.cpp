@@ -1,6 +1,6 @@
 #include "Reina.h"
 
-bool Reina::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero) {
+bool Reina::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) {
 
     // Movimiento en misma fila o columna
     if (filaOrigen == filaDestino || colOrigen == colDestino) {

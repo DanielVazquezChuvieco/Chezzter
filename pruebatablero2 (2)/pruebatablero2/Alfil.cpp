@@ -2,7 +2,7 @@
 #include "tablero.h"
 #include <cmath>
 
-bool Alfil::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero) {
+bool Alfil::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) {
     // El alfil solo puede moverse en diagonal
     if (abs(filaDestino - filaOrigen) != abs(colDestino - colOrigen)) //sólo puede moverse si la distancia en filas y columnas es igual
         return false;  //si no, el movimiento no es válido y devuelve un false

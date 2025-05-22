@@ -26,7 +26,7 @@ public:
     virtual void dibuja();  //Dibuja la pieza, implementado en clases derivadas
     void setPosicionGrafica();  //Posicionamiento gráfico de la pieza
 
-    virtual bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, tablero& Tablero) = 0;  //Método para obbtener el movimiento válido de las piezas
+    virtual bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero)  = 0;  //Método para obbtener el movimiento válido de las piezas
 
     void setPosicionGraficaPixel(int x, int y) { // Nuevo método para arrastrar piezas, posiciona las piezas según las coordenadas en pantalla
         sprite->setPos(x - 25, y - 25);
@@ -37,4 +37,6 @@ public:
     std::string obtenerColor() const {   //Lógica de turnos
         return esBlancoPieza ? "BLANCO" : "NEGRO";
     }
+    virtual bool esRey() const { return false; }
+
 };
