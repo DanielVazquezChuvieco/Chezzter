@@ -29,12 +29,12 @@ void juego::iniciarArrastre(int x, int y) {
 
     if (fila >= 0 && fila < 8 && col >= 0 && col < 8) {  //Comprueba que el clic está dentro del tablero
         if (Tablero.at(fila, col).hayPieza()) {   //Si hay una pieza en la casilla, obtiene un puntero a la pieza y muestra su tipo y color
-            Pieza* pieza = Tablero.at(fila, col).getPieza();
-            bool esBlanca = pieza->esBlanca();
+            Pieza* pieza = Tablero.at(fila, col).getPieza(); // Se coje la posición de la pieza pulsada
+            bool esBlanca = pieza->esBlanca(); // Se obtien el color
             std::string colorPieza = esBlanca ? "BLANCO" : "NEGRO";
-            cout << "Pieza encontrada: " << typeid(*pieza).name() << " Color: " << colorPieza << endl;
+            cout << "Pieza encontrada: " << typeid(*pieza).name() << " Color: " << colorPieza << endl; //para pillar el tipo de pieza que es, se podría hacer con polimorfismo, pero esto es más comodo
 
-            if (esBlanca != turnoBlanco) {
+            if (esBlanca != turnoBlanco) { //Default Turnoblanco = 1
                 cout << "Intento de mover pieza contraria! Turno actual: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
                 return;
             }
@@ -74,6 +74,15 @@ void juego::finalizarArrastre(int x, int y) {
 
         cout << "Posicion destino calculada: (" << filaDestino << ", " << colDestino << ")" << endl;
         cout << "Tipo de pieza: " << typeid(*piezaArrastrada).name() << endl;
+
+        if (filaDestino == filaOrigen && colDestino == colOrigen) {
+            cout << "Movimiento nulo: la pieza no se ha movido." << endl;
+            piezaArrastrada->setPosicionGrafica();  // Devuelve la pieza gráficamente
+            piezaArrastrada = nullptr;
+            arrastrando = false;
+            glutPostRedisplay();
+            return;
+        }
 
         //Inicializamos variables para saber si el movimiento es válido y el tipo de pieza
         bool movimientoValido = false;
