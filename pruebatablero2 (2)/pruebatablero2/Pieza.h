@@ -1,18 +1,16 @@
 ﻿#pragma once
 #include "ETSIDI.h"
+#include "Constantes.h"
 #include <string>
 
 class tablero; //Se pone la clase tablero para pasar por referencia movimientoValido() y verificar la ocupación de casillas e implementar reglas
-
 class Pieza  //Clase base con herencia en peon,torre,caballo,alfil,reina,rey
 {
 protected:
     int fila;  //Fila del tsblero 0-7 
     int columna;  //Columna tablero 0-7
     bool esBlancoPieza;   //True = piezablanca   Flase = piezanegra
-    static const int tama�oCasilla = 75;  //Tamaño visual de la casilla
-    static const int margenX = 100;   //Margen horizontal del tablero
-    static const int margenY = 100;  //Margen vertical del tablero
+ 
 
 
 public:

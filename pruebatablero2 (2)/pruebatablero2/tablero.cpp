@@ -12,7 +12,7 @@
 using namespace std;
 
 
-Casilla casilla; //Asignamos la responsabilidad de definir el tama�o de la casilla a casilla
+
 
 // Esta funci�n se encarga de dibujar el tablero cuadrado por cuadrado
 tablero::tablero() {
@@ -61,17 +61,19 @@ void tablero::dibuja() {
                 glColor3f(0.0f, 1.0f, 0.3f); //  rojo claro
 
             // Calculamos las coordenadas de cada cuadrado (esquina superior izquierda)
-            int y = margenY + col * casilla.gettam(); // columna * tama�o de casilla
-            int x = margenX + fila * casilla.gettam(); // fila * tama�o de casilla
+            int y = Constantes::margenX
+                + col * Constantes::tamanoCasilla; // columna * tama�o de casilla
+            int x = Constantes::margenX
+                + fila * Constantes::tamanoCasilla; // fila * tama�o de casilla
 
 
 
             // Dibujamos un cuadrado usando 4 v�rtices (OpenGL cl�sico)
             glBegin(GL_QUADS); // Iniciamos dibujo de un cuadrado
             glVertex2f(x, y);                           // esquina superior izquierda
-            glVertex2f(x + casilla.gettam(), y);             // esquina superior derecha
-            glVertex2f(x + casilla.gettam(), y + casilla.gettam()); // esquina inferior derecha
-            glVertex2f(x, y + casilla.gettam());             // esquina inferior izquierda
+            glVertex2f(x + Constantes::tamanoCasilla, y);             // esquina superior derecha
+            glVertex2f(x + Constantes::tamanoCasilla, y + Constantes::tamanoCasilla); // esquina inferior derecha
+            glVertex2f(x, y + Constantes::tamanoCasilla);             // esquina inferior izquierda
             glEnd(); // Terminamos el dibujo del cuadrado
 
 
@@ -83,13 +85,15 @@ void tablero::dibuja() {
     for (int col = 0; col < columnas; col++) {
         char caracter = 'a' + col;
         glColor3f(1.0f, 1.0f, 1.0f); // color negro
-        glRasterPos2f(margenX + casilla.gettam() / 2 + col * casilla.gettam(), 75); //Encargada de posicionar el caracter
+        glRasterPos2f(Constantes::margenX
+            + Constantes::tamanoCasilla / 2 + col * Constantes::tamanoCasilla, 75); //Encargada de posicionar el caracter
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, caracter); //Escribe en la tipologia elegida el caracter
     }
     for (int fila = 0; fila < filas; fila++) {
         char caracter = '1' + fila;
         glColor3f(1.0f, 1.0f, 1.0f); // color negro
-        glRasterPos2f(75, margenY + casilla.gettam() / 2 + fila * casilla.gettam());
+        glRasterPos2f(75, Constantes::margenX
+            + Constantes::tamanoCasilla / 2 + fila * Constantes::tamanoCasilla);
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, caracter);
     }
     for (int fila = 0; fila < filas; fila++) {
