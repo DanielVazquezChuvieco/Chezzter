@@ -28,7 +28,7 @@ public:
 
     void setPosicionGraficaPixel(int x, int y); // Nuevo método para arrastrar piezas, posiciona las piezas según las coordenadas en pantalla
        
- 
+    virtual std::string nombre() const = 0;
 
     virtual bool esRey() const { return false; }
 

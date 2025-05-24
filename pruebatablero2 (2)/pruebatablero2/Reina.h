@@ -17,4 +17,5 @@ public:
 
     //Movimiento válido reina
     bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) override;
+    std::string nombre() const { return "REINA"; }
 };

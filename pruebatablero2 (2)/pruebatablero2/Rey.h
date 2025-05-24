@@ -20,8 +20,7 @@ public:
     bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino,const tablero& Tablero) override;
 
     bool esRey() const override { return true; }
-
-
+    std::string nombre() const { return "REY"; }
 
 };
 
