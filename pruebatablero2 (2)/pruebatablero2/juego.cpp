@@ -32,7 +32,7 @@ void juego::iniciarArrastre(int x, int y) {
             Pieza* pieza = Tablero.at(fila, col).getPieza(); // Se coje la posición de la pieza pulsada
             bool esBlanca = pieza->esBlanca(); // Se obtien el color
             std::string colorPieza = esBlanca ? "BLANCO" : "NEGRO";
-            cout << "Pieza encontrada: " << typeid(*pieza).name() << " Color: " << colorPieza << endl; //para pillar el tipo de pieza que es, se podría hacer con polimorfismo, pero esto es más comodo
+            cout << "Pieza encontrada: " << pieza->nombre() << " Color: " << colorPieza << endl; //para pillar el tipo de pieza que es, se podría hacer con polimorfismo, pero esto es más comodo
 
             if (esBlanca != turnoBlanco) { //Default Turnoblanco = 1
                 cout << "Intento de mover pieza contraria! Turno actual: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
@@ -73,7 +73,7 @@ void juego::finalizarArrastre(int x, int y) {
         int colDestino = (x - 100) / 75;
 
         cout << "Posicion destino calculada: (" << filaDestino << ", " << colDestino << ")" << endl;
-        cout << "Tipo de pieza: " << typeid(*piezaArrastrada).name() << endl;
+        cout << "Tipo de pieza: " << piezaArrastrada->nombre() << endl;
 
         if (filaDestino == filaOrigen && colDestino == colOrigen) {
             cout << "Movimiento nulo: la pieza no se ha movido." << endl;
@@ -89,29 +89,29 @@ void juego::finalizarArrastre(int x, int y) {
         string tipoPieza = "Desconocida";
 
         //Intentamos conertir el puntero a cada tipo de pieza para llamar a su método específico movimientoValido
-        if (peon* p = dynamic_cast<peon*>(piezaArrastrada)) {
+        if (piezaArrastrada->nombre() == "PEON") {
             tipoPieza = "Peon";  //Guarda el tipo de pieza para mostrarlo
-            movimientoValido = p->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+            movimientoValido = piezaArrastrada->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
         }
-        else if (Torre* t = dynamic_cast<Torre*>(piezaArrastrada)) {
+        else if (piezaArrastrada->nombre() == "TORRE") {
             tipoPieza = "Torre";
-            movimientoValido = t->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+            movimientoValido = piezaArrastrada->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
         }
-        else if (Alfil* a = dynamic_cast<Alfil*>(piezaArrastrada)) {
+        else if (piezaArrastrada->nombre() == "TORRE") {
             tipoPieza = "Alfil";
-            movimientoValido = a->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+            movimientoValido = piezaArrastrada->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
         }
-        else if (Caballo* c = dynamic_cast<Caballo*>(piezaArrastrada)) {
+        else if (piezaArrastrada->nombre() == "TORRE") {
             tipoPieza = "Caballo";
-            movimientoValido = c->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+            movimientoValido = piezaArrastrada->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
         }
-        else if (Reina* r = dynamic_cast<Reina*>(piezaArrastrada)) {
+        else if (piezaArrastrada->nombre() == "TORRE") {
             tipoPieza = "Reina";
-            movimientoValido = r->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+            movimientoValido = piezaArrastrada->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
         }
-        else if (Rey* rey = dynamic_cast<Rey*>(piezaArrastrada)) {
+        else if (piezaArrastrada->nombre() == "TORRE") {
             tipoPieza = "Rey";
-            movimientoValido = rey->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+            movimientoValido = piezaArrastrada->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
         }
 
         //  imprime si el movimiento es válido o no
