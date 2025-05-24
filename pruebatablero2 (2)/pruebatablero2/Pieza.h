@@ -20,7 +20,7 @@ public:
     ETSIDI::SpriteSequence* sprite;  //Objeto gráfico para la ppieza
 
     virtual ~Pieza() { delete sprite; }  //Destructor virtual para herencia
-    bool getcolor() const { return esBlancoPieza; }  // Obtener color
+    bool esBlanca() const { return esBlancoPieza; }  // Obtener color
     virtual void dibuja();  //Dibuja la pieza, implementado en clases derivadas
     void setPosicionGrafica();  //Posicionamiento gráfico de la pieza
 
@@ -32,9 +32,6 @@ public:
         sprite->setSize(50, 50);  //Tamaño estándar
     }
 
-    std::string obtenerColor() const {   //Lógica de turnos
-        return esBlancoPieza ? "BLANCO" : "NEGRO";
-    }
     virtual bool esRey() const { return false; }
 
 };

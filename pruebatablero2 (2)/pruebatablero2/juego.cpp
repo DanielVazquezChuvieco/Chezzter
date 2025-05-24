@@ -30,14 +30,13 @@ void juego::iniciarArrastre(int x, int y) {
     if (fila >= 0 && fila < 8 && col >= 0 && col < 8) {  //Comprueba que el clic está dentro del tablero
         if (Tablero.at(fila, col).hayPieza()) {   //Si hay una pieza en la casilla, obtiene un puntero a la pieza y muestra su tipo y color
             Pieza* pieza = Tablero.at(fila, col).getPieza();
-            std::string colorPieza = pieza->getcolor() ? "BLANCO" : "NEGRO";
-
+            bool esBlanca = pieza->esBlanca();
+            std::string colorPieza = esBlanca ? "BLANCO" : "NEGRO";
             cout << "Pieza encontrada: " << typeid(*pieza).name() << " Color: " << colorPieza << endl;
 
-
-            if (!esTurnoDe(colorPieza)) {  //Si no es el turno del color de la pieza seleccionada, informa y no permite el arrastre
-                cout << "Intento de mover pieza contraria! Turno actual: " << obtenerTurnoActual() << endl;
-                return; // No es el turno de esa pieza
+            if (esBlanca != turnoBlanco) {
+                cout << "Intento de mover pieza contraria! Turno actual: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
+                return;
             }
             //Si es el turno correcto, guarda la pieza
             piezaArrastrada = pieza;
@@ -117,13 +116,12 @@ void juego::finalizarArrastre(int x, int y) {
             piezaArrastrada->setColumna(colDestino);
             piezaArrastrada->setPosicionGrafica();
 
-            cout << "Turno anterior: " << obtenerTurnoActual() << endl;
-            cambiarTurno(); // Cambia el turno solo si el movimiento es válido
-            cout << "Nuevo turno: " << obtenerTurnoActual() << endl;
-            std::string turnoActual = obtenerTurnoActual();
-            if (Tablero.estaEnJaque(turnoActual)) {
-                std::cout << "¡" << turnoActual << " está en JAQUE!" << std::endl;
-                
+            cout << "Turno anterior: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
+            turnoBlanco = !turnoBlanco; // Cambia el turno
+            cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
+
+            if (Tablero.estaEnJaque(turnoBlanco)) {
+                std::cout << "¡" << (turnoBlanco ? "BLANCO" : "NEGRO") << " está en JAQUE!" << std::endl;
             }
         }
         else {  //Si no es válido muestra posibles razones 

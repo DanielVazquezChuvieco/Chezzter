@@ -19,7 +19,7 @@ public:
 	Pieza* piezaArrastrada = nullptr;  //Apunta a la pieza que está siendo arrastrada
 
 	//variables turnos
-	std::string turnoActual = "BLANCO"; // ← ahora usamos string	
+	bool turnoBlanco = true;
 
 	// Para dibujar tablero y piezas;
 	void dibuja();
@@ -29,9 +29,6 @@ public:
 	void actualizarArrastre(int x, int y);  //Se llama mientras el usuario mueve el ratón con la pieza seleccionada
 	void finalizarArrastre(int x, int y);  //Se llama cuando el usuario suelta la pieza en una casilla destino
 
-	//Métodos turnos
-	std::string obtenerTurnoActual() const { return turnoActual; }  //Devuelve cuál es el turno actual
-	void cambiarTurno() { turnoActual = (turnoActual == "BLANCO") ? "NEGRO" : "BLANCO"; }  //Cambia el turno al otro jugador después de un movimiento válido
-	bool esTurnoDe(const std::string& color) const { return turnoActual == color; } //Devuelve true si el turno es del color que se pasa como argumento
+	
 
 };

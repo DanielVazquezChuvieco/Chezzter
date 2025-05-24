@@ -173,13 +173,12 @@ void tablero::aplicarGravedad() {
     }
 }
 
-Pieza* tablero::encontrarRey(const std::string& color, int& filaRey, int& colRey) const {
+Pieza* tablero::encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const {
     for (int fila = 0; fila < 8; ++fila) {
         for (int col = 0; col < 8; ++col) {
             if (grid[fila][col].hayPieza()) {
-                
                 Pieza* p = grid[fila][col].getPieza();
-                if (p->esRey() && p->obtenerColor() == color) {
+                if (p->esRey() && p->esBlanca() == colorBlanco) {
                     filaRey = fila;
                     colRey = col;
                     return p;
@@ -189,20 +188,18 @@ Pieza* tablero::encontrarRey(const std::string& color, int& filaRey, int& colRey
     }
     return nullptr;
 }
-bool tablero::estaEnJaque(const std::string& color) const {
+bool tablero::estaEnJaque(bool colorBlanco) const {
     int filaRey, colRey;
-    if (!encontrarRey(color, filaRey, colRey)) return false;
-
-    std::string colorEnemigo = (color == "BLANCO") ? "NEGRO" : "BLANCO";
+    if (!encontrarRey(colorBlanco, filaRey, colRey)) return false;
 
     for (int fila = 0; fila < 8; ++fila) {
         for (int col = 0; col < 8; ++col) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* pieza = grid[fila][col].getPieza();
-                if (pieza->obtenerColor() == colorEnemigo) {
+                if (pieza->esBlanca() != colorBlanco) { // enemigo
                     if (pieza->movimientoValido(fila, col, filaRey, colRey, *this)) {
-                        cout << "Rey de color" << colRey << " en jaque" << endl;
-                        return true; // El rey está amenazado
+                        cout << "Rey en (" << filaRey << ", " << colRey << ") está en jaque" << endl;
+                        return true;
                     }
                 }
             }
