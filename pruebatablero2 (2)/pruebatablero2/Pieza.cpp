@@ -16,3 +16,9 @@ void Pieza::setPosicionGrafica() {
     sprite->setCenter(0.5f, 0.5f);
     sprite->setSize(50, 50);
 }
+
+void Pieza::setPosicionGraficaPixel(int x, int y) {
+    sprite->setPos(x - 25, y - 25);
+    sprite->setCenter(0.5f, 0.5f);  //Centra el sprite
+    sprite->setSize(50, 50);  //Tamaño estándar
+}

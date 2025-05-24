@@ -108,32 +108,50 @@ void juego::finalizarArrastre(int x, int y) {
         //  imprime si el movimiento es válido o no
         cout << "Validacion movimiento (" << tipoPieza << "): " << (movimientoValido ? "VALIDO" : "INVALIDO") << endl;
 
-        if (movimientoValido && filaDestino >= 0 && filaDestino < 8 && colDestino >= 0 && colDestino < 8) {  //Si el movimiento es válido y dentro del tablero
-            cout << "Realizando movimiento de (" << filaOrigen << ", " << colOrigen << ") a (" << filaDestino << ", " << colDestino << ")" << endl;
+        if (movimientoValido && filaDestino >= 0 && filaDestino < 8 && colDestino >= 0 && colDestino < 8){  //Si el movimiento es válido y dentro del tablero
+            Pieza* compjaque = Tablero.at(filaDestino, colDestino).getPieza();
+
+            
             Tablero.at(filaDestino, colDestino).set(piezaArrastrada);  //actualiza la posición de la pieza
             Tablero.at(filaOrigen, colOrigen).set(nullptr);
             piezaArrastrada->setFila(filaDestino);
             piezaArrastrada->setColumna(colDestino);
-            piezaArrastrada->setPosicionGrafica();
-
-            cout << "Turno anterior: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
-            turnoBlanco = !turnoBlanco; // Cambia el turno
-            cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
-
+          
+          
             if (Tablero.estaEnJaque(turnoBlanco)) {
-                std::cout << "¡" << (turnoBlanco ? "BLANCO" : "NEGRO") << " está en JAQUE!" << std::endl;
+                Tablero.at(filaOrigen, colOrigen).set(piezaArrastrada);
+                Tablero.at(filaDestino, colDestino).set(compjaque);
+                piezaArrastrada->setFila(filaOrigen);
+                piezaArrastrada->setColumna(colOrigen);
+                piezaArrastrada->setPosicionGrafica();
+
+                cout << "¡Movimiento invalido! Tu rey quedaria en jaque." << endl;
             }
+            else {
+                piezaArrastrada->setPosicionGrafica();
+                cout << "Realizando movimiento de (" << filaOrigen << ", " << colOrigen << ") a (" << filaDestino << ", " << colDestino << ")" << endl;
+                cout << "Las" << (turnoBlanco ? "BLANCO" : "NEGRO") << " no estan en jaque" << endl;
+                cout << "Turno anterior: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
+                turnoBlanco = !turnoBlanco; // Cambia el turno
+                cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
+                if (Tablero.estaEnJaque(turnoBlanco)) {
+                    std::cout << "¡" << (turnoBlanco ? "BLANCO" : "NEGRO") << " esta en JAQUE!" << std::endl;
+                }
+            }
+            
+           
         }
         else {  //Si no es válido muestra posibles razones 
             cout << "Movimiento invalido! Razones posibles:" << endl;
             cout << "- Destino fuera del tablero: " << (filaDestino < 0 || filaDestino >= 8 || colDestino < 0 || colDestino >= 8) << endl;
             cout << "- Movimiento no permitido para la pieza" << endl;
             cout << "- Intento de capturar pieza propia" << endl;
+            cout << "LAS" << (turnoBlanco ? "BLANCO" : "NEGRO") << " ESTAN EN JAQUE MUEVE OTRA" << endl;
             piezaArrastrada->setPosicionGrafica(); // Devuelve la pieza a su sitio original
         }
         piezaArrastrada = nullptr;  //Ya no está arrastrando pieza
         arrastrando = false;
-        Tablero.aplicarGravedad();  //Aplica gravedad si hay huecos debajo
+       // Tablero.aplicarGravedad();  //Aplica gravedad si hay huecos debajo
         glutPostRedisplay();  //Redibuja la pantalla
     }
     else {

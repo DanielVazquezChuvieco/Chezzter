@@ -26,11 +26,9 @@ public:
 
     virtual bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero)  = 0;  //Método para obbtener el movimiento válido de las piezas
 
-    void setPosicionGraficaPixel(int x, int y) { // Nuevo método para arrastrar piezas, posiciona las piezas según las coordenadas en pantalla
-        sprite->setPos(x - 25, y - 25);
-        sprite->setCenter(0.5f, 0.5f);  //Centra el sprite
-        sprite->setSize(50, 50);  //Tamaño estándar
-    }
+    void setPosicionGraficaPixel(int x, int y); // Nuevo método para arrastrar piezas, posiciona las piezas según las coordenadas en pantalla
+       
+ 
 
     virtual bool esRey() const { return false; }
 
