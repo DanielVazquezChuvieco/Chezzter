@@ -2,6 +2,8 @@
 #include <cmath>
 
 bool Caballo::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino,const tablero& Tablero) {
+    if (intentaComerSuPropioRey(filaDestino, colDestino, Tablero))
+        return false;
 
     // Calcula la diferencia absoluta de filas y columnas
     int diferenciaFilas = filaDestino - filaOrigen; //Diferencia filas

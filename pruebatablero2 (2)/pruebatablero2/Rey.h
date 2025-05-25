@@ -22,5 +22,10 @@ public:
     bool esRey() const override { return true; }
     std::string nombre() const { return "REY"; }
 
+    Pieza* clonar() const override {
+        return new Rey(fila, columna, esBlanca());
+    }
+
+
 };
 

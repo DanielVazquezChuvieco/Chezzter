@@ -4,6 +4,7 @@
 
 class tablero
 {
+protected:
 	static const int  filas = 8, columnas = 8; //Tablero estándar 8x8
 	bool esBlanco;// atributo para determinar el color de la casilla
 
@@ -19,6 +20,9 @@ public:
 	Pieza* encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const;
 	bool estaEnJaque(bool colorBlanco) const;
 	const Casilla& at(int fila, int col) const;
+	bool esJaqueMate(bool colorBlanco) ;
+	tablero copiar() const;
+
 
 
 };

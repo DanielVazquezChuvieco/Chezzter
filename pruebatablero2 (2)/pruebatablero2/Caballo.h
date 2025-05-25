@@ -18,5 +18,9 @@ public:
     //movimiento válido caballo
     bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) override;
     std::string nombre() const { return "CABALLO"; }
+    Pieza* clonar() const override {
+        return new Caballo(fila, columna, esBlanca());
+    }
+
 };
 

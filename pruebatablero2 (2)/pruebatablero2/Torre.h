@@ -20,6 +20,10 @@ public:
     bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) override;
 
     std::string nombre() const{ return "TORRE"; } 
+    Pieza* clonar() const override {
+        return new Torre(fila, columna, esBlanca());
+    }
+
 };
 
 

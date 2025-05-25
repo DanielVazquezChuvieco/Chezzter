@@ -1,5 +1,5 @@
 ﻿#include "Pieza.h"
-
+#include "tablero.h"
 
 void Pieza::dibuja() {
     if (sprite) {
@@ -21,4 +21,9 @@ void Pieza::setPosicionGraficaPixel(int x, int y) {
     sprite->setPos(x - 25, y - 25);
     sprite->setCenter(0.5f, 0.5f);  //Centra el sprite
     sprite->setSize(50, 50);  //Tamaño estándar
+}
+
+bool Pieza::intentaComerSuPropioRey(int filaDestino, int colDestino, const tablero& Tablero) const {
+    Pieza* destino = Tablero.at(filaDestino, colDestino).getPieza();
+    return destino && destino->esRey() && destino->esBlanca() == this->esBlanca();
 }

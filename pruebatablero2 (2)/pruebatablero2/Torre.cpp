@@ -4,6 +4,8 @@ bool Torre::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int
     // Solo permite movimiento en misma fila o columna
     if (filaOrigen != filaDestino && colOrigen != colDestino )
         return false;  //Si el movimiento no es ni en la misma fila ni en la misma columna devuelve un false 
+    if (intentaComerSuPropioRey(filaDestino, colDestino, Tablero))
+        return false;
 
     // Dirección de movimiento
     int pasoFila = 0;

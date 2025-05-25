@@ -6,6 +6,8 @@ bool Alfil::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int
     // El alfil solo puede moverse en diagonal
     if (abs(filaDestino - filaOrigen) != abs(colDestino - colOrigen)) //sólo puede moverse si la distancia en filas y columnas es igual
         return false;  //si no, el movimiento no es válido y devuelve un false
+    if (intentaComerSuPropioRey(filaDestino, colDestino, Tablero))
+        return false;
 
     // Dirección de movimiento
     int pasoFila = 0;

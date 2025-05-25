@@ -1,16 +1,36 @@
 #include "Rey.h"
 
 bool Rey::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) {
-    // El rey solo puede moverse una casilla en cualquier dirección
-    int difFilas = filaDestino - filaOrigen;  //Cuántas filas se mueve el rey?
-    if (difFilas < 0) difFilas = -difFilas;  //convierte la diferencia a valor absoluto
+    int difFilas = abs(filaDestino - filaOrigen);
+    int difCols = abs(colDestino - colOrigen);
+    if (intentaComerSuPropioRey(filaDestino, colDestino, Tablero))
+        return false;
 
-    int difCols = colDestino - colOrigen;  //Cuántas columnas se mueve el rey?
-    if (difCols < 0) difCols = -difCols;  //convierte la diferencia a valor absoluto
+    // Movimiento solo 1 casilla
+    if (difFilas > 1 || difCols > 1)
+        return false;
 
-    if (difFilas > 1 || difCols > 1)  //si el rey se mueve más de una casilla en cualquier dirección vertical, horizontal o diagonal
-        return false;  //movimiento inválido retorna false
+    // No puede capturar pieza propia
+    if (Tablero.at(filaDestino, colDestino).hayPieza()) {
+        if (Tablero.at(filaDestino, colDestino).getPieza()->esBlanca() == this->esBlanca())
+            return false;
+    }
 
+    // Copiar el tablero para simular sin modificar el original
+    tablero copia = Tablero.copiar();
 
-    return true;
+    // Obtener puntero al rey dentro de la copia
+    Pieza* reyCopia = copia.at(filaOrigen, colOrigen).getPieza();
+
+    // Simular el movimiento
+    copia.at(filaDestino, colDestino).set(reyCopia);
+
+    copia.at(filaOrigen, colOrigen).set(nullptr);
+    reyCopia->setFila(filaDestino);
+    reyCopia->setColumna(colDestino);
+
+    // Comprobar si tras moverse el rey queda en jaque
+    bool enJaque = copia.estaEnJaque(this->esBlanca());
+
+    return !enJaque;
 }

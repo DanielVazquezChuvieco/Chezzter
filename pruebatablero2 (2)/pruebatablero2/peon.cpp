@@ -3,6 +3,8 @@
 bool peon::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) {
     int direccion = esBlancoPieza ? -1 : 1; // Blancos se mueven a la izquierda, negros a la derecha
     int columnaInicial = esBlancoPieza ? 6 : 1; // Columna desde la que pueden avanzar 2 pasos
+    if (intentaComerSuPropioRey(filaDestino, colDestino, Tablero))
+        return false;
 
     // Movimiento horizontal simple
     if (filaOrigen == filaDestino) {

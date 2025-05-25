@@ -106,7 +106,27 @@ void tablero::dibuja() {
         }
     }
 }
+/*
+// PROBAR JAQUE MATE
+void tablero::colocapiezas() {
+    // Limpiar tablero
+    for (int fila = 0; fila < filas; ++fila)
+        for (int col = 0; col < columnas; ++col)
+            at(fila, col).set(nullptr);
 
+ 
+    at(7, 0).set(new Rey(7, 0, false));  
+
+
+    at(5, 2).set(new Rey(5, 2, true));   
+
+   
+    at(0, 7).set(new Torre(0, 7, true));
+
+
+    at(6, 2).set(new Torre(6, 2, true)); 
+}
+*/
 
 void tablero::colocapiezas() {
     for (int fil = 0; fil < filas; ++fil) {
@@ -140,12 +160,12 @@ void tablero::colocapiezas() {
     at(7, 0).set(new Torre(7, 0, false));  //false = negro
 
     //Reina
-    at(3, 7).set(new Reina(3, 7, true));  // true = blanco
+    at(4, 7).set(new Reina(4, 7, true));  // true = blanco
     // Reina negros 
     at(4, 0).set(new Reina(4, 0, false));  // false = negro
 
     //Rey
-    at(4, 7).set(new Rey(4, 7, true));  // true = blanco
+    at(3, 7).set(new Rey(3, 7, true));  // true = blanco
     // Rey negros 
     at(3, 0).set(new Rey(3, 0, false));  // false = negro
 
@@ -211,4 +231,60 @@ bool tablero::estaEnJaque(bool colorBlanco) const {
 
 const Casilla& tablero::at(int fila, int col) const {
     return grid[fila][col];
+}
+
+bool tablero::esJaqueMate(bool colorBlanco) {
+    if (!estaEnJaque(colorBlanco))
+        return false;
+
+    for (int fila = 0; fila < 8; ++fila) {
+        for (int col = 0; col < 8; ++col) {
+            if (grid[fila][col].hayPieza()) {
+                Pieza* pieza = grid[fila][col].getPieza();
+                if (pieza->esBlanca() == colorBlanco) {
+                    for (int f2 = 0; f2 < 8; ++f2) {
+                        for (int c2 = 0; c2 < 8; ++c2) {
+                            if (pieza->movimientoValido(fila, col, f2, c2, *this)) {
+                                // Creamos copia del tablero
+                                tablero copia = copiar();
+
+                                // Referencia a la pieza dentro de la copia
+                                Pieza* piezaCopia = copia.at(fila, col).getPieza();
+
+                                // Simular el movimiento
+                                Pieza* capturada = copia.at(f2, c2).getPieza();
+                                copia.at(f2, c2).set(piezaCopia);
+                                copia.at(fila, col).set(nullptr);
+                                piezaCopia->setFila(f2);
+                                piezaCopia->setColumna(c2);
+
+                                // Verificar si sigue en jaque
+                                if (!copia.estaEnJaque(colorBlanco))
+                                    return false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return true; // Si ningún movimiento evita el jaque, es jaque mate
+}
+
+
+tablero tablero::copiar() const {
+    tablero copia;
+    for (int fila = 0; fila < 8; ++fila) {
+        for (int col = 0; col < 8; ++col) {
+            if (grid[fila][col].hayPieza()) {
+                Pieza* original = grid[fila][col].getPieza();
+                copia.grid[fila][col].set(original->clonar()); // OK
+            }
+            else {
+                copia.grid[fila][col].set(nullptr);
+            }
+        }
+    }
+    return copia;
 }

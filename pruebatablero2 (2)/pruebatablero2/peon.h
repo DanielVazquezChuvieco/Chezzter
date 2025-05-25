@@ -19,6 +19,10 @@ public:
     //Movimiento válido peón
     bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) override;
     std::string nombre() const { return "PEON"; }
+    Pieza* clonar() const override {
+        return new peon(fila, columna, esBlanca());
+    }
+
 };
 
 

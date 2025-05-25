@@ -1,6 +1,8 @@
 #include "Reina.h"
 
 bool Reina::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) {
+    if (intentaComerSuPropioRey(filaDestino, colDestino, Tablero))
+        return false;
 
     // Movimiento en misma fila o columna
     if (filaOrigen == filaDestino || colOrigen == colDestino) {
