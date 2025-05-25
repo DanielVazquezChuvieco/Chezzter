@@ -10,7 +10,7 @@ class juego        //1 Se encarga de guardar el estado del tablero y las piezas
 	//3 Gestionar el turno de cada jugador
 	//4 Controla el movimiento de las piezas con el ratón arrastrando y soltando
 {
-public:
+
 	tablero Tablero;   //Objeto que representa el tablero de ajedrez y todas sus piezas y casillas
 
 	// Variables para movimiento de piezas por arrastre con ratón
@@ -20,7 +20,7 @@ public:
 
 	//variables turnos
 	bool turnoBlanco = true;
-
+public:
 	// Para dibujar tablero y piezas;
 	void dibuja();
 

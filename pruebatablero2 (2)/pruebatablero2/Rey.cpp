@@ -10,11 +10,7 @@ bool Rey::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int c
     if (difFilas > 1 || difCols > 1)
         return false;
 
-    // No puede capturar pieza propia
-    if (Tablero.at(filaDestino, colDestino).hayPieza()) {
-        if (Tablero.at(filaDestino, colDestino).getPieza()->esBlanca() == this->esBlanca())
-            return false;
-    }
+    
 
     // Copiar el tablero para simular sin modificar el original
     tablero copia = Tablero.copiar();

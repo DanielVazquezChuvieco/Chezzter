@@ -1,4 +1,12 @@
-﻿  Reina.cpp
-  Rey.cpp
-  Generando código...
+﻿  tablero.cpp
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(73,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(73,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(74,55): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(74,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(75,57): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(75,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(76,29): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(76,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(89,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\tablero.cpp(96,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
   pruebatablero2.vcxproj -> D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\LAST\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe

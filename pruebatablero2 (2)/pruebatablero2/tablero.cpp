@@ -241,24 +241,26 @@ bool tablero::esJaqueMate(bool colorBlanco) {
         for (int col = 0; col < 8; ++col) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* pieza = grid[fila][col].getPieza();
+
                 if (pieza->esBlanca() == colorBlanco) {
                     for (int f2 = 0; f2 < 8; ++f2) {
                         for (int c2 = 0; c2 < 8; ++c2) {
                             if (pieza->movimientoValido(fila, col, f2, c2, *this)) {
-                                // Creamos copia del tablero
+
+                                // COPIA del tablero
                                 tablero copia = copiar();
 
-                                // Referencia a la pieza dentro de la copia
+                                // Mover pieza en la copia
                                 Pieza* piezaCopia = copia.at(fila, col).getPieza();
-
-                                // Simular el movimiento
-                                Pieza* capturada = copia.at(f2, c2).getPieza();
                                 copia.at(f2, c2).set(piezaCopia);
                                 copia.at(fila, col).set(nullptr);
                                 piezaCopia->setFila(f2);
                                 piezaCopia->setColumna(c2);
 
-                                // Verificar si sigue en jaque
+                               
+                                //copia.aplicarGravedad();
+
+                           
                                 if (!copia.estaEnJaque(colorBlanco))
                                     return false;
                             }
@@ -269,7 +271,7 @@ bool tablero::esJaqueMate(bool colorBlanco) {
         }
     }
 
-    return true; // Si ningún movimiento evita el jaque, es jaque mate
+    return true; // No hay escapatoria posible
 }
 
 

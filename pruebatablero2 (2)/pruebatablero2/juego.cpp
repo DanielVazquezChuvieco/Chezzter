@@ -140,6 +140,7 @@ void juego::finalizarArrastre(int x, int y) {
 
         piezaArrastrada = nullptr;
         arrastrando = false;
+        Tablero.aplicarGravedad();  //Aplica gravedad si hay huecos debajo
         glutPostRedisplay();
     }
     else {
