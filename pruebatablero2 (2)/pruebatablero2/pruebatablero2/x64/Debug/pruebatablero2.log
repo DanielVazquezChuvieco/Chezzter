@@ -1,0 +1,12 @@
+﻿  tablero.cpp
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(71,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(71,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(72,46): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(72,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(73,48): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(73,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(74,29): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(74,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(86,54): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(92,58): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+  pruebatablero2.vcxproj -> C:\Users\jvald\Documents\GitHub\Chezzter\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe
