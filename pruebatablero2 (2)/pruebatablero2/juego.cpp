@@ -1,4 +1,4 @@
-#include "juego.h"
+Ôªø#include "juego.h"
 #include "freeglut.h"
 #include "peon.h"
 #include "Torre.h"
@@ -22,17 +22,17 @@ void juego::iniciarArrastre(int x, int y) {
     cout << "\n=== INICIANDO ARRASTRE ===" << endl;
     cout << "Coordenadas click: (" << x << ", " << y << ")" << endl;
 
-    //Convierte las coordenadas de pantalla a la posiciÛn de la casilla del tablero y lo muestra por consola
+    //Convierte las coordenadas de pantalla a la posici√≥n de la casilla del tablero y lo muestra por consola
     int fila = (y - 100) / 75;
     int col = (x - 100) / 75;
     cout << "Casilla calculada: (" << fila << ", " << col << ")" << endl;
 
-    if (fila >= 0 && fila < 8 && col >= 0 && col < 8) {  //Comprueba que el clic est· dentro del tablero
+    if (fila >= 0 && fila < 8 && col >= 0 && col < 8) {  //Comprueba que el clic est√° dentro del tablero
         if (Tablero.at(fila, col).hayPieza()) {   //Si hay una pieza en la casilla, obtiene un puntero a la pieza y muestra su tipo y color
-            Pieza* pieza = Tablero.at(fila, col).getPieza(); // Se coje la posiciÛn de la pieza pulsada
+            Pieza* pieza = Tablero.at(fila, col).getPieza(); // Se coje la posici√≥n de la pieza pulsada
             bool esBlanca = pieza->esBlanca(); // Se obtien el color
             std::string colorPieza = esBlanca ? "BLANCO" : "NEGRO";
-            cout << "Pieza encontrada: " << pieza->nombre() << " Color: " << colorPieza << endl; //para pillar el tipo de pieza que es, se podrÌa hacer con polimorfismo, pero esto es m·s comodo
+            cout << "Pieza encontrada: " << pieza->nombre() << " Color: " << colorPieza << endl; //para pillar el tipo de pieza que es, se podr√≠a hacer con polimorfismo, pero esto es m√°s comodo
 
             if (esBlanca != turnoBlanco) { //Default Turnoblanco = 1
                 cout << "Intento de mover pieza contraria! Turno actual: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
@@ -40,23 +40,23 @@ void juego::iniciarArrastre(int x, int y) {
             }
             //Si es el turno correcto, guarda la pieza
             piezaArrastrada = pieza;
-            filaOrigen = fila;  //Guarda su posiciÛn de origen
+            filaOrigen = fila;  //Guarda su posici√≥n de origen
             colOrigen = col;
             arrastrando = true;  //activa el modo arrastre
 
             cout << "Iniciando arrastre de pieza desde (" << filaOrigen << ", " << colOrigen << ")" << endl;
-            piezaArrastrada->setPosicionGraficaPixel(x, y);  //actualiza la posiciÛn gr·fica de la pieza del drag
+            piezaArrastrada->setPosicionGraficaPixel(x, y);  //actualiza la posici√≥n gr√°fica de la pieza del drag
         }
         else {
             cout << "No hay pieza en (" << fila << ", " << col << ")" << endl;  //Si no hay pieza lo indica
         }
     }
     else {
-        cout << "Click fuera del tablero" << endl;  //Si est· fuera del tablero lo indica
+        cout << "Click fuera del tablero" << endl;  //Si est√° fuera del tablero lo indica
     }
 }
 
-//Mientras el usuario arrastra la pieza, imprime la posiciÛn actual del ratÛn y actualiza la plsicion gr·fica de la pieza para que siga el cursos
+//Mientras el usuario arrastra la pieza, imprime la posici√≥n actual del rat√≥n y actualiza la plsicion gr√°fica de la pieza para que siga el cursos
 void juego::actualizarArrastre(int x, int y) {
     if (arrastrando && piezaArrastrada) {
         cout << "Actualizando posicion arrastre: (" << x << ", " << y << ")" << endl;
@@ -84,28 +84,18 @@ void juego::finalizarArrastre(int x, int y) {
             return;
         }
 
-        bool movimientoValido = false;
-        string tipoPieza = piezaArrastrada->nombre();
-
-        // LÛgica de validaciÛn
-        movimientoValido = piezaArrastrada->movimientoValido(
+        bool movimientoValido = piezaArrastrada->movimientoValido(
             filaOrigen, colOrigen, filaDestino, colDestino, Tablero
         );
 
-        cout << "Movimiento (" << tipoPieza << "): " << (movimientoValido ? "VALIDO" : "INVALIDO") << endl;
+        cout << "Movimiento (" << piezaArrastrada->nombre() << "): " << (movimientoValido ? "VALIDO" : "INVALIDO") << endl;
 
         if (movimientoValido && filaDestino >= 0 && filaDestino < 8 && colDestino >= 0 && colDestino < 8) {
             Pieza* compjaque = Tablero.at(filaDestino, colDestino).getPieza();
 
-            // Simular movimiento
-            Tablero.at(filaDestino, colDestino).set(piezaArrastrada);
-            Tablero.at(filaOrigen, colOrigen).set(nullptr);
-            piezaArrastrada->setFila(filaDestino);
-            piezaArrastrada->setColumna(colDestino);
-
-            // Verificar si queda en jaque tras mover
-            if (Tablero.estaEnJaque(turnoBlanco)) {
-                cout << "Tu rey quedarÌa en jaque. Movimiento cancelado." << endl;
+            // Simular movimiento con gravedad para verificar si el rey queda en jaque
+            if (!simularMovimientoConGravedadYVerificar(filaOrigen, colOrigen, filaDestino, colDestino)) {
+                cout << "Tu rey quedar√≠a en jaque tras aplicar la gravedad. Movimiento cancelado." << endl;
 
                 // Revertir movimiento
                 Tablero.at(filaOrigen, colOrigen).set(piezaArrastrada);
@@ -116,34 +106,59 @@ void juego::finalizarArrastre(int x, int y) {
             }
             else {
                 // Movimiento aceptado
+                Tablero.at(filaDestino, colDestino).set(piezaArrastrada);
+                Tablero.at(filaOrigen, colOrigen).set(nullptr);
+                piezaArrastrada->setFila(filaDestino);
+                piezaArrastrada->setColumna(colDestino);
                 piezaArrastrada->setPosicionGrafica();
                 cout << "Movimiento realizado." << endl;
-
-                // Verificar JAQUE o JAQUE MATE al jugador rival
-                bool rivalBlanco = !turnoBlanco;
-                if (Tablero.estaEnJaque(rivalBlanco)) {
-                    cout << "°" << (rivalBlanco ? "BLANCO" : "NEGRO") << " est· en JAQUE!" << endl;
-                    if (Tablero.esJaqueMate(rivalBlanco)) {
-                        cout << "°JAQUE MATE! Ha ganado " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
+            
+                if (Tablero.estaEnJaque(!turnoBlanco)) {
+                    cout << "¬°" << (turnoBlanco ? "BLANCO" : "NEGRO") << " est√° en JAQUE!" << endl;
+                    if (Tablero.esJaqueMate(turnoBlanco)) {
+                        cout << "¬°JAQUE MATE! Ha ganado " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
                     }
                 }
 
-                // Cambiar el turno solo si el movimiento fue v·lido y aceptado
+                // Cambiar el turno
                 turnoBlanco = !turnoBlanco;
                 cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
             }
+          
         }
         else {
-            cout << "Movimiento inv·lido. Revisa lÌmites o reglas de la pieza." << endl;
+            cout << "Movimiento inv√°lido. Revisa l√≠mites o reglas de la pieza." << endl;
             piezaArrastrada->setPosicionGrafica();
         }
 
-        piezaArrastrada = nullptr;
-        arrastrando = false;
-        Tablero.aplicarGravedad();  //Aplica gravedad si hay huecos debajo
-        glutPostRedisplay();
+
     }
     else {
-        cout << "No habÌa pieza seleccionada al soltar." << endl;
+        cout << "No hab√≠a pieza seleccionada al soltar." << endl;
     }
+    piezaArrastrada = nullptr;
+    arrastrando = false;
+    Tablero.aplicarGravedad();  // Aplica gravedad definitiva
+    glutPostRedisplay();
+}
+
+
+bool juego::simularMovimientoConGravedadYVerificar(int filaOrigen, int colOrigen, int filaDestino, int colDestino) {
+    tablero copia = Tablero.copiar();
+
+    Pieza* pieza = copia.at(filaOrigen, colOrigen).getPieza();
+
+    if (!pieza->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, copia))
+        return false;
+
+    // Movimiento simulado
+    copia.at(filaDestino, colDestino).set(pieza);
+    copia.at(filaOrigen, colOrigen).set(nullptr);
+    pieza->setFila(filaDestino);
+    pieza->setColumna(colDestino);
+
+    // Aplicar gravedad
+    copia.aplicarGravedad();
+    // Verificar si el rey queda en jaque
+    return !copia.estaEnJaque(pieza->esBlanca());
 }

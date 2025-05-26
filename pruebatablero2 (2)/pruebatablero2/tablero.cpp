@@ -8,6 +8,10 @@
 #include "Reina.h"
 #include "ETSIDI.h"
 #include <iostream>
+#include "juego.h"  // Asegúrate de tener acceso al juego actual si es necesario
+
+extern juego Juego;  // Usa el objeto global definido en Source.cpp
+
 
 using namespace std;
 
@@ -176,7 +180,7 @@ void tablero::aplicarGravedad() {
     for (int col = 0; col < columnas; ++col) { //recorre todas las columnas
         for (int fila = filas - 2; fila >= 0; --fila) { // recorre todas las filas desde la penultima(no puede caer más si esta en la última)
             if (grid[fila][col].hayPieza()) { //verifica si hay pieza
-                int nuevaFila = fila; //guarda fila acyual pieza
+                int nuevaFila = fila; //guarda fila actual pieza
                 while (nuevaFila + 1 < filas && !grid[nuevaFila + 1][col].hayPieza()) {// recorre de la fila siguiente hasta que encuentre una pieza
                     nuevaFila++;
                 }
@@ -217,8 +221,11 @@ bool tablero::estaEnJaque(bool colorBlanco) const {
             if (grid[fila][col].hayPieza()) {
                 Pieza* pieza = grid[fila][col].getPieza();
                 if (pieza->esBlanca() != colorBlanco) { // enemigo
-                    if (pieza->movimientoValido(fila, col, filaRey, colRey, *this)) {
-                        cout << "Rey en (" << filaRey << ", " << colRey << ") está en jaque" << endl;
+                    bool amenaza = pieza->movimientoValido(fila, col, filaRey, colRey, *this);
+                    if (amenaza) {
+                        cout << "  " << pieza->nombre() << " (" << (pieza->esBlanca() ? "BLANCA" : "NEGRA")
+                            << ") en (" << fila << ", " << col << ") amenaza al REY "
+                            << (colorBlanco ? "BLANCO" : "NEGRO") << " en (" << filaRey << ", " << colRey << ") → JAQUE" << endl;
                         return true;
                     }
                 }
@@ -229,9 +236,11 @@ bool tablero::estaEnJaque(bool colorBlanco) const {
     return false;
 }
 
+
 const Casilla& tablero::at(int fila, int col) const {
     return grid[fila][col];
 }
+
 
 bool tablero::esJaqueMate(bool colorBlanco) {
     if (!estaEnJaque(colorBlanco))
@@ -246,23 +255,10 @@ bool tablero::esJaqueMate(bool colorBlanco) {
                     for (int f2 = 0; f2 < 8; ++f2) {
                         for (int c2 = 0; c2 < 8; ++c2) {
                             if (pieza->movimientoValido(fila, col, f2, c2, *this)) {
-
-                                // COPIA del tablero
-                                tablero copia = copiar();
-
-                                // Mover pieza en la copia
-                                Pieza* piezaCopia = copia.at(fila, col).getPieza();
-                                copia.at(f2, c2).set(piezaCopia);
-                                copia.at(fila, col).set(nullptr);
-                                piezaCopia->setFila(f2);
-                                piezaCopia->setColumna(c2);
-
-                               
-                                //copia.aplicarGravedad();
-
-                           
-                                if (!copia.estaEnJaque(colorBlanco))
-                                    return false;
+                                // Usamos la simulación desde el objeto global Juego
+                                if (Juego.simularMovimientoConGravedadYVerificar(fila, col, f2, c2)) {
+                                    return false;  // Existe al menos un movimiento que salva al rey
+                                }
                             }
                         }
                     }
@@ -271,8 +267,9 @@ bool tablero::esJaqueMate(bool colorBlanco) {
         }
     }
 
-    return true; // No hay escapatoria posible
+    return true;  // Ningún movimiento salva al rey
 }
+
 
 
 tablero tablero::copiar() const {

@@ -28,7 +28,7 @@ public:
 	void iniciarArrastre(int x, int y);  //Se llama cuando el usuario pulsa el ratón sobre una pieza para empezar a arrastrarla 
 	void actualizarArrastre(int x, int y);  //Se llama mientras el usuario mueve el ratón con la pieza seleccionada
 	void finalizarArrastre(int x, int y);  //Se llama cuando el usuario suelta la pieza en una casilla destino
-
+	bool simularMovimientoConGravedadYVerificar(int filaOrigen, int colOrigen, int filaDestino, int colDestino);
 	
 
 };
