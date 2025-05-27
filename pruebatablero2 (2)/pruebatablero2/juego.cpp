@@ -121,6 +121,14 @@ void juego::finalizarArrastre(int x, int y) {
                 piezaArrastrada->setPosicionGrafica();
                 cout << "Movimiento realizado." << endl;
             
+                if (turnoBlanco) {
+                    ETSIDI::play("sonidos/astro_move.mp3"); // Sonido para piezas blancas
+                }
+                else {
+                    ETSIDI::play("sonidos/alien_move2.mp3");  // Sonido para piezas negras
+                }
+
+
                 if (Tablero.estaEnJaque(!turnoBlanco)) {
                     cout << "¡" << (turnoBlanco ? "BLANCO" : "NEGRO") << " está en JAQUE!" << endl;
                     if (Tablero.esJaqueMate(turnoBlanco)) {

@@ -12,7 +12,7 @@ enum ResultadoPartida {
 class PantaFinal {
 private:
     ResultadoPartida resultado = EN_CURSO;
-    //ResultadoPartida resultado = GANA_BLANCAS;
+   // ResultadoPartida resultado = GANA_BLANCAS;
 
 
 public:
