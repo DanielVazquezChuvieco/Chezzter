@@ -8,6 +8,7 @@
 #include "Rey.h"
 #include <iostream>
 #include "ETSIDI.h"
+#include "tablero.h"
 
 using namespace std;
 
@@ -138,7 +139,6 @@ void juego::finalizarArrastre(int x, int y) {
     }
     piezaArrastrada = nullptr;
     arrastrando = false;
-    Tablero.aplicarGravedad();  // Aplica gravedad definitiva
     glutPostRedisplay();
 }
 

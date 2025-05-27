@@ -1,89 +1,89 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\",
+  "WorkspaceRootPath": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Torre.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Rey.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Reina.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:juego.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Torre.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Caballo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Alfil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Torre.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Rey.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Reina.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Caballo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Alfil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:juego.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Rey.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Alfil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Rey.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Reina.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Caballo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Alfil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Torre.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Reina.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Caballo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4B5BC8A6-A2DE-441A-8541-AB53E3B7618E}|pruebatablero2.vcxproj|solutionrelative:Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -94,52 +94,145 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "tablero.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.cpp",
-              "RelativeDocumentMoniker": "tablero.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.cpp",
-              "RelativeToolTip": "tablero.cpp",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAUwKkAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Source.cpp",
+              "RelativeDocumentMoniker": "Source.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Source.cpp",
+              "RelativeToolTip": "Source.cpp",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADoAAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T08:52:53.026Z"
+              "WhenOpened": "2025-05-07T15:21:10.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "juego.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.cpp",
+              "RelativeDocumentMoniker": "juego.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.cpp",
+              "RelativeToolTip": "juego.cpp",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAJcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-08T09:06:06.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "tablero.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.h",
+              "RelativeDocumentMoniker": "tablero.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.h",
+              "RelativeToolTip": "tablero.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-08T08:52:50.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "tablero.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.cpp",
+              "RelativeDocumentMoniker": "tablero.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.cpp",
+              "RelativeToolTip": "tablero.cpp",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAALIAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-08T08:52:53.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "juego.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.h",
+              "RelativeDocumentMoniker": "juego.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.h",
+              "RelativeToolTip": "juego.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-08T09:04:57.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "peon.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.cpp",
+              "RelativeDocumentMoniker": "peon.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.cpp",
+              "RelativeToolTip": "peon.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAUwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-08T09:54:38.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "peon.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.h",
+              "RelativeDocumentMoniker": "peon.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.h",
+              "RelativeToolTip": "peon.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-08T09:53:23.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Pieza.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.h",
+              "RelativeDocumentMoniker": "Pieza.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.h",
+              "RelativeToolTip": "Pieza.h",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAACYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-13T08:59:07.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Pieza.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.cpp",
+              "RelativeDocumentMoniker": "Pieza.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.cpp",
+              "RelativeToolTip": "Pieza.cpp",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-13T08:59:33.174Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Source.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Source.cpp",
-              "RelativeDocumentMoniker": "Source.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Source.cpp",
-              "RelativeToolTip": "Source.cpp",
-              "ViewState": "AgIAADEAAAAAAAAAAAAUwD8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-07T15:21:10.433Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Torre.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.cpp",
               "RelativeDocumentMoniker": "Torre.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.cpp",
               "RelativeToolTip": "Torre.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-14T11:52:51.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "Rey.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.cpp",
               "RelativeDocumentMoniker": "Rey.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.cpp",
               "RelativeToolTip": "Rey.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -147,11 +240,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
+              "Title": "Rey.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.h",
+              "RelativeDocumentMoniker": "Rey.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.h",
+              "RelativeToolTip": "Rey.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-13T09:26:02.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Reina.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.cpp",
               "RelativeDocumentMoniker": "Reina.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.cpp",
               "RelativeToolTip": "Reina.cpp",
               "ViewState": "AgIAACkAAAAAAAAAAAAUwEMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -159,47 +265,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Pieza.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.cpp",
-              "RelativeDocumentMoniker": "Pieza.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.cpp",
-              "RelativeToolTip": "Pieza.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-13T08:59:33.174Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "peon.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.cpp",
-              "RelativeDocumentMoniker": "peon.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.cpp",
-              "RelativeToolTip": "peon.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwCAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T09:54:38.824Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "juego.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.cpp",
-              "RelativeDocumentMoniker": "juego.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.cpp",
-              "RelativeToolTip": "juego.cpp",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAUwIoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-08T09:06:06.334Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Casilla.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.cpp",
               "RelativeDocumentMoniker": "Casilla.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.cpp",
               "RelativeToolTip": "Casilla.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -207,11 +277,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "Caballo.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.cpp",
               "RelativeDocumentMoniker": "Caballo.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.cpp",
               "RelativeToolTip": "Caballo.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -219,11 +289,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Alfil.cpp",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.cpp",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.cpp",
               "RelativeDocumentMoniker": "Alfil.cpp",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.cpp",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.cpp",
               "RelativeToolTip": "Alfil.cpp",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -231,11 +301,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "Torre.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.h",
               "RelativeDocumentMoniker": "Torre.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Torre.h",
               "RelativeToolTip": "Torre.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -243,35 +313,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "tablero.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.h",
-              "RelativeDocumentMoniker": "tablero.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\tablero.h",
-              "RelativeToolTip": "tablero.h",
+              "DocumentIndex": 11,
+              "Title": "Alfil.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.h",
+              "RelativeDocumentMoniker": "Alfil.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.h",
+              "RelativeToolTip": "Alfil.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T08:52:50.394Z"
+              "WhenOpened": "2025-05-13T09:25:34.994Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Rey.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.h",
-              "RelativeDocumentMoniker": "Rey.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Rey.h",
-              "RelativeToolTip": "Rey.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-13T09:26:02.825Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Reina.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.h",
               "RelativeDocumentMoniker": "Reina.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Reina.h",
               "RelativeToolTip": "Reina.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -279,35 +338,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Pieza.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.h",
-              "RelativeDocumentMoniker": "Pieza.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Pieza.h",
-              "RelativeToolTip": "Pieza.h",
-              "ViewState": "AgIAABYAAAAAAAAAAAAUwCcAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-13T08:59:07.288Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "peon.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.h",
-              "RelativeDocumentMoniker": "peon.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\peon.h",
-              "RelativeToolTip": "peon.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T09:53:23.534Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Caballo.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.h",
               "RelativeDocumentMoniker": "Caballo.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Caballo.h",
               "RelativeToolTip": "Caballo.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -315,35 +350,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Alfil.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.h",
-              "RelativeDocumentMoniker": "Alfil.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Alfil.h",
-              "RelativeToolTip": "Alfil.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-13T09:25:34.994Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "juego.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.h",
-              "RelativeDocumentMoniker": "juego.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\juego.h",
-              "RelativeToolTip": "juego.h",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAUwCQAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-08T09:04:57.963Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 20,
               "Title": "Casilla.h",
-              "DocumentMoniker": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.h",
+              "DocumentMoniker": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.h",
               "RelativeDocumentMoniker": "Casilla.h",
-              "ToolTip": "E:\\repositoriodegithubbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.h",
+              "ToolTip": "E:\\Repositoriodegithubbbb\\Chezzter\\pruebatablero2 (2)\\pruebatablero2\\Casilla.h",
               "RelativeToolTip": "Casilla.h",
               "ViewState": "AgIAAAIAAAAAAAAAAAAswBkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",

@@ -176,26 +176,24 @@ void tablero::colocapiezas() {
 }
 
 
-void tablero::aplicarGravedad() {
-    for (int col = 0; col < columnas; ++col) { //recorre todas las columnas
-        for (int fila = filas - 2; fila >= 0; --fila) { // recorre todas las filas desde la penultima(no puede caer más si esta en la última)
-            if (grid[fila][col].hayPieza()) { //verifica si hay pieza
-                int nuevaFila = fila; //guarda fila actual pieza
-                while (nuevaFila + 1 < filas && !grid[nuevaFila + 1][col].hayPieza()) {// recorre de la fila siguiente hasta que encuentre una pieza
-                    nuevaFila++;
-                }
-                if (nuevaFila != fila) { // si la nueva fila es distinta de la fila inicial
-                    Pieza* pieza = grid[fila][col].getPieza();// cogemos la pieza original(el puntero)
-                    grid[nuevaFila][col].set(pieza);//la colocamos en la nueva fila
-                    grid[fila][col].set(nullptr);//liberamos la anterior
-                    pieza->setFila(nuevaFila);//actualiza posicíon interna
-                    pieza->setColumna(col);
-                    pieza->setPosicionGrafica(); // actualiza visualmente la pieza
-                }
+bool tablero::aplicarGravedad() {  //Booleana para devolver a la función timer del source 0 1 e iniciar el timer
+    bool huboMovimiento = false;
+    for (int col = 0; col < columnas; ++col) {  //Recorremos todas las columnas del tablero
+        for (int fila = filas - 2; fila >= 0; --fila) {  //Recorremos las filas desde la penúltima hasta la primera
+            if (grid[fila][col].hayPieza() && !grid[fila + 1][col].hayPieza()) {  // Si hay una pieza en la casilla actual y la casilla de abajo está vacía
+                Pieza* pieza = grid[fila][col].getPieza();  //Obtenemos la pieza de la casilla actual
+                grid[fila + 1][col].set(pieza); //Movemos la pieza a la casilla de abajo
+                grid[fila][col].set(nullptr);  //Borramos la referencia de la casilla actual
+                pieza->setFila(fila + 1);  //Actualizamos la fila de la pieza
+                pieza->setColumna(col); //La columna sigue siendo la misma
+                pieza->setPosicionGrafica();  //Actualizamos posición gráfica
+                huboMovimiento = true;  //Indicamos que hubo al menos un movimiento
             }
         }
     }
+    return huboMovimiento;   //Si hubo movimiento devuelve true
 }
+
 
 Pieza* tablero::encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const {
     for (int fila = 0; fila < 8; ++fila) {

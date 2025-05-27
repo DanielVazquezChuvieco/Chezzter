@@ -30,5 +30,5 @@ public:
 	void finalizarArrastre(int x, int y);  //Se llama cuando el usuario suelta la pieza en una casilla destino
 	bool simularMovimientoConGravedadYVerificar(int filaOrigen, int colOrigen, int filaDestino, int colDestino);
 	
-
+	tablero& getTablero() { return Tablero; }  //Te devuelve el tablero para la animación de gravedad
 };
