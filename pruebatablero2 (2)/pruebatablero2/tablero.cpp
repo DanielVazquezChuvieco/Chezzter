@@ -112,7 +112,7 @@ void tablero::dibuja() {
 }
 
 // PROBAR JAQUE MATE
-/*void tablero::colocapiezas() {
+void tablero::colocapiezas() {
     // Limpiar tablero
     for (int fila = 0; fila < filas; ++fila)
         for (int col = 0; col < columnas; ++col)
@@ -129,9 +129,9 @@ void tablero::dibuja() {
 
 
     at(6, 2).set(new Torre(6, 2, true)); 
-}*/
+}
 
-
+/*
 void tablero::colocapiezas() {
     for (int fil = 0; fil < filas; ++fil) {
         at(fil, 6).set(new peon(fil, 6, true));  // true = blanco
@@ -174,7 +174,7 @@ void tablero::colocapiezas() {
     at(3, 0).set(new Rey(3, 0, false));  // false = negro
 
 }
-
+*/
 
 bool tablero::aplicarGravedadAccion() {  //Booleana para devolver a la función timer del source 0 1 e iniciar el timer
     bool huboMovimiento = false;

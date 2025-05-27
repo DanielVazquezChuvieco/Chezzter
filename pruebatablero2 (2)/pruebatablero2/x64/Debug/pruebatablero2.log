@@ -1,15 +1,4 @@
-﻿  Alfil.cpp
-  Caballo.cpp
-  Pieza.cpp
-C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.cpp(21,30): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\Pieza.cpp(21,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Reina.cpp
-  Rey.cpp
-  Source.cpp
-  Torre.cpp
-  juego.cpp
-  peon.cpp
-  tablero.cpp
+﻿  tablero.cpp
 C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(77,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
 C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(77,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
 C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(78,55): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
@@ -21,6 +10,4 @@ C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima 
 C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(93,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
 C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(100,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
 C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(248,110): warning C4566: el carácter representado por el nombre de carácter universal '\u2192' no se puede representar en la página de códigos actual (1252)
-  Generando código...
-C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\Rey.cpp(15): warning C4715: 'Rey::movimientoValido': no todas las rutas de acceso de control devuelven un valor
   pruebatablero2.vcxproj -> C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\CUARTO\INFO\Chezzter\ultima version\Chezzter\pruebatablero2 (2)\pruebatablero2\Chezzter\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe
