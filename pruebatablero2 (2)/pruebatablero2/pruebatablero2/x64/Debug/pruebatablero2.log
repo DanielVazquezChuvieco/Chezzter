@@ -1,15 +1,17 @@
 ﻿  juego.cpp
+  PantaFinal.cpp
+  Source.cpp
   tablero.cpp
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(77,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(77,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(78,55): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(78,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(79,57): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(79,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(80,29): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(80,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(93,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(100,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(226,110): warning C4566: el carácter representado por el nombre de carácter universal '\u2192' no se puede representar en la página de códigos actual (1252)
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(77,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(77,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(78,55): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(78,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(79,57): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(79,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(80,29): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(80,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(93,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(100,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\tablero.cpp(226,110): warning C4566: el carácter representado por el nombre de carácter universal '\u2192' no se puede representar en la página de códigos actual (1252)
   Generando código...
-  pruebatablero2.vcxproj -> E:\Repositoriodegithubbbb\Chezzter\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe
+  pruebatablero2.vcxproj -> C:\Users\jvald\Desktop\CURSO 24 - 25\2do CUATRI\INFO\Trabajo\Chezzter\LA_ULTIMA\Chezzter\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe

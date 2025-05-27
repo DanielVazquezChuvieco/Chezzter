@@ -15,6 +15,13 @@ using namespace std;
 
 void juego::dibuja()
 {
+
+    if (pantallaFinal.getResultado() != EN_CURSO) {
+        std::cout << "FINAL: dibujando pantalla final\n";
+
+        pantallaFinal.dibujar();
+        return;
+    }
     Tablero.dibuja();  //Dibuja el tablero y piezasen pantalla
 }
 
@@ -118,6 +125,12 @@ void juego::finalizarArrastre(int x, int y) {
                     cout << "¡" << (turnoBlanco ? "BLANCO" : "NEGRO") << " está en JAQUE!" << endl;
                     if (Tablero.esJaqueMate(turnoBlanco)) {
                         cout << "¡JAQUE MATE! Ha ganado " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
+
+                        // Asignar ganador y mostrar pantalla final
+                      
+                    pantallaFinal.setResultado(turnoBlanco ? GANA_BLANCAS : GANA_NEGRAS);
+                    glutPostRedisplay();
+                    return; 
                     }
                 }
 
