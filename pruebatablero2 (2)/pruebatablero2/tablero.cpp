@@ -176,7 +176,7 @@ void tablero::colocapiezas() {
 }
 
 
-bool tablero::aplicarGravedad() {  //Booleana para devolver a la función timer del source 0 1 e iniciar el timer
+bool tablero::aplicarGravedadAccion() {  //Booleana para devolver a la función timer del source 0 1 e iniciar el timer
     bool huboMovimiento = false;
     for (int col = 0; col < columnas; ++col) {  //Recorremos todas las columnas del tablero
         for (int fila = filas - 2; fila >= 0; --fila) {  //Recorremos las filas desde la penúltima hasta la primera
@@ -192,6 +192,28 @@ bool tablero::aplicarGravedad() {  //Booleana para devolver a la función timer 
         }
     }
     return huboMovimiento;   //Si hubo movimiento devuelve true
+}
+
+
+void tablero::aplicarGravedad() {
+    for (int col = 0; col < columnas; ++col) { //recorre todas las columnas
+        for (int fila = filas - 2; fila >= 0; --fila) { // recorre todas las filas desde la penultima(no puede caer más si esta en la última)
+            if (grid[fila][col].hayPieza()) { //verifica si hay pieza
+                int nuevaFila = fila; //guarda fila actual pieza
+                while (nuevaFila + 1 < filas && !grid[nuevaFila + 1][col].hayPieza()) {// recorre de la fila siguiente hasta que encuentre una pieza
+                    nuevaFila++;
+                }
+                if (nuevaFila != fila) { // si la nueva fila es distinta de la fila inicial
+                    Pieza* pieza = grid[fila][col].getPieza();// cogemos la pieza original(el puntero)
+                    grid[nuevaFila][col].set(pieza);//la colocamos en la nueva fila
+                    grid[fila][col].set(nullptr);//liberamos la anterior
+                    pieza->setFila(nuevaFila);//actualiza posicíon interna
+                    pieza->setColumna(col);
+                    pieza->setPosicionGrafica(); // actualiza visualmente la pieza
+                }
+            }
+        }
+    }
 }
 
 

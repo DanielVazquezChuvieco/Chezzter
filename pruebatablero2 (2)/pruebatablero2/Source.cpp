@@ -66,7 +66,7 @@ void onMouseDrag(int x, int y) {
 }
 
 void timerGravedad(int value) {
-    if (Juego.getTablero().aplicarGravedad()) {   //aplicarGravedad devuelve true si hubo movimiento
+    if (Juego.getTablero().aplicarGravedadAccion()) {   //aplicarGravedad devuelve true si hubo movimiento
         glutPostRedisplay();  //Entonces si se ha indicado movimiento, el temporizador solo sigue activo mientras haya piezas quepuedan caer
         glutTimerFunc(300, timerGravedad, 0); // 300 ms entre pasos
     }
