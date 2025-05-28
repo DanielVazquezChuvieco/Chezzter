@@ -72,7 +72,6 @@ void juego::actualizarArrastre(int x, int y) {
         glutPostRedisplay();  //LLamada al glutPostRedisplay para redibujar la pantalla
     }
 }
-
 void juego::finalizarArrastre(int x, int y) {
     cout << "\n=== FINALIZANDO ARRASTRE ===" << endl;
 
@@ -83,6 +82,17 @@ void juego::finalizarArrastre(int x, int y) {
         cout << "Destino: (" << filaDestino << ", " << colDestino << ")" << endl;
         cout << "Pieza: " << piezaArrastrada->nombre() << endl;
 
+        // ✔ Comprobación de límites
+        if (filaDestino < 0 || filaDestino >= 8 || colDestino < 0 || colDestino >= 8) {
+            cout << "Destino fuera de límites. Movimiento cancelado." << endl;
+            piezaArrastrada->setPosicionGrafica();
+            piezaArrastrada = nullptr;
+            arrastrando = false;
+            glutPostRedisplay();
+            return;
+        }
+
+        // ✔ Movimiento nulo (soltar en la misma casilla)
         if (filaDestino == filaOrigen && colDestino == colOrigen) {
             cout << "Movimiento nulo." << endl;
             piezaArrastrada->setPosicionGrafica();
@@ -92,16 +102,18 @@ void juego::finalizarArrastre(int x, int y) {
             return;
         }
 
+        // ✔ Comprobar si el movimiento es válido para la pieza
         bool movimientoValido = piezaArrastrada->movimientoValido(
             filaOrigen, colOrigen, filaDestino, colDestino, Tablero
         );
 
         cout << "Movimiento (" << piezaArrastrada->nombre() << "): " << (movimientoValido ? "VALIDO" : "INVALIDO") << endl;
 
-        if (movimientoValido && filaDestino >= 0 && filaDestino < 8 && colDestino >= 0 && colDestino < 8) {
+        if (movimientoValido) {
+            // Guardar la pieza en destino (por si hay que deshacer)
             Pieza* compjaque = Tablero.at(filaDestino, colDestino).getPieza();
 
-            // Simular movimiento con gravedad para verificar si el rey queda en jaque
+            // ✔ Verificar que no deja en jaque tras aplicar gravedad
             if (!simularMovimientoConGravedadYVerificar(filaOrigen, colOrigen, filaDestino, colDestino)) {
                 cout << "Tu rey quedaría en jaque tras aplicar la gravedad. Movimiento cancelado." << endl;
 
@@ -113,51 +125,48 @@ void juego::finalizarArrastre(int x, int y) {
                 piezaArrastrada->setPosicionGrafica();
             }
             else {
-                // Movimiento aceptado
+                // ✔ Movimiento aceptado y realizado
                 Tablero.at(filaDestino, colDestino).set(piezaArrastrada);
                 Tablero.at(filaOrigen, colOrigen).set(nullptr);
                 piezaArrastrada->setFila(filaDestino);
                 piezaArrastrada->setColumna(colDestino);
                 piezaArrastrada->setPosicionGrafica();
                 cout << "Movimiento realizado." << endl;
-            
-                if (turnoBlanco) {
-                    ETSIDI::play("sonidos/astro_move.mp3"); // Sonido para piezas blancas
-                }
-                else {
-                    ETSIDI::play("sonidos/alien_move2.mp3");  // Sonido para piezas negras
-                }
 
+                // Sonido según turno
+                if (turnoBlanco)
+                    ETSIDI::play("sonidos/astro_move.mp3");
+                else
+                    ETSIDI::play("sonidos/alien_move2.mp3");
 
+              
+
+                
                 if (Tablero.estaEnJaque(!turnoBlanco)) {
                     cout << "¡" << (turnoBlanco ? "BLANCO" : "NEGRO") << " está en JAQUE!" << endl;
-                    if (Tablero.esJaqueMate(turnoBlanco)) {
+                    if (Tablero.esJaqueMate(!turnoBlanco)) {
                         cout << "¡JAQUE MATE! Ha ganado " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
-
-                        // Asignar ganador y mostrar pantalla final
-                      
-                    pantallaFinal.setResultado(turnoBlanco ? GANA_BLANCAS : GANA_NEGRAS);
-                    glutPostRedisplay();
-                    return; 
+                        pantallaFinal.setResultado(turnoBlanco ? GANA_BLANCAS : GANA_NEGRAS);
+                        glutPostRedisplay();
+                        return;
                     }
                 }
+                
 
-                // Cambiar el turno
+                // ✔ Cambio de turno
                 turnoBlanco = !turnoBlanco;
                 cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
             }
-          
         }
         else {
             cout << "Movimiento inválido. Revisa límites o reglas de la pieza." << endl;
             piezaArrastrada->setPosicionGrafica();
         }
-
-
     }
     else {
         cout << "No había pieza seleccionada al soltar." << endl;
     }
+
     piezaArrastrada = nullptr;
     arrastrando = false;
     glutPostRedisplay();
@@ -165,21 +174,46 @@ void juego::finalizarArrastre(int x, int y) {
 
 
 bool juego::simularMovimientoConGravedadYVerificar(int filaOrigen, int colOrigen, int filaDestino, int colDestino) {
-    tablero copia = Tablero.copiar();
 
-    Pieza* pieza = copia.at(filaOrigen, colOrigen).getPieza();
+       
+        tablero copia = Tablero.copiar();
 
-    if (!pieza->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, copia))
-        return false;
+        if (filaOrigen < 0 || filaOrigen >= 8 || colOrigen < 0 || colOrigen >= 8 ||
+            filaDestino < 0 || filaDestino >= 8 || colDestino < 0 || colDestino >= 8) {
+            std::cerr << "[ERROR] Coordenadas fuera de rango: origen (" << filaOrigen << ", " << colOrigen
+                << ") destino (" << filaDestino << ", " << colDestino << ")" << std::endl;
+            return false;
+        }
 
-    // Movimiento simulado
-    copia.at(filaDestino, colDestino).set(pieza);
-    copia.at(filaOrigen, colOrigen).set(nullptr);
-    pieza->setFila(filaDestino);
-    pieza->setColumna(colDestino);
+    
+        Pieza* pieza = copia.at(filaOrigen, colOrigen).getPieza();
+        if (!pieza) {
+            std::cerr << "[ERROR] No hay pieza en (" << filaOrigen << ", " << colOrigen << ") en la copia" << std::endl;
+            return false;
+        }
 
-    // Aplicar gravedad
-    copia.aplicarGravedad();
-    // Verificar si el rey queda en jaque
-    return !copia.estaEnJaque(pieza->esBlanca());
+       
+        if (!pieza->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, copia)) {
+            return false;
+        }
+
+
+        copia.at(filaDestino, colDestino).set(pieza);
+        copia.at(filaOrigen, colOrigen).set(nullptr);
+        pieza->setFila(filaDestino);
+        pieza->setColumna(colDestino);
+
+     
+        copia.aplicarGravedad();
+
+        int filaRey, colRey;
+        Pieza* rey = copia.encontrarRey(pieza->esBlanca(), filaRey, colRey);
+        if (!rey) {
+            std::cerr << "[ERROR] El rey ha desaparecido tras la gravedad" << std::endl;
+            return false;
+        }
+
+        return !copia.estaEnJaque(pieza->esBlanca());
+
+  
 }

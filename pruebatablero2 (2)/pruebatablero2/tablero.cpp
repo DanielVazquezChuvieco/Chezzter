@@ -24,8 +24,10 @@ tablero::tablero() {
     colocapiezas();
 }
 
-Casilla& tablero::at(int fila, int columna) {
-    return grid[fila][columna];
+Casilla& tablero::at(int fila, int col) {
+    if (fila < 0 || fila >= filas || col < 0 || col >= columnas)
+        throw std::out_of_range("Índice fuera de rango en tablero::at()");
+    return grid[fila][col];
 }
 
 
@@ -119,19 +121,21 @@ void tablero::colocapiezas() {
             at(fila, col).set(nullptr);
 
  
-    at(7, 0).set(new Rey(7, 0, false));  
+    at(6, 0).set(new Rey(6, 0, true));  
+    at(7, 0).set(new peon(7, 0, true));
 
 
-    at(5, 2).set(new Rey(5, 2, true));   
+    at(7, 3).set(new Rey(7, 3, false));   
 
    
-    at(0, 7).set(new Torre(0, 7, true));
+    at(6, 7).set(new Torre(6, 7, true));
+    at(7, 7).set(new peon(7, 7, true));
 
 
-    at(6, 2).set(new Torre(6, 2, true)); 
+    
 }
-
 /*
+
 void tablero::colocapiezas() {
     for (int fil = 0; fil < filas; ++fil) {
         at(fil, 6).set(new peon(fil, 6, true));  // true = blanco
@@ -234,18 +238,20 @@ Pieza* tablero::encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const 
 }
 bool tablero::estaEnJaque(bool colorBlanco) const {
     int filaRey, colRey;
-    if (!encontrarRey(colorBlanco, filaRey, colRey)) return false;
+    if (!encontrarRey(colorBlanco, filaRey, colRey)) {
+        std::cerr << "[ERROR] No se encontró el rey en el tablero" << std::endl;
+        return false;
+    }
 
     for (int fila = 0; fila < 8; ++fila) {
         for (int col = 0; col < 8; ++col) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* pieza = grid[fila][col].getPieza();
-                if (pieza->esBlanca() != colorBlanco) { // enemigo
-                    bool amenaza = pieza->movimientoValido(fila, col, filaRey, colRey, *this);
-                    if (amenaza) {
-                        cout << "  " << pieza->nombre() << " (" << (pieza->esBlanca() ? "BLANCA" : "NEGRA")
-                            << ") en (" << fila << ", " << col << ") amenaza al REY "
-                            << (colorBlanco ? "BLANCO" : "NEGRO") << " en (" << filaRey << ", " << colRey << ") → JAQUE" << endl;
+
+                // Solo nos interesan las piezas enemigas
+                if (pieza->esBlanca() != colorBlanco) {
+                    // Simulamos si esta pieza puede atacar al rey
+                    if (pieza->movimientoValido(fila, col, filaRey, colRey, *this)) {
                         return true;
                     }
                 }
@@ -257,27 +263,37 @@ bool tablero::estaEnJaque(bool colorBlanco) const {
 }
 
 
+
+
+
 const Casilla& tablero::at(int fila, int col) const {
+    if (fila < 0 || fila >= filas || col < 0 || col >= columnas) {
+        throw std::out_of_range("Índice fuera del tablero en tablero::at()");
+    }
     return grid[fila][col];
 }
 
 
 bool tablero::esJaqueMate(bool colorBlanco) {
-    if (!estaEnJaque(colorBlanco))
+    // Si el rey no está en jaque, no puede haber jaque mate
+    if (!estaEnJaque(colorBlanco)) {
         return false;
+    }
 
+    // Recorremos todas las piezas aliadas
     for (int fila = 0; fila < 8; ++fila) {
         for (int col = 0; col < 8; ++col) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* pieza = grid[fila][col].getPieza();
 
                 if (pieza->esBlanca() == colorBlanco) {
+                    // Probar todos los movimientos posibles de esta pieza
                     for (int f2 = 0; f2 < 8; ++f2) {
                         for (int c2 = 0; c2 < 8; ++c2) {
                             if (pieza->movimientoValido(fila, col, f2, c2, *this)) {
-                                // Usamos la simulación desde el objeto global Juego
+                                // Simulamos movimiento + gravedad
                                 if (Juego.simularMovimientoConGravedadYVerificar(fila, col, f2, c2)) {
-                                    return false;  // Existe al menos un movimiento que salva al rey
+                                    return false; // Hay al menos un movimiento que salva al rey
                                 }
                             }
                         }
@@ -287,7 +303,7 @@ bool tablero::esJaqueMate(bool colorBlanco) {
         }
     }
 
-    return true;  // Ningún movimiento salva al rey
+    return true; // No hay forma de salvar al rey
 }
 
 

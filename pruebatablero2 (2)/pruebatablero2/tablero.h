@@ -20,7 +20,7 @@ public:
 	void aplicarGravedad();
 	Pieza* encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const;
 	bool estaEnJaque(bool colorBlanco) const;
-	const Casilla& at(int fila, int col) const;
+    const Casilla& at(int fila, int col) const;
 	bool esJaqueMate(bool colorBlanco) ;
 	tablero copiar() const;
 
@@ -28,3 +28,4 @@ public:
 
 };
 
+ 

@@ -1,34 +1,39 @@
 #include "peon.h"
 
 bool peon::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) {
-    int direccion = esBlancoPieza ? -1 : 1; // Blancos se mueven a la izquierda, negros a la derecha
-    int columnaInicial = esBlancoPieza ? 6 : 1; // Columna desde la que pueden avanzar 2 pasos
+    int direccion = esBlancoPieza ? -1 : 1;
+    int columnaInicial = esBlancoPieza ? 6 : 1;
+
     if (intentaComerSuPropioRey(filaDestino, colDestino, Tablero))
         return false;
 
-    // Movimiento horizontal simple
+    // Movimiento hacia adelante (mismo fila, cambia columna)
     if (filaOrigen == filaDestino) {
-        // Una casilla hacia adelante
-        if (colDestino == colOrigen + direccion && !Tablero.at(filaDestino, colDestino).hayPieza())
-            return true;
+        // Una casilla adelante
+        if (colDestino == colOrigen + direccion) {
+            if (colDestino >= 0 && colDestino < 8 && !Tablero.at(filaDestino, colDestino).hayPieza())
+                return true;
+        }
 
-        // Dos casillas desde la posición inicial
-        bool enPosicionInicial = (colOrigen == columnaInicial);
-        bool avanzaDos = (colDestino == colOrigen + 2 * direccion);
-
-        bool intermediaLibre = !Tablero.at(filaDestino, colOrigen + direccion).hayPieza();
-        bool destinoLibre = !Tablero.at(filaDestino, colDestino).hayPieza();
-
-        if (enPosicionInicial && avanzaDos && intermediaLibre && destinoLibre)
-            return true;
+        // Dos casillas desde posición inicial
+        if (colOrigen == columnaInicial && colDestino == colOrigen + 2 * direccion) {
+            int intermedia = colOrigen + direccion;
+            if (intermedia >= 0 && intermedia < 8 && colDestino >= 0 && colDestino < 8 &&
+                !Tablero.at(filaDestino, intermedia).hayPieza() &&
+                !Tablero.at(filaDestino, colDestino).hayPieza()) {
+                return true;
+            }
+        }
     }
 
-    // Captura en vertical (una fila arriba o abajo)
-    bool esVertical = abs(filaDestino - filaOrigen) == 1;
-    bool esAdelante = colDestino == colOrigen + direccion;
-    bool hayPieza = Tablero.at(filaDestino, colDestino).hayPieza();
+    // Captura vertical (una fila arriba o abajo)
+    bool esMovimientoDiagonal = abs(filaDestino - filaOrigen) == 1;
+    bool esHaciaAdelante = colDestino == colOrigen + direccion;
+    bool hayPieza = (colDestino >= 0 && colDestino < 8 && filaDestino >= 0 && filaDestino < 8)
+        ? Tablero.at(filaDestino, colDestino).hayPieza()
+        : false;
 
-    if (esVertical && esAdelante && hayPieza)
+    if (esMovimientoDiagonal && esHaciaAdelante && hayPieza)
         return true;
 
     return false;
