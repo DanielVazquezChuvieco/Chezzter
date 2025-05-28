@@ -23,5 +23,6 @@ public:
         return new Alfil(fila, columna, esBlanca());
     }
 
+
 };
 
