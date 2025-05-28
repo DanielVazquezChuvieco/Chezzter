@@ -24,10 +24,8 @@ tablero::tablero() {
     colocapiezas();
 }
 
-Casilla& tablero::at(int fila, int col) {
-    if (fila < 0 || fila >= filas || col < 0 || col >= columnas)
-        throw std::out_of_range("Índice fuera de rango en tablero::at()");
-    return grid[fila][col];
+Casilla& tablero::at(int fila, int columna) {
+    return grid[fila][columna];
 }
 
 
@@ -113,6 +111,30 @@ void tablero::dibuja() {
     }
 }
 
+
+//EL JODE VIDAS
+void tablero::colocapiezas() {
+    // Limpiar tablero
+    for (int fila = 0; fila < filas; ++fila)
+        for (int col = 0; col < columnas; ++col)
+            at(fila, col).set(nullptr);
+
+
+    at(6, 0).set(new Rey(6, 0, true));
+    at(7, 0).set(new peon(7, 0, true));
+
+
+    at(7, 3).set(new Rey(7, 3, false));
+
+
+    at(6, 7).set(new Torre(6, 7, true));
+    at(7, 7).set(new peon(7, 7, true));
+
+
+
+}
+
+/*
 // PROBAR JAQUE MATE
 void tablero::colocapiezas() {
     // Limpiar tablero
@@ -121,21 +143,19 @@ void tablero::colocapiezas() {
             at(fila, col).set(nullptr);
 
  
-    at(6, 0).set(new Rey(6, 0, true));  
-    at(7, 0).set(new peon(7, 0, true));
+    at(7, 0).set(new Rey(7, 0, false));  
 
 
-    at(7, 3).set(new Rey(7, 3, false));   
+    at(5, 5).set(new Rey(5, 5, true));   
 
    
-    at(6, 7).set(new Torre(6, 7, true));
-    at(7, 7).set(new peon(7, 7, true));
+    at(0, 7).set(new Torre(0, 7, true));
 
 
-    
+    at(6, 2).set(new Torre(6, 2, true)); 
 }
+*/
 /*
-
 void tablero::colocapiezas() {
     for (int fil = 0; fil < filas; ++fil) {
         at(fil, 6).set(new peon(fil, 6, true));  // true = blanco
@@ -177,26 +197,7 @@ void tablero::colocapiezas() {
     // Rey negros 
     at(3, 0).set(new Rey(3, 0, false));  // false = negro
 
-}
-*/
-
-bool tablero::aplicarGravedadAccion() {  //Booleana para devolver a la función timer del source 0 1 e iniciar el timer
-    bool huboMovimiento = false;
-    for (int col = 0; col < columnas; ++col) {  //Recorremos todas las columnas del tablero
-        for (int fila = filas - 2; fila >= 0; --fila) {  //Recorremos las filas desde la penúltima hasta la primera
-            if (grid[fila][col].hayPieza() && !grid[fila + 1][col].hayPieza()) {  // Si hay una pieza en la casilla actual y la casilla de abajo está vacía
-                Pieza* pieza = grid[fila][col].getPieza();  //Obtenemos la pieza de la casilla actual
-                grid[fila + 1][col].set(pieza); //Movemos la pieza a la casilla de abajo
-                grid[fila][col].set(nullptr);  //Borramos la referencia de la casilla actual
-                pieza->setFila(fila + 1);  //Actualizamos la fila de la pieza
-                pieza->setColumna(col); //La columna sigue siendo la misma
-                pieza->setPosicionGrafica();  //Actualizamos posición gráfica
-                huboMovimiento = true;  //Indicamos que hubo al menos un movimiento
-            }
-        }
-    }
-    return huboMovimiento;   //Si hubo movimiento devuelve true
-}
+}*/
 
 
 void tablero::aplicarGravedad() {
@@ -220,7 +221,6 @@ void tablero::aplicarGravedad() {
     }
 }
 
-
 Pieza* tablero::encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const {
     for (int fila = 0; fila < 8; ++fila) {
         for (int col = 0; col < 8; ++col) {
@@ -238,20 +238,15 @@ Pieza* tablero::encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const 
 }
 bool tablero::estaEnJaque(bool colorBlanco) const {
     int filaRey, colRey;
-    if (!encontrarRey(colorBlanco, filaRey, colRey)) {
-        std::cerr << "[ERROR] No se encontró el rey en el tablero" << std::endl;
-        return false;
-    }
+    if (!encontrarRey(colorBlanco, filaRey, colRey)) return false;
 
     for (int fila = 0; fila < 8; ++fila) {
         for (int col = 0; col < 8; ++col) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* pieza = grid[fila][col].getPieza();
-
-                // Solo nos interesan las piezas enemigas
-                if (pieza->esBlanca() != colorBlanco) {
-                    // Simulamos si esta pieza puede atacar al rey
+                if (pieza->esBlanca() != colorBlanco) {  // enemigo
                     if (pieza->movimientoValido(fila, col, filaRey, colRey, *this)) {
+                        std::cout << "Rey en (" << filaRey << ", " << colRey << ") está en jaque" << std::endl;
                         return true;
                     }
                 }
@@ -261,39 +256,46 @@ bool tablero::estaEnJaque(bool colorBlanco) const {
 
     return false;
 }
-
-
-
-
-
 const Casilla& tablero::at(int fila, int col) const {
-    if (fila < 0 || fila >= filas || col < 0 || col >= columnas) {
-        throw std::out_of_range("Índice fuera del tablero en tablero::at()");
-    }
     return grid[fila][col];
 }
 
 
 bool tablero::esJaqueMate(bool colorBlanco) {
-    // Si el rey no está en jaque, no puede haber jaque mate
-    if (!estaEnJaque(colorBlanco)) {
+    if (!estaEnJaque(colorBlanco))
         return false;
-    }
 
-    // Recorremos todas las piezas aliadas
+    // Probar todos los movimientos posibles de las piezas del jugador
     for (int fila = 0; fila < 8; ++fila) {
         for (int col = 0; col < 8; ++col) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* pieza = grid[fila][col].getPieza();
-
                 if (pieza->esBlanca() == colorBlanco) {
-                    // Probar todos los movimientos posibles de esta pieza
                     for (int f2 = 0; f2 < 8; ++f2) {
                         for (int c2 = 0; c2 < 8; ++c2) {
-                            if (pieza->movimientoValido(fila, col, f2, c2, *this)) {
-                                // Simulamos movimiento + gravedad
-                                if (Juego.simularMovimientoConGravedadYVerificar(fila, col, f2, c2)) {
-                                    return false; // Hay al menos un movimiento que salva al rey
+                            tablero copia = this->copiar();
+
+                            Pieza* pCopia = copia.at(fila, col).getPieza();
+                            if (!pCopia) {
+                                ;
+
+                                // Validamos movimiento en la copia
+                                if (!pCopia->movimientoValido(fila, col, f2, c2, copia)) {
+                                    ;
+
+                                    // Simular el movimiento
+                                    copia.at(f2, c2).set(pCopia);
+                                    copia.at(fila, col).set(nullptr);
+                                    pCopia->setFila(f2);
+                                    pCopia->setColumna(c2);
+
+                                    // Aplicar la gravedad
+                                    copia.aplicarGravedad();
+
+                                    // Verificar si el rey sigue en jaque
+                                    if (!copia.estaEnJaque(colorBlanco)) {
+                                        return false;  // Hay un movimiento que salva al rey
+                                    }
                                 }
                             }
                         }
@@ -303,7 +305,7 @@ bool tablero::esJaqueMate(bool colorBlanco) {
         }
     }
 
-    return true; // No hay forma de salvar al rey
+    return true;  // Ningún movimiento salva al rey
 }
 
 

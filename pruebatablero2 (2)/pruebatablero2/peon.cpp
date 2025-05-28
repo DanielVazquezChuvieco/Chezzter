@@ -38,12 +38,3 @@ bool peon::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int 
 
     return false;
 }
-
-
-
-
-
-
-
-
-

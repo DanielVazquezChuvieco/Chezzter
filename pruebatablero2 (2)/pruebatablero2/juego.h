@@ -4,7 +4,6 @@
 #include <string>
 #include <iostream>
 #include <cstring>
-#include "PantaFinal.h"
 
 class juego        //1 Se encarga de guardar el estado del tablero y las piezas
 	//2 Dibujar lo anteriormente mecionado
@@ -13,7 +12,6 @@ class juego        //1 Se encarga de guardar el estado del tablero y las piezas
 {
 
 	tablero Tablero;   //Objeto que representa el tablero de ajedrez y todas sus piezas y casillas
-	PantaFinal pantallaFinal;
 
 	// Variables para movimiento de piezas por arrastre con ratón
 	bool arrastrando = false;   //Indica si el usuario está arrastrando una pieza con el ratón
@@ -32,5 +30,5 @@ public:
 	void finalizarArrastre(int x, int y);  //Se llama cuando el usuario suelta la pieza en una casilla destino
 	bool simularMovimientoConGravedadYVerificar(int filaOrigen, int colOrigen, int filaDestino, int colDestino);
 	
-	tablero& getTablero() { return Tablero; }  //Te devuelve el tablero para la animación de gravedad
+
 };

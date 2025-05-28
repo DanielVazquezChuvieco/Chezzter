@@ -7,7 +7,6 @@ juego Juego;
 void onDraw(); // esta función será llamada para dibujar
 void onMouseClick(int button, int state, int x, int y);
 void onMouseDrag(int x, int y);  //Nueva función de arrastre
-void timerGravedad(int value);  //Temporizador para la animación de gravedad
 
 // Función principal del programa
 int main(int argc, char** argv) {
@@ -56,18 +55,10 @@ void onMouseClick(int button, int state, int x, int y) {
         }
         else if (state == GLUT_UP) {
             Juego.finalizarArrastre(x, y);
-            glutTimerFunc(300, timerGravedad, 0);  //Se hace aquí la llamada al timer para que inicie cuando se suelta la figura
         }
     }
 }
 
 void onMouseDrag(int x, int y) {
     Juego.actualizarArrastre(x, y);
-}
-
-void timerGravedad(int value) {
-    if (Juego.getTablero().aplicarGravedadAccion()) {   //aplicarGravedad devuelve true si hubo movimiento
-        glutPostRedisplay();  //Entonces si se ha indicado movimiento, el temporizador solo sigue activo mientras haya piezas quepuedan caer
-        glutTimerFunc(300, timerGravedad, 0); // 300 ms entre pasos
-    }
 }
