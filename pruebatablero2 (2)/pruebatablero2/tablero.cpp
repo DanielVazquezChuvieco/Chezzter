@@ -246,7 +246,7 @@ bool tablero::estaEnJaque(bool colorBlanco) const {
                 Pieza* pieza = grid[fila][col].getPieza();
                 if (pieza->esBlanca() != colorBlanco) {  // enemigo
                     if (pieza->movimientoValido(fila, col, filaRey, colRey, *this)) {
-                        std::cout << "Rey en (" << filaRey << ", " << colRey << ") está en jaque" << std::endl;
+                       // std::cout << "Rey en (" << filaRey << ", " << colRey << ") esta en jaque" << std::endl;
                         return true;
                     }
                 }

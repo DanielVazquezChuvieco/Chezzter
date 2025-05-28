@@ -31,11 +31,11 @@ void juego::iniciarArrastre(int x, int y) {
         if (Tablero.at(fila, col).hayPieza()) {   //Si hay una pieza en la casilla, obtiene un puntero a la pieza y muestra su tipo y color
             Pieza* pieza = Tablero.at(fila, col).getPieza(); // Se coje la posición de la pieza pulsada
             bool esBlanca = pieza->esBlanca(); // Se obtien el color
-            std::string colorPieza = esBlanca ? "BLANCO" : "NEGRO";
-            cout << "Pieza encontrada: " << pieza->nombre() << " Color: " << colorPieza << endl; //para pillar el tipo de pieza que es, se podría hacer con polimorfismo, pero esto es más comodo
+            //std::string colorPieza = esBlanca ? "BLANCO" : "NEGRO";
+            cout << "Pieza encontrada: " << pieza->nombre() << " de los: " << (esBlanca ? "Astronautas" : "Aliens") << endl; //para pillar el tipo de pieza que es, se podría hacer con polimorfismo, pero esto es más comodo
 
             if (esBlanca != turnoBlanco) { //Default Turnoblanco = 1
-                cout << "Intento de mover pieza contraria! Turno actual: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
+                cout << "Intento de mover pieza contraria! Turno actual: " << (turnoBlanco ? "Astronautas" : "Aliens") << endl;
                 return;
             }
             //Si es el turno correcto, guarda la pieza
@@ -48,11 +48,11 @@ void juego::iniciarArrastre(int x, int y) {
             piezaArrastrada->setPosicionGraficaPixel(x, y);  //actualiza la posición gráfica de la pieza del drag
         }
         else {
-            cout << "No hay pieza en (" << fila << ", " << col << ")" << endl;  //Si no hay pieza lo indica
+            cout << "No hay vida en (" << fila << ", " << col << ")" << endl;  //Si no hay pieza lo indica
         }
     }
     else {
-        cout << "Click fuera del tablero" << endl;  //Si está fuera del tablero lo indica
+        cout << "Click fuera de la galxia" << endl;  //Si está fuera del tablero lo indica
     }
 }
 
@@ -88,14 +88,14 @@ void juego::finalizarArrastre(int x, int y) {
         std::cout << "Intentando mover " << piezaArrastrada->nombre()
             << " de (" << filaOrigen << ", " << colOrigen << ") a ("
             << filaDestino << ", " << colDestino << "): "
-            << (movimientoValido ? "VÁLIDO" : "INVÁLIDO") << std::endl;
+            << (movimientoValido ? "Valido" : "Invalido") << std::endl;
 
         if (movimientoValido && filaDestino >= 0 && filaDestino < 8 && colDestino >= 0 && colDestino < 8) {
             Pieza* destinoAnterior = Tablero.at(filaDestino, colDestino).getPieza();
 
             // Simular para evitar mover a jaque
             if (!simularMovimientoConGravedadYVerificar(filaOrigen, colOrigen, filaDestino, colDestino)) {
-                std::cout << "Movimiento dejaría al rey en jaque. Cancelado." << std::endl;
+                std::cout << "Movimiento dejaria al rey en jaque. No se puede." << std::endl;
                 piezaArrastrada->setPosicionGrafica();
             }
             else {
@@ -114,24 +114,24 @@ void juego::finalizarArrastre(int x, int y) {
                 // Verificar jaque y jaque mate al rival
                 bool rivalBlanco = !turnoBlanco;
                 if (Tablero.estaEnJaque(rivalBlanco)) {
-                    std::cout << "¡" << (rivalBlanco ? "BLANCO" : "NEGRO") << " está en JAQUE!" << std::endl;
+                    std::cout<<"CUIDADO " << (rivalBlanco ? "ASTRONAUTAS" : "ALIENS") << " esta en JAQUE!" << std::endl;
                     if (Tablero.esJaqueMate(rivalBlanco)) {
-                        std::cout << "¡JAQUE MATE! Ha ganado " << (turnoBlanco ? "BLANCO" : "NEGRO") << std::endl;
+                        std::cout << "JAQUE MATE! Han ganado " << (turnoBlanco ? "ASTRONAUTAS" : "ALIENS") << std::endl;
                     }
                 }
 
                 // Cambiar turno tras todo el proceso
                 turnoBlanco = !turnoBlanco;
-                std::cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << std::endl;
+                std::cout << "Nuevo turno: " << (turnoBlanco ? "Astronautas" : "Aliens") << std::endl;
             }
         }
         else {
-            std::cout << "Movimiento inválido." << std::endl;
+            std::cout << "Movimiento invalido." << std::endl;
             piezaArrastrada->setPosicionGrafica();
         }
     }
     else {
-        std::cout << "No había pieza seleccionada." << std::endl;
+        std::cout << "No hay vida seleccionada en ese hueco." << std::endl;
     }
 
     piezaArrastrada = nullptr;
