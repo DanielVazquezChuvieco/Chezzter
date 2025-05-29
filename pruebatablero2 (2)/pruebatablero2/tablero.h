@@ -23,7 +23,7 @@ public:
 	bool esJaqueMate(bool colorBlanco) ;
 	tablero copiar() const;
 
-
+	void animarCaidaGravedad();
 
 };
 

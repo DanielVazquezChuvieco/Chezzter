@@ -12,10 +12,14 @@
 using namespace std;
 
 
-void juego::dibuja()
-{
-    Tablero.dibuja();  //Dibuja el tablero y piezasen pantalla
+void juego::dibuja() {
+    Tablero.dibuja();
+    if (!arrastrando) {
+        Tablero.animarCaidaGravedad();  // Solo animación visual
+    }
 }
+
+
 
 
 void juego::iniciarArrastre(int x, int y) {

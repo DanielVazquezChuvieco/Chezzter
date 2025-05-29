@@ -325,3 +325,40 @@ tablero tablero::copiar() const {
     }
     return copia;
 }
+
+void tablero::animarCaidaGravedad() {
+    for (int col = 0; col < columnas; ++col) {
+        for (int fila = filas - 2; fila >= 0; --fila) {
+            if (grid[fila][col].hayPieza()) {
+                Pieza* pieza = grid[fila][col].getPieza();
+                int destino = fila;
+
+                // Buscar la fila más baja disponible en esa columna
+                while (destino + 1 < filas && !grid[destino + 1][col].hayPieza()) {
+                    destino++;
+                }
+
+                // Si hay caída visual
+                if (destino != fila) {
+                    // Calcular posición gráfica actual y destino en Y
+                    float yActual = Constantes::margenX + pieza->getFila() * Constantes::tamanoCasilla + Constantes::tamanoCasilla / 2.0f - 25;
+                    float yDestino = Constantes::margenX + destino * Constantes::tamanoCasilla + Constantes::tamanoCasilla / 2.0f - 25;
+
+                    float velocidad = 4.0f;
+                    float nuevaY = yActual + velocidad;
+                    if (nuevaY > yDestino) nuevaY = yDestino;
+
+                    // Posición en X constante (según columna)
+                    float x = Constantes::margenX + col * Constantes::tamanoCasilla + Constantes::tamanoCasilla / 2.0f - 25;
+
+                    // Actualizar visualmente la posición del sprite
+                    pieza->sprite->setPos(x, nuevaY);
+                }
+            }
+        }
+    }
+
+    // Pedir redibujado continuo
+    glutPostRedisplay();
+}
+
