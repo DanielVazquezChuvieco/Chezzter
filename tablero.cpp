@@ -113,6 +113,7 @@ void tablero::dibuja() {
 
 
 //EL JODE VIDAS
+/*
 void tablero::colocapiezas() {
     // Limpiar tablero
     for (int fila = 0; fila < filas; ++fila)
@@ -132,7 +133,7 @@ void tablero::colocapiezas() {
 
 
 
-}
+}*/
 
 /*
 // PROBAR JAQUE MATE
@@ -155,7 +156,7 @@ void tablero::colocapiezas() {
     at(6, 2).set(new Torre(6, 2, true)); 
 }
 */
-/*
+
 void tablero::colocapiezas() {
     for (int fil = 0; fil < filas; ++fil) {
         at(fil, 6).set(new peon(fil, 6, true));  // true = blanco
@@ -197,7 +198,7 @@ void tablero::colocapiezas() {
     // Rey negros 
     at(3, 0).set(new Rey(3, 0, false));  // false = negro
 
-}*/
+}
 
 
 void tablero::aplicarGravedad() {

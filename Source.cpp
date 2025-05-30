@@ -1,13 +1,14 @@
 ﻿#include "freeglut.h"
 #include "tablero.h"
 #include "juego.h"
+#include "Coordinador.h"
 
-juego Juego;
-
+juego Juegos;
+Coordinador coordinador;
 void onDraw(); // esta función será llamada para dibujar
 void onMouseClick(int button, int state, int x, int y);
 void onMouseDrag(int x, int y);  //Nueva función de arrastre
-
+void OnKeyboardDown(unsigned char key, int x_t, int y_t);
 void timerGravedad(int value);  //Temporizador para la animación de gravedad
 
 //void timerGravedad(int value);  //Temporizador para la animación de gravedad
@@ -39,7 +40,7 @@ int main(int argc, char** argv) {
     glutDisplayFunc(onDraw);
     glutMouseFunc(onMouseClick);
     glutMotionFunc(onMouseDrag);  //Movimiento con botón pulsado
-
+    glutKeyboardFunc(OnKeyboardDown);
     // Bucle principal de GLUT
     glutMainLoop();
 
@@ -49,38 +50,51 @@ int main(int argc, char** argv) {
 void onDraw() {
     glClear(GL_COLOR_BUFFER_BIT);
     glDisable(GL_LIGHTING);
-    Juego.dibuja();
+    coordinador.dibujapantallamenu();
+    if (coordinador.getEstado() == JUEGO) {
+        Juegos.dibuja();
+    }
     glutSwapBuffers();
 }
 
 void onMouseClick(int button, int state, int x, int y) {
-    if (button == GLUT_LEFT_BUTTON) {
-        if (state == GLUT_DOWN) {
-            Juego.iniciarArrastre(x, y);
-        }
-        else if (state == GLUT_UP) {
-            Juego.finalizarArrastre(x, y);
+        if (button == GLUT_LEFT_BUTTON) {
+            if (state == GLUT_DOWN) {
+                Juegos.iniciarArrastre(x, y);
+            }
+            else if (state == GLUT_UP) {
+                Juegos.finalizarArrastre(x, y);
 
-            glutTimerFunc(300, timerGravedad, 0);
+                glutTimerFunc(300, timerGravedad, 0);
 
+            }
         }
-    }
+    glutPostRedisplay();
 }
 
 void onMouseDrag(int x, int y) {
-    Juego.actualizarArrastre(x, y);
+   
+        Juegos.actualizarArrastre(x, y);
+    
+    glutPostRedisplay();
 }
 
 void timerGravedad(int value) {
 
-    if (Juego.getTablero().aplicarGravedadAccion()) {
-        glutPostRedisplay();
-        glutTimerFunc(300, timerGravedad, 0);  // animación continua
-    }
-    else {
-        Juego.postGravedad();  // cuando termina la gravedad
-        glutPostRedisplay();
-    }
+   
+        if (Juegos.getTablero().aplicarGravedadAccion()) {
+            glutPostRedisplay();
+            glutTimerFunc(300, timerGravedad, 0);
+        }
+        else {
+            Juegos.postGravedad();
+            glutPostRedisplay();
+        }
+    
 }
 
-        
+void OnKeyboardDown(unsigned char key, int x_t, int y_t)  {
+
+    coordinador.tecla(key);
+    glutPostRedisplay();
+}

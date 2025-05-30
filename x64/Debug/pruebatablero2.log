@@ -1,2 +1,14 @@
-﻿  juego.cpp
-  pruebatablero2.vcxproj -> C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\pruebatablero2 (2)\pruebatablero2\x64\Debug\pruebatablero2.exe
+﻿  Source.cpp
+  tablero.cpp
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(77,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(77,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(78,55): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(78,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(79,57): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(79,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(80,29): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(80,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(93,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\tablero.cpp(100,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+  Generando código...
+  pruebatablero2.vcxproj -> C:\Users\mmval\OneDrive\Documentos\UNIVERSIDAD MANU\Chezzter\x64\Debug\pruebatablero2.exe
