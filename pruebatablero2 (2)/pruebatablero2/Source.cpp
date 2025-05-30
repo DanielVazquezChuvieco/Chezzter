@@ -8,6 +8,11 @@ void onDraw(); // esta función será llamada para dibujar
 void onMouseClick(int button, int state, int x, int y);
 void onMouseDrag(int x, int y);  //Nueva función de arrastre
 
+void timerGravedad(int value);  //Temporizador para la animación de gravedad
+
+//void timerGravedad(int value);  //Temporizador para la animación de gravedad
+
+
 // Función principal del programa
 int main(int argc, char** argv) {
     // Inicializamos GLUT (sistema de ventanas)
@@ -55,6 +60,9 @@ void onMouseClick(int button, int state, int x, int y) {
         }
         else if (state == GLUT_UP) {
             Juego.finalizarArrastre(x, y);
+
+            glutTimerFunc(300, timerGravedad, 0);
+
         }
     }
 }
@@ -62,3 +70,17 @@ void onMouseClick(int button, int state, int x, int y) {
 void onMouseDrag(int x, int y) {
     Juego.actualizarArrastre(x, y);
 }
+
+void timerGravedad(int value) {
+
+    if (Juego.getTablero().aplicarGravedadAccion()) {
+        glutPostRedisplay();
+        glutTimerFunc(300, timerGravedad, 0);  // animación continua
+    }
+    else {
+        Juego.postGravedad();  // cuando termina la gravedad
+        glutPostRedisplay();
+    }
+}
+
+        

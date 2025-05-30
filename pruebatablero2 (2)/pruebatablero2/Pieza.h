@@ -33,9 +33,6 @@ public:
     virtual bool esRey() const { return false; }
 
     virtual Pieza* clonar() const = 0;  
-    int getFila() const { return fila; }
-    int getColumna() const { return columna; }
-
 
 protected:
     bool intentaComerSuPropioRey(int filaDestino, int colDestino, const tablero& Tablero) const;

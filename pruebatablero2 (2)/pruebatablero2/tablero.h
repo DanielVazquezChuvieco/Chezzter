@@ -17,13 +17,14 @@ public:
 	void colocapiezas();  //Posiciona las piezas en sus casillas iniciales
 	Casilla& at(int fila, int columna);  //Método de acceso a las casillas específicas,  SE VA A VER MUCHO MÁS ADELANTE EN EL MOVIMIENTO DE LAS PIEZAS!!
 	void aplicarGravedad();  //Mécanica específica del trabajo para que las piezas caigan a la posición más baja en su columna
+	bool aplicarGravedadAccion();
 	Pieza* encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const;
 	bool estaEnJaque(bool colorBlanco) const;
 	const Casilla& at(int fila, int col) const;
 	bool esJaqueMate(bool colorBlanco) ;
 	tablero copiar() const;
 
-	void animarCaidaGravedad();
+
 
 };
 

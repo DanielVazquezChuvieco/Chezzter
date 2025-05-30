@@ -214,12 +214,30 @@ void tablero::aplicarGravedad() {
                     grid[fila][col].set(nullptr);//liberamos la anterior
                     pieza->setFila(nuevaFila);//actualiza posicíon interna
                     pieza->setColumna(col);
-                    pieza->setPosicionGrafica(); // actualiza visualmente la pieza
+                   // pieza->setPosicionGrafica(); // actualiza visualmente la pieza
                 }
             }
         }
     }
 }
+bool tablero::aplicarGravedadAccion() {  //Booleana para devolver a la función timer del source 0 1 e iniciar el timer
+    bool huboMovimiento = false;
+    for (int col = 0; col < columnas; ++col) {  //Recorremos todas las columnas del tablero
+        for (int fila = filas - 2; fila >= 0; --fila) {  //Recorremos las filas desde la penúltima hasta la primera
+            if (grid[fila][col].hayPieza() && !grid[fila + 1][col].hayPieza()) {  // Si hay una pieza en la casilla actual y la casilla de abajo está vacía
+                Pieza* pieza = grid[fila][col].getPieza();  //Obtenemos la pieza de la casilla actual
+                grid[fila + 1][col].set(pieza); //Movemos la pieza a la casilla de abajo
+                grid[fila][col].set(nullptr);  //Borramos la referencia de la casilla actual
+                pieza->setFila(fila + 1);  //Actualizamos la fila de la pieza
+                pieza->setColumna(col); //La columna sigue siendo la misma
+                pieza->setPosicionGrafica();  //Actualizamos posición gráfica
+                huboMovimiento = true;  //Indicamos que hubo al menos un movimiento
+            }
+        }
+    }
+    return huboMovimiento;   //Si hubo movimiento devuelve true
+}
+
 
 Pieza* tablero::encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const {
     for (int fila = 0; fila < 8; ++fila) {
@@ -246,7 +264,7 @@ bool tablero::estaEnJaque(bool colorBlanco) const {
                 Pieza* pieza = grid[fila][col].getPieza();
                 if (pieza->esBlanca() != colorBlanco) {  // enemigo
                     if (pieza->movimientoValido(fila, col, filaRey, colRey, *this)) {
-                       // std::cout << "Rey en (" << filaRey << ", " << colRey << ") esta en jaque" << std::endl;
+                        std::cout << "Rey en (" << filaRey << ", " << colRey << ") está en jaque" << std::endl;
                         return true;
                     }
                 }
@@ -277,12 +295,10 @@ bool tablero::esJaqueMate(bool colorBlanco) {
 
                             Pieza* pCopia = copia.at(fila, col).getPieza();
                             if (!pCopia) {
-                                ;
-
+                                
                                 // Validamos movimiento en la copia
                                 if (!pCopia->movimientoValido(fila, col, f2, c2, copia)) {
-                                    ;
-
+                                 
                                     // Simular el movimiento
                                     copia.at(f2, c2).set(pCopia);
                                     copia.at(fila, col).set(nullptr);
@@ -325,40 +341,3 @@ tablero tablero::copiar() const {
     }
     return copia;
 }
-
-void tablero::animarCaidaGravedad() {
-    for (int col = 0; col < columnas; ++col) {
-        for (int fila = filas - 2; fila >= 0; --fila) {
-            if (grid[fila][col].hayPieza()) {
-                Pieza* pieza = grid[fila][col].getPieza();
-                int destino = fila;
-
-                // Buscar la fila más baja disponible en esa columna
-                while (destino + 1 < filas && !grid[destino + 1][col].hayPieza()) {
-                    destino++;
-                }
-
-                // Si hay caída visual
-                if (destino != fila) {
-                    // Calcular posición gráfica actual y destino en Y
-                    float yActual = Constantes::margenX + pieza->getFila() * Constantes::tamanoCasilla + Constantes::tamanoCasilla / 2.0f - 25;
-                    float yDestino = Constantes::margenX + destino * Constantes::tamanoCasilla + Constantes::tamanoCasilla / 2.0f - 25;
-
-                    float velocidad = 4.0f;
-                    float nuevaY = yActual + velocidad;
-                    if (nuevaY > yDestino) nuevaY = yDestino;
-
-                    // Posición en X constante (según columna)
-                    float x = Constantes::margenX + col * Constantes::tamanoCasilla + Constantes::tamanoCasilla / 2.0f - 25;
-
-                    // Actualizar visualmente la posición del sprite
-                    pieza->sprite->setPos(x, nuevaY);
-                }
-            }
-        }
-    }
-
-    // Pedir redibujado continuo
-    glutPostRedisplay();
-}
-
