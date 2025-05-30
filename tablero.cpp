@@ -87,14 +87,14 @@ void tablero::dibuja() {
 
     //Estas funciones se encargan de asignar letras y numeros a las casillas
     for (int col = 0; col < columnas; col++) {
-        char caracter = 'a' + col;
+        char caracter = '0' + col;
         glColor3f(1.0f, 1.0f, 1.0f); // color negro
         glRasterPos2f(Constantes::margenX
             + Constantes::tamanoCasilla / 2 + col * Constantes::tamanoCasilla, 75); //Encargada de posicionar el caracter
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, caracter); //Escribe en la tipologia elegida el caracter
     }
     for (int fila = 0; fila < filas; fila++) {
-        char caracter = '1' + fila;
+        char caracter = '0' + fila;
         glColor3f(1.0f, 1.0f, 1.0f); // color negro
         glRasterPos2f(75, Constantes::margenX
             + Constantes::tamanoCasilla / 2 + fila * Constantes::tamanoCasilla);
@@ -113,7 +113,7 @@ void tablero::dibuja() {
 
 
 //EL JODE VIDAS
-/*
+
 void tablero::colocapiezas() {
     // Limpiar tablero
     for (int fila = 0; fila < filas; ++fila)
@@ -133,7 +133,7 @@ void tablero::colocapiezas() {
 
 
 
-}*/
+}
 
 /*
 // PROBAR JAQUE MATE
@@ -156,7 +156,7 @@ void tablero::colocapiezas() {
     at(6, 2).set(new Torre(6, 2, true)); 
 }
 */
-
+/*
 void tablero::colocapiezas() {
     for (int fil = 0; fil < filas; ++fil) {
         at(fil, 6).set(new peon(fil, 6, true));  // true = blanco
@@ -199,7 +199,7 @@ void tablero::colocapiezas() {
     at(3, 0).set(new Rey(3, 0, false));  // false = negro
 
 }
-
+*/
 
 void tablero::aplicarGravedad() {
     for (int col = 0; col < columnas; ++col) { //recorre todas las columnas

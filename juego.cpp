@@ -8,13 +8,24 @@
 #include "Rey.h"
 #include <iostream>
 #include "ETSIDI.h"
+#include <cstdlib>
 
 using namespace std;
 
 
 void juego::dibuja()
 {
-    Tablero.dibuja();  //Dibuja el tablero y piezasen pantalla
+    if (coordinador.getEstado() == GANA_BLANCAS|| coordinador.getEstado() == GANA_NEGRAS) {
+        std::cout << "FINAL: dibujando pantalla final\n";
+
+        coordinador.dibujapantallamenu();
+        std::cout << "DESPUESl\n";
+
+        return;
+    }
+
+    //std::cout << "JUEGO: dibujando tablero\n";
+    Tablero.dibuja();
 }
 
 
@@ -166,10 +177,22 @@ void juego::postGravedad() {
         std::cout << "¡" << (rivalBlanco ? "BLANCO" : "NEGRO") << " está en JAQUE!" << std::endl;
         if (Tablero.esJaqueMate(rivalBlanco)) {
             std::cout << "¡JAQUE MATE! Ha ganado " << (turnoBlanco ? "NEGRO" : "BLANCO") << std::endl;
+            coordinador.setResultado((turnoBlanco ? GANA_NEGRAS : GANA_BLANCAS));
+
+            glutPostRedisplay();
+            return;
         }
     }
 
     // Cambiar turno tras todo el proceso
    //turnoBlanco = !turnoBlanco;
  //  std::cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << std::endl;
+}
+
+void juego::reiniciarJuego(){
+    Tablero.colocapiezas();
+    turnoBlanco = true;
+ //  system("cls");
+    cout << "Juego REINICIADO Empiezan blancas" << endl;
+    coordinador.setResultado(MENU);
 }

@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <cstring>
+#include "Coordinador.h"
 
 class juego        //1 Se encarga de guardar el estado del tablero y las piezas
 	//2 Dibujar lo anteriormente mecionado
@@ -12,7 +13,7 @@ class juego        //1 Se encarga de guardar el estado del tablero y las piezas
 {
 
 	tablero Tablero;   //Objeto que representa el tablero de ajedrez y todas sus piezas y casillas
-
+	Coordinador coordinador;
 	// Variables para movimiento de piezas por arrastre con ratón
 	bool arrastrando = false;   //Indica si el usuario está arrastrando una pieza con el ratón
 	int filaOrigen, colOrigen;  //Variables que se van a encargar de guardar la posición de donde se emmpezó a arrastrar la pieza
@@ -31,5 +32,5 @@ public:
 	bool simularMovimientoConGravedadYVerificar(int filaOrigen, int colOrigen, int filaDestino, int colDestino);
 	void postGravedad();
 	tablero& getTablero() { return Tablero; }  //Te devuelve el tablero para la animación de gravedad
-
+	void reiniciarJuego();
 };

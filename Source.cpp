@@ -53,6 +53,7 @@ void onDraw() {
     coordinador.dibujapantallamenu();
     if (coordinador.getEstado() == JUEGO) {
         Juegos.dibuja();
+       
     }
     glutSwapBuffers();
 }
@@ -96,5 +97,9 @@ void timerGravedad(int value) {
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)  {
 
     coordinador.tecla(key);
+    if (coordinador.getEstado() == GANA_BLANCAS || coordinador.getEstado() == GANA_NEGRAS) {
+        if (key == 'R')
+            coordinador.setResultado(MENU);
+    }
     glutPostRedisplay();
 }
