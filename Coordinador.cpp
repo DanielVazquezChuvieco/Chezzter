@@ -2,6 +2,9 @@
 #include "freeglut.h"
 #include "ETSIDI.h"
 #include "juego.h"
+#include <chrono>
+#include <thread>
+
 
 
 juego Juego;
@@ -33,11 +36,13 @@ void Coordinador::dibujapantallamenu() {
 
         // glEnable(GL_LIGHTING);
         glDisable(GL_TEXTURE_2D);
+    //    std::this_thread::sleep_for(std::chrono::milliseconds(3000)); // Espera 3 segundo
 
         break;
     case JUEGO:
         //Juego.reiniciarJuego();
         Juego.dibuja();
+       
 
         
         break;
@@ -100,6 +105,8 @@ void Coordinador::dibujapantallamenu() {
         glDisable(GL_TEXTURE_2D);
         // glDisable(GL_TEXTURE_2D);
          //glutSwapBuffers();
+       
+        estado = BORRADO;
         break;
     case GANA_NEGRAS:
         //   else if (estado == GANA_NEGRAS) {
@@ -121,7 +128,13 @@ void Coordinador::dibujapantallamenu() {
         // glEnable(GL_LIGHTING);
         glDisable(GL_TEXTURE_2D);
         break;
+    case BORRADO:
+        Juego.reiniciarJuego();
+        break;
+
     }
+
+   
 }
 
 void Coordinador::tecla(unsigned char tecla) {
@@ -131,10 +144,9 @@ void Coordinador::tecla(unsigned char tecla) {
 
     case MENU:
         if (tecla == '1') { // ASCII for '1'
-            Juego.reiniciarJuego();
-            Juego.dibuja();
-
-            glutPostRedisplay;
+            
+           
+            glutPostRedisplay();
             
             estado = JUEGO;
         }
@@ -155,18 +167,17 @@ void Coordinador::tecla(unsigned char tecla) {
         }
         break;
     case JUEGO:
-        Juego.dibuja();
+       // Juego.dibuja();
+       
         if (tecla =='R' || tecla=='r') { // ASCII for '1'
-            Juego.reiniciarJuego();
-            glutPostRedisplay;
-            estado = MENU;
+            estado =  MENU;
             
            
         }
         else if (tecla == 27)
             exit(0);
         break;
-
+ 
 
     case CONTROLES:
         if (tecla == '4') { // ASCII for '1'
@@ -174,30 +185,6 @@ void Coordinador::tecla(unsigned char tecla) {
         }
         break;
 
-    case GANA_BLANCAS:
-
-        std::cout << "Pulsa R para volver al menu y esc para salir";
-        if (tecla == 'W') {
-            estado = MENU;
-            
-            Juego.reiniciarJuego();
-            glutPostRedisplay;
-            
-        }
-        else if (tecla == 27)
-            exit(0);
-        break;
-    case GANA_NEGRAS:
-        //  std::cout << "Pulsa R para volver al menu y esc para salir";
-        if (tecla == 'R' || tecla == 'r') {
-            std::cout << "llego" << std::endl;
-            estado = MENU;
-            Juego.reiniciarJuego();
-            glutPostRedisplay;
-        }
-        else if (tecla == 27)
-            exit(0);
-        break;
     }
 }
 

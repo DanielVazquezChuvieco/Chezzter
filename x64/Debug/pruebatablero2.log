@@ -1,6 +1,16 @@
 ﻿  Coordinador.cpp
-D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\Coordinador.cpp(137,13): warning C4551: la llamada a la función no tiene lista de argumentos
-D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\Coordinador.cpp(161,13): warning C4551: la llamada a la función no tiene lista de argumentos
-D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\Coordinador.cpp(184,13): warning C4551: la llamada a la función no tiene lista de argumentos
-D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\Coordinador.cpp(196,13): warning C4551: la llamada a la función no tiene lista de argumentos
+  Source.cpp
+  juego.cpp
+  tablero.cpp
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(77,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(77,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(78,55): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(78,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(79,57): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(79,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(80,29): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(80,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(93,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\tablero.cpp(100,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+  Generando código...
   pruebatablero2.vcxproj -> D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\x64\Debug\pruebatablero2.exe

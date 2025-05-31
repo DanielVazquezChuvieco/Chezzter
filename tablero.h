@@ -23,6 +23,7 @@ public:
 	const Casilla& at(int fila, int col) const;
 	bool esJaqueMate(bool colorBlanco) ;
 	tablero copiar() const;
+	void limpiar();
 
 
 

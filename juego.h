@@ -33,6 +33,6 @@ public:
 	void postGravedad();
 	tablero& getTablero() { return Tablero; }  //Te devuelve el tablero para la animación de gravedad
 	void reiniciarJuego();
-	//int queJaque();
+	
 	
 };

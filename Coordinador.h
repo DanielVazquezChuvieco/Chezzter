@@ -6,7 +6,8 @@ enum Estado {
     INSTRUCCIONES,
     CONTROLES,
     GANA_BLANCAS,
-    GANA_NEGRAS
+    GANA_NEGRAS,
+    BORRADO
 };
 
 class Coordinador

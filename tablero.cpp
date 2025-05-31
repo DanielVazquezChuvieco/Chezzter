@@ -116,9 +116,7 @@ void tablero::dibuja() {
 
 void tablero::colocapiezas() {
     // Limpiar tablero
-    for (int fila = 0; fila < filas; ++fila)
-        for (int col = 0; col < columnas; ++col)
-            at(fila, col).set(nullptr);
+   // limpiar();
 
 
     at(6, 0).set(new Rey(6, 0, true));
@@ -317,9 +315,18 @@ bool tablero::esJaqueMate(bool colorBlanco) {
         }
     }
 
+    
     return true;  // Ningún movimiento salva al rey
 }
 
+void tablero::limpiar() {
+    for (int fila = 0; fila < filas; ++fila) {
+        for (int col = 0; col < columnas; ++col) {
+            delete grid[fila][col].getPieza();   // Elimina pieza
+            grid[fila][col].set(nullptr);        // Evita puntero colgante
+        }
+    }
+}
 
 
 

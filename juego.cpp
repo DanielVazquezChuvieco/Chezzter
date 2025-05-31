@@ -9,7 +9,8 @@
 #include <iostream>
 #include "ETSIDI.h"
 #include <cstdlib>
-
+#include <chrono>
+#include <thread>
 using namespace std;
 
 
@@ -24,11 +25,14 @@ void juego::dibuja()
         coordinador.dibujapantallamenu();
         std::cout << "DESPUES\n";
 
+      //  Tablero.dibuja();
+        reiniciarJuego();
         return;
 
     }
 
     //std::cout << "JUEGO: dibujando tablero\n";
+    
     Tablero.dibuja();
 }
 
@@ -182,7 +186,9 @@ void juego::postGravedad() {
         if (Tablero.esJaqueMate(rivalBlanco)) {
             std::cout << "¡JAQUE MATE! Ha ganado " << (turnoBlanco ? "NEGRO" : "BLANCO") << std::endl;
             coordinador.setResultado((turnoBlanco ? GANA_NEGRAS : GANA_BLANCAS));
-
+            Tablero.limpiar();
+            //std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Espera 1 segundo
+           // reiniciarJuego();
             glutPostRedisplay();
             return;
         }
@@ -194,6 +200,7 @@ void juego::postGravedad() {
 }
 
 void juego::reiniciarJuego(){
+    
     Tablero.colocapiezas();
     turnoBlanco = true;
  //  system("cls");
