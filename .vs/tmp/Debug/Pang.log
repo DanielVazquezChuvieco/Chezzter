@@ -1,0 +1,27 @@
+﻿  Alfil.cpp
+  Caballo.cpp
+  Casilla.cpp
+  Constantes.cpp
+  Coordinador.cpp
+  juego.cpp
+  peon.cpp
+  Pieza.cpp
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\Pieza.cpp(21,30): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\Pieza.cpp(21,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Reina.cpp
+  Rey.cpp
+  tablero.cpp
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(69,27): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(69,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(70,55): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(70,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(71,57): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(71,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(72,29): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(72,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(83,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\FINAL\src\tablero.cpp(90,45): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+  Torre.cpp
+  pang.cpp
+  Generando código...
+  Pang.vcxproj -> D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\Y FINAL\Chezzter\bin\Pang.exe
