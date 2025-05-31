@@ -15,13 +15,17 @@ using namespace std;
 
 void juego::dibuja()
 {
+
     if (coordinador.getEstado() == GANA_BLANCAS|| coordinador.getEstado() == GANA_NEGRAS) {
         std::cout << "FINAL: dibujando pantalla final\n";
-
+      //  Tablero.dibuja();
+      // if(coordinador.tecla== 'R')
+       
         coordinador.dibujapantallamenu();
-        std::cout << "DESPUESl\n";
+        std::cout << "DESPUES\n";
 
         return;
+
     }
 
     //std::cout << "JUEGO: dibujando tablero\n";
@@ -196,3 +200,6 @@ void juego::reiniciarJuego(){
     cout << "Juego REINICIADO Empiezan blancas" << endl;
     coordinador.setResultado(MENU);
 }
+
+
+

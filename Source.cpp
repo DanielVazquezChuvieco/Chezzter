@@ -97,8 +97,11 @@ void timerGravedad(int value) {
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)  {
 
     coordinador.tecla(key);
+    std::cout << "POLLAS NEGRAS" << std::endl;
     if (coordinador.getEstado() == GANA_BLANCAS || coordinador.getEstado() == GANA_NEGRAS) {
         if (key == 'R')
+
+            std::cout << "Y GORDAS" << std::endl;
             coordinador.setResultado(MENU);
     }
     glutPostRedisplay();

@@ -20,7 +20,7 @@ public:
     void tecla(unsigned char tecla);
     void dibujapantallamenu();
     Estado getEstado();
-    
+
 
 };
 

@@ -1,2 +1,6 @@
-﻿  Source.cpp
+﻿  Coordinador.cpp
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\Coordinador.cpp(137,13): warning C4551: la llamada a la función no tiene lista de argumentos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\Coordinador.cpp(161,13): warning C4551: la llamada a la función no tiene lista de argumentos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\Coordinador.cpp(184,13): warning C4551: la llamada a la función no tiene lista de argumentos
+D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\Coordinador.cpp(196,13): warning C4551: la llamada a la función no tiene lista de argumentos
   pruebatablero2.vcxproj -> D:\Universidad\CURSOS\CUARTO\SEGUNDO CUATRI\INFO\ESTABIEN\Chezzter\x64\Debug\pruebatablero2.exe
