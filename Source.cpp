@@ -41,6 +41,8 @@ int main(int argc, char** argv) {
     glutMotionFunc(onMouseDrag);  //Movimiento con botón pulsado
     glutKeyboardFunc(OnKeyboardDown);
     // Bucle principal de GLUT
+
+   // ETSIDI::play("sonidos/chuvi.mp3");
     glutMainLoop();
 
     return 0;

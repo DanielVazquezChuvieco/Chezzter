@@ -103,31 +103,31 @@ void Coordinador::tecla(unsigned char tecla) {
 
 
     case MENU:
-        if (tecla == '1') { // ASCII for '1'           
+        if (tecla == '1') {          
    
             glutPostRedisplay();
             
             estado = JUEGO;
         }
-        else if (tecla == '2') { // ASCII for '2'
+        else if (tecla == '2') { 
             estado = INSTRUCCIONES;
         }
-        else if (tecla == '3') { // ASCII for '3'
+        else if (tecla == '3') { 
             estado = CONTROLES;
         }
-        else if (tecla == 27) { // ASCII for ESC key
+        else if (tecla == '4') { 
             exit(0);
         }
         break; 
 
     case INSTRUCCIONES:
-        if (tecla == 'A'|| tecla == 'a') { // ASCII for '1'
+        if (tecla == 'A'|| tecla == 'a') { 
             estado = MENU;
         }
         break;
     case JUEGO:
        
-        if (tecla =='R' || tecla=='r') { // ASCII for '1'
+        if (tecla =='R' || tecla=='r') { 
             estado =  MENU;    
         }
         else if (tecla == 27)
@@ -136,7 +136,7 @@ void Coordinador::tecla(unsigned char tecla) {
  
 
     case CONTROLES:
-        if (tecla == 'A' || tecla == 'a') { // ASCII for '1'
+        if (tecla == 'A' || tecla == 'a') { 
             estado = MENU;
         }
         break;

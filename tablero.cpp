@@ -75,17 +75,17 @@ void tablero::dibuja() {
         }
     }
 
-    //Estas funciones se encargan de asignar letras y numeros a las casillas
+    //Estas funciones se encargan de asignar numeros a las casillas
     for (int col = 0; col < columnas; col++) {
         char caracter = '0' + col;
-        glColor3f(1.0f, 1.0f, 1.0f); // color negro
+        glColor3f(1.0f, 1.0f, 1.0f); 
         glRasterPos2f(Constantes::margenX
             + Constantes::tamanoCasilla / 2 + col * Constantes::tamanoCasilla, 75); //Encargada de posicionar el caracter
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, caracter); //Escribe en la tipologia elegida el caracter
     }
     for (int fila = 0; fila < filas; fila++) {
         char caracter = '0' + fila;
-        glColor3f(1.0f, 1.0f, 1.0f); // color negro
+        glColor3f(1.0f, 1.0f, 1.0f); 
         glRasterPos2f(75, Constantes::margenX
             + Constantes::tamanoCasilla / 2 + fila * Constantes::tamanoCasilla);
         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, caracter);
@@ -103,27 +103,27 @@ void tablero::dibuja() {
 
 // AQUI USAMOS NO CONST (at)
 //EL JODE VIDAS
-
+/*
 void tablero::colocapiezas() {
  
 
-    at(6, 0).set(new Rey(6, 0, false));
-    at(7, 0).set(new peon(7, 0, false));
+    at(6, 0).set(new Rey(6, 0, true));
+    at(7, 0).set(new peon(7, 0, true));
 
-    at(7, 3).set(new peon(7, 3, true));
-    at(6, 3).set(new Rey(6, 3, true));
-   // at(7, 2).set(new peon(7, 2, true));
+    at(7, 3).set(new peon(7, 3, false));
+    at(6, 3).set(new Rey(6, 3, false));
+    at(7, 2).set(new peon(7, 2, false));
 
 
-    at(6, 7).set(new Torre(6, 7, false));
-    at(7, 7).set(new peon(7, 7, false));
+    at(6, 7).set(new Torre(6, 7, true));
+    at(7, 7).set(new peon(7, 7, true));
 
 
 
 }
+*/
 
 
-/*
 void tablero::colocapiezas() {
     for (int fil = 0; fil < filas; ++fil) {
         at(fil, 6).set(new peon(fil, 6, true));  // true = blanco
@@ -166,7 +166,7 @@ void tablero::colocapiezas() {
     at(3, 0).set(new Rey(3, 0, false));  // false = negro
 
 }
-*/
+
 
 void tablero::aplicarGravedad() {
     for (int col = 0; col < columnas; col++) { 
