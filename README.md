@@ -1,2 +1,0 @@
-# Chezzter
-Trabajo ajedrez c++
