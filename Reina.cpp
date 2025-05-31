@@ -23,7 +23,7 @@ bool Reina::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int
 
         int f = filaOrigen + pasoFila;
         int c = colOrigen + pasoCol;
-
+         
         // Comprueba si hay piezas en el camino sin incluir destino
         while (f != filaDestino || c != colDestino) {  //recorre todas las casillas entre el origen y el destino
             if (Tablero.at(f, c).hayPieza())  //si encuentra una pieza en el camino devuelve false porque no puede saltarla

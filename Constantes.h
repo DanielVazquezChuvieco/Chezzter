@@ -7,5 +7,5 @@ public:
     static const int anchoPantalla = 800;
     static const int largoPantalla = 800;
     static const int tamanoCasilla = 75;
-
+     
 };

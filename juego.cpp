@@ -8,30 +8,20 @@
 #include "Rey.h"
 #include <iostream>
 #include "ETSIDI.h"
-#include <cstdlib>
-#include <chrono>
-#include <thread>
 using namespace std;
 
 
 void juego::dibuja()
 {
 
-    if (coordinador.getEstado() == GANA_BLANCAS|| coordinador.getEstado() == GANA_NEGRAS) {
-        std::cout << "FINAL: dibujando pantalla final\n";
-      //  Tablero.dibuja();
-      // if(coordinador.tecla== 'R')
-       
-        coordinador.dibujapantallamenu();
-        std::cout << "DESPUES\n";
+    if (coordinador.getEstado() == GANA_BLANCAS || coordinador.getEstado() == GANA_NEGRAS) {
+        cout << "FINAL: dibujando pantalla final" << endl;
 
-      //  Tablero.dibuja();
+        coordinador.dibujapantallamenu();
+
         reiniciarJuego();
         return;
-
     }
-
-    //std::cout << "JUEGO: dibujando tablero\n";
     
     Tablero.dibuja();
 }
@@ -50,8 +40,7 @@ void juego::iniciarArrastre(int x, int y) {
         if (Tablero.at(fila, col).hayPieza()) {   //Si hay una pieza en la casilla, obtiene un puntero a la pieza y muestra su tipo y color
             Pieza* pieza = Tablero.at(fila, col).getPieza(); // Se coje la posición de la pieza pulsada
             bool esBlanca = pieza->esBlanca(); // Se obtien el color
-            std::string colorPieza = esBlanca ? "BLANCO" : "NEGRO";
-            cout << "Pieza encontrada: " << pieza->nombre() << " Color: " << colorPieza << endl; //para pillar el tipo de pieza que es, se podría hacer con polimorfismo, pero esto es más comodo
+            cout << "Pieza encontrada: " << pieza->nombre() << " Color: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl; //para pillar el tipo de pieza que es, se hace con polimorfismo
 
             if (esBlanca != turnoBlanco) { //Default Turnoblanco = 1
                 cout << "Intento de mover pieza contraria! Turno actual: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
@@ -78,7 +67,6 @@ void juego::iniciarArrastre(int x, int y) {
 //Mientras el usuario arrastra la pieza, imprime la posición actual del ratón y actualiza la plsicion gráfica de la pieza para que siga el cursos
 void juego::actualizarArrastre(int x, int y) {
     if (arrastrando && piezaArrastrada) {
-        cout << "Actualizando posicion arrastre: (" << x << ", " << y << ")" << endl;
         piezaArrastrada->setPosicionGraficaPixel(x, y);
         glutPostRedisplay();  //LLamada al glutPostRedisplay para redibujar la pantalla
     }
@@ -90,9 +78,59 @@ void juego::finalizarArrastre(int x, int y) {
     if (arrastrando && piezaArrastrada) {
         int filaDestino = (y - 100) / 75;
         int colDestino = (x - 100) / 75;
+        if (filaDestino >= 0 && filaDestino < 8 && colDestino >= 0 && colDestino < 8) { // Para que no crashe si se va fuera del tablero
+            if (filaDestino == filaOrigen && colDestino == colOrigen) { //Si pieza origen == pieza destino
+                std::cout << "Movimiento nulo." << std::endl;
+                piezaArrastrada->setPosicionGrafica();
+                piezaArrastrada = nullptr;
+                arrastrando = false;
+                glutPostRedisplay();
+                return;
+            }
 
-        if (filaDestino == filaOrigen && colDestino == colOrigen) {
-            std::cout << "Movimiento nulo." << std::endl;
+            bool movimientoValido = piezaArrastrada->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, Tablero);
+
+            cout << "Intentando mover " << piezaArrastrada->nombre()   << " de (" << filaOrigen << ", " << colOrigen << ") a (" << filaDestino << ", " << colDestino << "): " << (movimientoValido ? "VÁLIDO" : "INVÁLIDO") << endl;
+
+            if (movimientoValido && filaDestino >= 0 && filaDestino < 8 && colDestino >= 0 && colDestino < 8) {
+                Pieza* destinoAnterior = Tablero.at(filaDestino, colDestino).getPieza();
+
+                // Simular para evitar mover a jaque
+                if (!simularMovimientoConGravedadYVerificar(filaOrigen, colOrigen, filaDestino, colDestino)) {
+                  cout << "Movimiento dejaría al rey en jaque. Cancelado." << endl;
+                }
+                else {
+                    // Ejecutar el movimiento real
+                    Tablero.at(filaDestino, colDestino).set(piezaArrastrada);
+                    Tablero.at(filaOrigen, colOrigen).set(nullptr);
+                    piezaArrastrada->setFila(filaDestino);
+                    piezaArrastrada->setColumna(colDestino);
+                    piezaArrastrada->setPosicionGrafica();
+
+
+                    cout << "Movimiento realizado correctamente." << endl;
+
+                }
+
+                cout << "Movimiento realizado." << endl;
+                // Sonidos
+                if (turnoBlanco) {
+                    ETSIDI::play("sonidos/astro_move.mp3"); 
+                }
+                else {
+                    ETSIDI::play("sonidos/alien_move2.mp3");  
+                }
+                // Cambio de turno
+                turnoBlanco = !turnoBlanco;
+                cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << endl;
+            }
+            else {
+                cout << "Movimiento inválido." << endl;
+                piezaArrastrada->setPosicionGrafica();
+            }
+        }
+        else {
+            cout << "Movimiento nulo." << endl;
             piezaArrastrada->setPosicionGrafica();
             piezaArrastrada = nullptr;
             arrastrando = false;
@@ -100,69 +138,23 @@ void juego::finalizarArrastre(int x, int y) {
             return;
         }
 
-        bool movimientoValido = piezaArrastrada->movimientoValido(
-            filaOrigen, colOrigen, filaDestino, colDestino, Tablero
-        );
 
-        std::cout << "Intentando mover " << piezaArrastrada->nombre()
-            << " de (" << filaOrigen << ", " << colOrigen << ") a ("
-            << filaDestino << ", " << colDestino << "): "
-            << (movimientoValido ? "VÁLIDO" : "INVÁLIDO") << std::endl;
-
-        if (movimientoValido && filaDestino >= 0 && filaDestino < 8 && colDestino >= 0 && colDestino < 8 ) {
-            Pieza* destinoAnterior = Tablero.at(filaDestino, colDestino).getPieza();
-
-            // Simular para evitar mover a jaque
-            if (!simularMovimientoConGravedadYVerificar(filaOrigen, colOrigen, filaDestino, colDestino)) {
-                std::cout << "Movimiento dejaría al rey en jaque. Cancelado." << std::endl;
-                piezaArrastrada->setPosicionGrafica();
-            }
-            else {
-                // Ejecutar el movimiento real
-                Tablero.at(filaDestino, colDestino).set(piezaArrastrada);
-                Tablero.at(filaOrigen, colOrigen).set(nullptr);
-                piezaArrastrada->setFila(filaDestino);
-                piezaArrastrada->setColumna(colDestino);
-                piezaArrastrada->setPosicionGrafica();
-
-
-                std::cout << "Movimiento realizado correctamente." << std::endl;
-              
-                }    
-
-                cout << "Movimiento realizado." << endl;
-
-                // Sonido segÃºn turno
-                if (turnoBlanco) {
-                    ETSIDI::play("sonidos/astro_move.mp3"); // Sonido para piezas blancas
-                }
-                else {
-                    ETSIDI::play("sonidos/alien_move2.mp3");  // Sonido para piezas negras
-                }
-                turnoBlanco = !turnoBlanco;
-                std::cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << std::endl;
-        }
-        else {
-            std::cout << "Movimiento inválido." << std::endl;
-            piezaArrastrada->setPosicionGrafica();
-        }
     }
     else {
         std::cout << "No había pieza seleccionada." << std::endl;
     }
-    
+    // Reset de parametros para volver a arrastrar
     piezaArrastrada = nullptr;
     arrastrando = false;
     glutPostRedisplay();
 }
 
-
 bool juego::simularMovimientoConGravedadYVerificar(int filaOrigen, int colOrigen, int filaDestino, int colDestino) {
-    tablero copia = Tablero.copiar();
+    tablero copia = Tablero.copiar(); // Copiamos el tablero actual para no modificar el tablero original y poder evaluar
     
     Pieza* pieza = copia.at(filaOrigen, colOrigen).getPieza();
 
-    if (!pieza->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, copia))
+    if (!pieza->movimientoValido(filaOrigen, colOrigen, filaDestino, colDestino, copia)) // Movimiento invalido sale de la funcion
         return false;
 
     // Movimiento simulado
@@ -175,37 +167,28 @@ bool juego::simularMovimientoConGravedadYVerificar(int filaOrigen, int colOrigen
     copia.aplicarGravedad();
 
     // Verificar si el rey queda en jaque
-    return !copia.estaEnJaque(pieza->esBlanca());
+    return !copia.estaEnJaque(pieza->esBlanca()); // Si queda en jaque retur false
 }
 
 void juego::postGravedad() {
-    // Verificar jaque y jaque mate al rival
+    // Verificar jaque y jaque mate 
     bool rivalBlanco = turnoBlanco;
     if (Tablero.estaEnJaque(rivalBlanco)) {
         std::cout << "¡" << (rivalBlanco ? "BLANCO" : "NEGRO") << " está en JAQUE!" << std::endl;
         if (Tablero.esJaqueMate(rivalBlanco)) {
             std::cout << "¡JAQUE MATE! Ha ganado " << (turnoBlanco ? "NEGRO" : "BLANCO") << std::endl;
             coordinador.setResultado((turnoBlanco ? GANA_NEGRAS : GANA_BLANCAS));
-            Tablero.limpiar();
-            //std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // Espera 1 segundo
-           // reiniciarJuego();
             glutPostRedisplay();
             return;
         }
     }
-
-    // Cambiar turno tras todo el proceso
-   //turnoBlanco = !turnoBlanco;
- //  std::cout << "Nuevo turno: " << (turnoBlanco ? "BLANCO" : "NEGRO") << std::endl;
 }
 
 void juego::reiniciarJuego(){
-    
-    Tablero.colocapiezas();
-    turnoBlanco = true;
- //  system("cls");
+    Tablero.limpiar(); // delete de las piezas  
+    Tablero.colocapiezas(); // colocarlas de nuevo
+    turnoBlanco = true; 
     cout << "Juego REINICIADO Empiezan blancas" << endl;
-    coordinador.setResultado(MENU);
 }
 
 

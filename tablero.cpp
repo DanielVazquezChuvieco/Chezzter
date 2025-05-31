@@ -8,24 +8,22 @@
 #include "Reina.h"
 #include "ETSIDI.h"
 #include <iostream>
-#include "juego.h"  // Asegúrate de tener acceso al juego actual si es necesario
-
-extern juego Juego;  // Usa el objeto global definido en Source.cpp
-
+#include "juego.h"  
 
 using namespace std;
 
 
-
-
-// Esta funci�n se encarga de dibujar el tablero cuadrado por cuadrado
 tablero::tablero() {
-    grid.resize(filas, std::vector<Casilla>(columnas));  // crea un grid de 8x8
+    grid.resize(filas, std::vector<Casilla>(columnas));  // crea un matriz de casillas llamada grid de 8x8 
     colocapiezas();
 }
 
 Casilla& tablero::at(int fila, int columna) {
     return grid[fila][columna];
+}
+
+const Casilla& tablero::at(int fila, int col) const {
+    return grid[fila][col];
 }
 
 
@@ -51,36 +49,28 @@ void tablero::dibuja() {
 
 
 
-    // Recorremos todas las filas del tablero
+  
     for (int fila = 0; fila < filas; fila++) {
-        // Recorremos todas las columnas del tablero
         for (int col = 0; col < columnas; col++) {
-            // Usamos una f�rmula para alternar colores blanco y negro
+           
             esBlanco = (fila + col) % 2 == 0;
-
-            // Si es una casilla blanca, usamos color blanco
             if (esBlanco)
-                glColor3f(0.2f, 0.2f, 0.6f); //  gris claro
+                glColor3f(0.2f, 0.2f, 0.6f); 
             else
-                glColor3f(0.0f, 1.0f, 0.3f); //  rojo claro
+                glColor3f(0.0f, 1.0f, 0.3f); 
 
             // Calculamos las coordenadas de cada cuadrado (esquina superior izquierda)
             int y = Constantes::margenX
-                + col * Constantes::tamanoCasilla; // columna * tama�o de casilla
+                + col * Constantes::tamanoCasilla; 
             int x = Constantes::margenX
-                + fila * Constantes::tamanoCasilla; // fila * tama�o de casilla
+                + fila * Constantes::tamanoCasilla; 
 
-
-
-            // Dibujamos un cuadrado usando 4 v�rtices (OpenGL cl�sico)
             glBegin(GL_QUADS); // Iniciamos dibujo de un cuadrado
             glVertex2f(x, y);                           // esquina superior izquierda
             glVertex2f(x + Constantes::tamanoCasilla, y);             // esquina superior derecha
             glVertex2f(x + Constantes::tamanoCasilla, y + Constantes::tamanoCasilla); // esquina inferior derecha
             glVertex2f(x, y + Constantes::tamanoCasilla);             // esquina inferior izquierda
-            glEnd(); // Terminamos el dibujo del cuadrado
-
-
+            glEnd(); 
 
         }
     }
@@ -104,56 +94,35 @@ void tablero::dibuja() {
         // Recorremos todas las columnas del tablero
         for (int col = 0; col < columnas; col++) {
             if (grid[fila][col].hayPieza()) {
-                grid[fila][col].getPieza()->dibuja();  // Llamamos al m�todo dibuja() de la pieza
-                //cout << "pieza" << fila << col << endl;
+                grid[fila][col].getPieza()->dibuja();  // Llamamos al metodo dibuja() de la pieza
+               
             }
         }
     }
 }
 
-
+// AQUI USAMOS NO CONST (at)
 //EL JODE VIDAS
 
 void tablero::colocapiezas() {
-    // Limpiar tablero
-   // limpiar();
-
-
-    at(6, 0).set(new Rey(6, 0, true));
-    at(7, 0).set(new peon(7, 0, true));
-
-    at(7, 3).set(new peon(7, 3, false));
-    at(6, 3).set(new Rey(6, 3, false));
-
-
-    at(6, 7).set(new Torre(6, 7, true));
-    at(7, 7).set(new peon(7, 7, true));
-
-
-
-}
-
-/*
-// PROBAR JAQUE MATE
-void tablero::colocapiezas() {
-    // Limpiar tablero
-    for (int fila = 0; fila < filas; ++fila)
-        for (int col = 0; col < columnas; ++col)
-            at(fila, col).set(nullptr);
-
  
-    at(7, 0).set(new Rey(7, 0, false));  
+
+    at(6, 0).set(new Rey(6, 0, false));
+    at(7, 0).set(new peon(7, 0, false));
+
+    at(7, 3).set(new peon(7, 3, true));
+    at(6, 3).set(new Rey(6, 3, true));
+   // at(7, 2).set(new peon(7, 2, true));
 
 
-    at(5, 5).set(new Rey(5, 5, true));   
-
-   
-    at(0, 7).set(new Torre(0, 7, true));
+    at(6, 7).set(new Torre(6, 7, false));
+    at(7, 7).set(new peon(7, 7, false));
 
 
-    at(6, 2).set(new Torre(6, 2, true)); 
+
 }
-*/
+
+
 /*
 void tablero::colocapiezas() {
     for (int fil = 0; fil < filas; ++fil) {
@@ -200,29 +169,28 @@ void tablero::colocapiezas() {
 */
 
 void tablero::aplicarGravedad() {
-    for (int col = 0; col < columnas; ++col) { //recorre todas las columnas
-        for (int fila = filas - 2; fila >= 0; --fila) { // recorre todas las filas desde la penultima(no puede caer más si esta en la última)
+    for (int col = 0; col < columnas; col++) { 
+        for (int fila = filas - 2; fila >= 0; fila--) { // recorre todas las filas desde la penultima(no puede caer más si esta en la última)
             if (grid[fila][col].hayPieza()) { //verifica si hay pieza
-                int nuevaFila = fila; //guarda fila actual pieza
+                int nuevaFila = fila; 
                 while (nuevaFila + 1 < filas && !grid[nuevaFila + 1][col].hayPieza()) {// recorre de la fila siguiente hasta que encuentre una pieza
                     nuevaFila++;
                 }
                 if (nuevaFila != fila) { // si la nueva fila es distinta de la fila inicial
-                    Pieza* pieza = grid[fila][col].getPieza();// cogemos la pieza original(el puntero)
+                    Pieza* pieza = grid[fila][col].getPieza();// cogemos la pieza original
                     grid[nuevaFila][col].set(pieza);//la colocamos en la nueva fila
                     grid[fila][col].set(nullptr);//liberamos la anterior
                     pieza->setFila(nuevaFila);//actualiza posicíon interna
                     pieza->setColumna(col);
-                   // pieza->setPosicionGrafica(); // actualiza visualmente la pieza
                 }
             }
         }
     }
 }
-bool tablero::aplicarGravedadAccion() {  //Booleana para devolver a la función timer del source 0 1 e iniciar el timer
+bool tablero::aplicarGravedadAccion() { 
     bool huboMovimiento = false;
-    for (int col = 0; col < columnas; ++col) {  //Recorremos todas las columnas del tablero
-        for (int fila = filas - 2; fila >= 0; --fila) {  //Recorremos las filas desde la penúltima hasta la primera
+    for (int col = 0; col < columnas; col++) {  //Recorremos todas las columnas del tablero
+        for (int fila = filas - 2; fila >= 0; fila--) {  //Recorremos las filas desde la penúltima hasta la primera
             if (grid[fila][col].hayPieza() && !grid[fila + 1][col].hayPieza()) {  // Si hay una pieza en la casilla actual y la casilla de abajo está vacía
                 Pieza* pieza = grid[fila][col].getPieza();  //Obtenemos la pieza de la casilla actual
                 grid[fila + 1][col].set(pieza); //Movemos la pieza a la casilla de abajo
@@ -239,8 +207,8 @@ bool tablero::aplicarGravedadAccion() {  //Booleana para devolver a la función 
 
 
 Pieza* tablero::encontrarRey(bool colorBlanco, int& filaRey, int& colRey) const {
-    for (int fila = 0; fila < 8; ++fila) {
-        for (int col = 0; col < 8; ++col) {
+    for (int fila = 0; fila < 8; fila++) {
+        for (int col = 0; col < 8; col++) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* p = grid[fila][col].getPieza();
                 if (p->esRey() && p->esBlanca() == colorBlanco) {
@@ -257,13 +225,12 @@ bool tablero::estaEnJaque(bool colorBlanco) const {
     int filaRey, colRey;
     if (!encontrarRey(colorBlanco, filaRey, colRey)) return false;
 
-    for (int fila = 0; fila < 8; ++fila) {
-        for (int col = 0; col < 8; ++col) {
+    for (int fila = 0; fila < 8; fila++) {
+        for (int col = 0; col < 8; col++) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* pieza = grid[fila][col].getPieza();
                 if (pieza->esBlanca() != colorBlanco) {  // enemigo
-                    if (pieza->movimientoValido(fila, col, filaRey, colRey, *this)) {
-                        //std::cout << "Rey en (" << filaRey << ", " << colRey << ") está en jaque" << std::endl;
+                    if (pieza->movimientoValido(fila, col, filaRey, colRey, *this)) { //this hace referncia al propio objeto del tablero
                         return true;
                     }
                 }
@@ -273,9 +240,6 @@ bool tablero::estaEnJaque(bool colorBlanco) const {
 
     return false;
 }
-const Casilla& tablero::at(int fila, int col) const {
-    return grid[fila][col];
-}
 
 
 bool tablero::esJaqueMate(bool colorBlanco) {
@@ -283,17 +247,17 @@ bool tablero::esJaqueMate(bool colorBlanco) {
         return false;
 
     // Probar todos los movimientos posibles de las piezas del jugador
-    for (int fila = 0; fila < 8; ++fila) {
-        for (int col = 0; col < 8; ++col) {
+    for (int fila = 0; fila < 8; fila++) {
+        for (int col = 0; col < 8;col++) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* pieza = grid[fila][col].getPieza();
                 if (pieza->esBlanca() == colorBlanco) {
-                    for (int f2 = 0; f2 < 8; ++f2) {
-                        for (int c2 = 0; c2 < 8; ++c2) {
-                            tablero copia = this->copiar();
+                    for (int f2 = 0; f2 < 8; f2++) {
+                        for (int c2 = 0; c2 < 8; c2++) {
+                            tablero copia = this->copiar();  // crea una copia de ESE tablero (copiame a mi)
 
-                            Pieza* pCopia = copia.at(fila, col).getPieza();
-                            if (pCopia) {
+                            Pieza* pCopia = copia.at(fila, col).getPieza(); // pieza de la copia
+                            
                                 if (pCopia->movimientoValido(fila, col, f2, c2, copia)) {
                                     // Simular movimiento y comprobar jaque
                                     copia.at(f2, c2).set(pCopia);
@@ -307,7 +271,7 @@ bool tablero::esJaqueMate(bool colorBlanco) {
                                         return false; // Existe un movimiento válido que salva al rey
                                     }
                                 }
-                            }
+                            
                         }
                     }
                 }
@@ -320,10 +284,10 @@ bool tablero::esJaqueMate(bool colorBlanco) {
 }
 
 void tablero::limpiar() {
-    for (int fila = 0; fila < filas; ++fila) {
-        for (int col = 0; col < columnas; ++col) {
+    for (int fila = 0; fila < filas;fila++) {
+        for (int col = 0; col < columnas; col++) {
             delete grid[fila][col].getPieza();   // Elimina pieza
-            grid[fila][col].set(nullptr);        // Evita puntero colgante
+            grid[fila][col].set(nullptr);        
         }
     }
 }
@@ -332,11 +296,11 @@ void tablero::limpiar() {
 
 tablero tablero::copiar() const {
     tablero copia;
-    for (int fila = 0; fila < 8; ++fila) {
-        for (int col = 0; col < 8; ++col) {
+    for (int fila = 0; fila < 8; fila++) {
+        for (int col = 0; col < 8; col++) {
             if (grid[fila][col].hayPieza()) {
                 Pieza* original = grid[fila][col].getPieza();
-                copia.grid[fila][col].set(original->clonar()); // OK
+                copia.grid[fila][col].set(original->clonar()); 
             }
             else {
                 copia.grid[fila][col].set(nullptr);

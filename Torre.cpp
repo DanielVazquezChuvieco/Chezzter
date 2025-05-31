@@ -31,7 +31,7 @@ bool Torre::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int
         f += pasoFila;  //si no sigue avanzando
         c += pasoCol;   //si no sigue avanzando
     }
-
+     
 
     return true;
 }

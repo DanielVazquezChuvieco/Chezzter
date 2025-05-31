@@ -18,6 +18,6 @@ bool Caballo::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, i
     if (!esMovimientoL)   //si no es así
         return false;   //devuelve false
 
-
+     
     return true;
 }

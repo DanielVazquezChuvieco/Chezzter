@@ -26,12 +26,10 @@ bool peon::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int 
         }
     }
 
-    // Captura vertical (una fila arriba o abajo)
+    // Captura horizontal 
     bool esMovimientoDiagonal = abs(filaDestino - filaOrigen) == 1;
     bool esHaciaAdelante = colDestino == colOrigen + direccion;
-    bool hayPieza = (colDestino >= 0 && colDestino < 8 && filaDestino >= 0 && filaDestino < 8)
-        ? Tablero.at(filaDestino, colDestino).hayPieza()
-        : false;
+    bool hayPieza = (colDestino >= 0 && colDestino < 8 && filaDestino >= 0 && filaDestino < 8) ? Tablero.at(filaDestino, colDestino).hayPieza(): false;
 
     if (esMovimientoDiagonal && esHaciaAdelante && hayPieza)
         return true;

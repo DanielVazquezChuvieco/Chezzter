@@ -22,7 +22,7 @@ public:
     std::string nombre() const{ return "TORRE"; } 
     Pieza* clonar() const override {
         return new Torre(fila, columna, esBlanca());
-    }
+    } 
 
 };
 

@@ -25,5 +25,10 @@ void Pieza::setPosicionGraficaPixel(int x, int y) {
 
 bool Pieza::intentaComerSuPropioRey(int filaDestino, int colDestino, const tablero& Tablero) const {
     Pieza* destino = Tablero.at(filaDestino, colDestino).getPieza();
-    return destino && destino->esRey() && destino->esBlanca() == this->esBlanca();
+
+    if (!destino) return false;              // No hay pieza en destino
+    if (!destino->esRey()) return false;     // La pieza destino no es un rey
+    if (destino->esBlanca() != esBlanca()) return false;  // El rey no es del mismo color
+
+    return true;  // Es tu propio rey
 }

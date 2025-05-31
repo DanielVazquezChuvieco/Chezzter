@@ -21,5 +21,5 @@ public:
     Pieza* clonar() const override {
         return new Reina(fila, columna, esBlanca());
     }
-
+     
 };

@@ -10,8 +10,7 @@ void onMouseClick(int button, int state, int x, int y);
 void onMouseDrag(int x, int y);  //Nueva función de arrastre
 void OnKeyboardDown(unsigned char key, int x_t, int y_t);
 void timerGravedad(int value);  //Temporizador para la animación de gravedad
-
-//void timerGravedad(int value);  //Temporizador para la animación de gravedad
+void timerGravedad(int value);  //Temporizador para la animación de gravedad
 
 
 // Función principal del programa
@@ -52,8 +51,7 @@ void onDraw() {
     glDisable(GL_LIGHTING);
     coordinador.dibujapantallamenu();
     if (coordinador.getEstado() == JUEGO) {
-        Juegos.dibuja();
-       
+        Juegos.dibuja();    
     }
     glutSwapBuffers();
 }
@@ -85,7 +83,6 @@ void onMouseDrag(int x, int y) {
 
 void timerGravedad(int value) {
 
-   
         if (Juegos.getTablero().aplicarGravedadAccion()) {
             glutPostRedisplay();
             glutTimerFunc(300, timerGravedad, 0);
@@ -100,13 +97,5 @@ void timerGravedad(int value) {
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)  {
 
     coordinador.tecla(key);
-  
-    if (coordinador.getEstado() == GANA_BLANCAS || coordinador.getEstado() == GANA_NEGRAS) {
-        if (key == 'R')
-
-          
-            coordinador.setResultado(MENU);
-            
-    }
     glutPostRedisplay();
 }

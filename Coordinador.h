@@ -1,5 +1,5 @@
 #pragma once
-
+// ESTADOS DEL MENU
 enum Estado {
     MENU=0,
     JUEGO,
@@ -7,7 +7,6 @@ enum Estado {
     CONTROLES,
     GANA_BLANCAS,
     GANA_NEGRAS,
-    BORRADO
 };
 
 class Coordinador
@@ -20,7 +19,7 @@ public:
     void setResultado(Estado r);
     void tecla(unsigned char tecla);
     void dibujapantallamenu();
-    Estado getEstado();
+    Estado getEstado(); 
 
 
 };

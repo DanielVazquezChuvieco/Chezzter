@@ -33,6 +33,6 @@ bool Alfil::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int
         f += pasoFila;
         c += pasoCol;
     }
-
+     
     return true;
 }

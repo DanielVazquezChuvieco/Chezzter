@@ -3,6 +3,7 @@
 #include "Constantes.h"
 #include <string>
 
+
 class tablero; //Se pone la clase tablero para pasar por referencia movimientoValido() y verificar la ocupación de casillas e implementar reglas
 class Pieza  //Clase base con herencia en peon,torre,caballo,alfil,reina,rey
 {
@@ -10,8 +11,6 @@ protected:
     int fila;  //Fila del tsblero 0-7 
     int columna;  //Columna tablero 0-7
     bool esBlancoPieza;   //True = piezablanca   Flase = piezanegra
- 
-
 
 public:
     void setFila(int f) { fila = f; }  //Actualiza la fila
@@ -28,12 +27,12 @@ public:
 
     void setPosicionGraficaPixel(int x, int y); // Nuevo método para arrastrar piezas, posiciona las piezas según las coordenadas en pantalla
        
-    virtual std::string nombre() const = 0;
+    virtual std::string nombre() const = 0; // metodo para obtener el nombre de la pieza (Rey, Torre...)
 
-    virtual bool esRey() const { return false; }
+    virtual bool esRey() const { return false; } // metodo para comprobar si se trata del rey
 
-    virtual Pieza* clonar() const = 0;  
+    virtual Pieza* clonar() const = 0;  // metodo para clonar pieza y estudiar distintas situaciones fuera del tablero origen
 
 protected:
-    bool intentaComerSuPropioRey(int filaDestino, int colDestino, const tablero& Tablero) const;
+    bool intentaComerSuPropioRey(int filaDestino, int colDestino, const tablero& Tablero) const; // metodo para hacer que no se pueda comer a sus hijas
 };

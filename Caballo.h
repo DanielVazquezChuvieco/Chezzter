@@ -20,7 +20,7 @@ public:
     std::string nombre() const { return "CABALLO"; }
     Pieza* clonar() const override {
         return new Caballo(fila, columna, esBlanca());
-    }
+    } 
 
 };
 

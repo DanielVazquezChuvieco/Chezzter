@@ -14,8 +14,6 @@ public:
         setPosicionGrafica();
     } //Constructor 
 
-
-
     //Movimiento válido peón
     bool movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int colDestino, const tablero& Tablero) override;
     std::string nombre() const { return "PEON"; }

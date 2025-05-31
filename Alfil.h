@@ -22,7 +22,7 @@ public:
     Pieza* clonar() const override {
         return new Alfil(fila, columna, esBlanca());
     }
-
+     
 
 };
 

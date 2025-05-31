@@ -2,96 +2,66 @@
 #include "freeglut.h"
 #include "ETSIDI.h"
 #include "juego.h"
-#include <chrono>
-#include <thread>
-
-
-
 juego Juego;
-Estado estado = MENU;
+Estado estado = MENU; // Empieza en MENU
 Estado Coordinador::getEstado() {
     return estado;
 }
 
 void Coordinador::dibujapantallamenu() {
    
-    //estado = MENU;
-    // --- Dibujar el fondo de pantalla según el estado actual ---
     switch (estado) {
     case MENU:
 
-        std::cout << "hola estoy en menu" << std::endl;
+        std::cout << "===MENU===" << std::endl;
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo_menu.png").id); //HAY QUE METER DONDE fondo EL NOMBRE DE LA FOTO QUE SE ELIJA 
         glDisable(GL_LIGHTING); //Esta ni penseis en quitarla
-
         glColor3f(1.0f, 1.0f, 1.0f);  // para que se vea con su color real
-
         glBegin(GL_POLYGON); //Defino el cuadrado en el que se va a pegar la imagen
         glTexCoord2d(0, 0); glVertex2f(0, 0); //Limite abajo izquierda
         glTexCoord2d(1, 0); glVertex2f(800, 0); //Limite abajo derecha
         glTexCoord2d(1, 1); glVertex2f(800, 800); //Limite arriba derecha
         glTexCoord2d(0, 1); glVertex2f(0, 800); //Origen arriba izq
         glEnd();
-
-        // glEnable(GL_LIGHTING);
         glDisable(GL_TEXTURE_2D);
-    //    std::this_thread::sleep_for(std::chrono::milliseconds(3000)); // Espera 3 segundo
-
         break;
+
     case JUEGO:
-        //Juego.reiniciarJuego();
         Juego.dibuja();
-       
-
-        
         break;
+
     case INSTRUCCIONES:
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo_instrucciones.png").id); //HAY QUE METER DONDE fondo EL NOMBRE DE LA FOTO QUE SE ELIJA 
         glDisable(GL_LIGHTING); //Esta ni penseis en quitarla
-
         glColor3f(1.0f, 1.0f, 1.0f);  // para que se vea con su color real
-
         glBegin(GL_POLYGON); //Defino el cuadrado en el que se va a pegar la imagen
         glTexCoord2d(0, 0); glVertex2f(0, 0); //Limite abajo izquierda
         glTexCoord2d(1, 0); glVertex2f(800, 0); //Limite abajo derecha
         glTexCoord2d(1, 1); glVertex2f(800, 800); //Limite arriba derecha
         glTexCoord2d(0, 1); glVertex2f(0, 800); //Origen arriba izq
         glEnd();
-
-        // glEnable(GL_LIGHTING);
         glDisable(GL_TEXTURE_2D);
-
-
         break;
+
     case CONTROLES:
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo_controles.png").id); //HAY QUE METER DONDE fondo EL NOMBRE DE LA FOTO QUE SE ELIJA 
         glDisable(GL_LIGHTING); //Esta ni penseis en quitarla
-
         glColor3f(1.0f, 1.0f, 1.0f);  // para que se vea con su color real
-
         glBegin(GL_POLYGON); //Defino el cuadrado en el que se va a pegar la imagen
         glTexCoord2d(0, 0); glVertex2f(0, 0); //Limite abajo izquierda
         glTexCoord2d(1, 0); glVertex2f(800, 0); //Limite abajo derecha
         glTexCoord2d(1, 1); glVertex2f(800, 800); //Limite arriba derecha
         glTexCoord2d(0, 1); glVertex2f(0, 800); //Origen arriba izq
         glEnd();
-
-        // glEnable(GL_LIGHTING);
         glDisable(GL_TEXTURE_2D);
-
         break;
 
-
     case GANA_BLANCAS:
-        //  ETSIDI::play("sonidos/astro.mp3");
-
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Astro_gana.png").id); //HAY QUE METER DONDE fondo EL NOMBRE DE LA FOTO QUE SE ELIJA 
-       // glDisable(GL_LIGHTING); //Esta ni penseis en quitarla
-
         glColor3f(1.0f, 1.0f, 1.0f);  // para que se vea con su color real
         glDisable(GL_LIGHTING); //Esta ni penseis en quitarla
         glBegin(GL_POLYGON); //Defino el cuadrado en el que se va a pegar la imagen
@@ -100,36 +70,26 @@ void Coordinador::dibujapantallamenu() {
         glTexCoord2d(1, 1); glVertex2f(800, 800); //Limite arriba derecha
         glTexCoord2d(0, 1); glVertex2f(0, 800); //Origen arriba izq
         glEnd();
-
         glEnable(GL_LIGHTING);
         glDisable(GL_TEXTURE_2D);
-        // glDisable(GL_TEXTURE_2D);
-         //glutSwapBuffers();
-       
-        estado = BORRADO;
+        estado = MENU;
         break;
+ 
+
     case GANA_NEGRAS:
-        //   else if (estado == GANA_NEGRAS) {
-               //   ETSIDI::play("sonidos/alien.mp3");
 
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Alien_gana.png").id); //HAY QUE METER DONDE fondo EL NOMBRE DE LA FOTO QUE SE ELIJA 
         glDisable(GL_LIGHTING); //Esta ni penseis en quitarla
-
         glColor3f(1.0f, 1.0f, 1.0f);  // para que se vea con su color real
-
         glBegin(GL_POLYGON); //Defino el cuadrado en el que se va a pegar la imagen
         glTexCoord2d(0, 0); glVertex2f(0, 0); //Limite abajo izquierda
         glTexCoord2d(1, 0); glVertex2f(800, 0); //Limite abajo derecha
         glTexCoord2d(1, 1); glVertex2f(800, 800); //Limite arriba derecha
         glTexCoord2d(0, 1); glVertex2f(0, 800); //Origen arriba izq
         glEnd();
-
-        // glEnable(GL_LIGHTING);
         glDisable(GL_TEXTURE_2D);
-        break;
-    case BORRADO:
-        Juego.reiniciarJuego();
+        estado = MENU;
         break;
 
     }
@@ -143,9 +103,8 @@ void Coordinador::tecla(unsigned char tecla) {
 
 
     case MENU:
-        if (tecla == '1') { // ASCII for '1'
-            
-           
+        if (tecla == '1') { // ASCII for '1'           
+   
             glutPostRedisplay();
             
             estado = JUEGO;
@@ -159,20 +118,17 @@ void Coordinador::tecla(unsigned char tecla) {
         else if (tecla == 27) { // ASCII for ESC key
             exit(0);
         }
-        break; // IMPORTANT: Add break here for MENU case
+        break; 
 
     case INSTRUCCIONES:
-        if (tecla == '4') { // ASCII for '1'
+        if (tecla == 'A'|| tecla == 'a') { // ASCII for '1'
             estado = MENU;
         }
         break;
     case JUEGO:
-       // Juego.dibuja();
        
         if (tecla =='R' || tecla=='r') { // ASCII for '1'
-            estado =  MENU;
-            
-           
+            estado =  MENU;    
         }
         else if (tecla == 27)
             exit(0);
@@ -180,7 +136,7 @@ void Coordinador::tecla(unsigned char tecla) {
  
 
     case CONTROLES:
-        if (tecla == '4') { // ASCII for '1'
+        if (tecla == 'A' || tecla == 'a') { // ASCII for '1'
             estado = MENU;
         }
         break;

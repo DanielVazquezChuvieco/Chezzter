@@ -11,12 +11,12 @@ bool Rey::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int c
         return false;
 
     
+    
+   
+    tablero copia = Tablero.copiar(); // Copiar el tablero para simular sin modificar el original
 
-    // Copiar el tablero para simular sin modificar el original
-    tablero copia = Tablero.copiar();
-
-    // Obtener puntero al rey dentro de la copia
-    Pieza* reyCopia = copia.at(filaOrigen, colOrigen).getPieza();
+   
+    Pieza* reyCopia = copia.at(filaOrigen, colOrigen).getPieza();  // Obtener puntero al rey dentro de la copia
 
     // Simular el movimiento
     copia.at(filaDestino, colDestino).set(reyCopia);
@@ -25,8 +25,9 @@ bool Rey::movimientoValido(int filaOrigen, int colOrigen, int filaDestino, int c
     reyCopia->setFila(filaDestino);
     reyCopia->setColumna(colDestino);
     copia.aplicarGravedad();
-    // Comprobar si tras moverse el rey queda en jaque
-    bool enJaque = copia.estaEnJaque(this->esBlanca());
+   
+    bool enJaque = copia.estaEnJaque(this->esBlanca()); // Comprobar si tras moverse el rey queda en jaque
+    
 
     return !enJaque;
 }
