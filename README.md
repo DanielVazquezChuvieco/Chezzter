@@ -9,4 +9,5 @@ Algunos detalles importantes para funcionamiento y comprensión del trabajo son:
 ->Es un ajedrez modificado, como se puede ver en las instrucciones consta de gravedad y la variante kramnik.
 
 ->El movimiento de las piezas se hace pinchando y arrastrando hasta la casilla final, solo funciona si el movimiento es considerado como válido y no deja a su propio rey en jaque.
+
 Este trabajo ha sido realizado con cariño (a ratos ;) ) por: Manuel Vallina, Javier Valdes, Alvaro Ribalda, Daniel García y Daniel Vázquez.
